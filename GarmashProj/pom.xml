@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>G37Project</artifactId>
+    <groupId>G37Project</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
-  <groupId>G37Project</groupId>
-  <artifactId>G37Project</artifactId>
+  <groupId>GarmashProj</groupId>
+  <artifactId>GarmashProj</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
 
-  <name>G37Project</name>
+  <name>GarmashProj</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -25,7 +29,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -62,23 +65,4 @@
       </plugins>
     </pluginManagement>
   </build>
-  <modules>
-    <module>overAll</module>
-    <module>AgliamovaProj</module>
-    <module>BalandukProj</module>
-    <module>GavrilukProj</module>
-    <module>GopachiloProj</module>
-    <module>GarmashProj</module>
-    <module>GrebenukProj</module>
-    <module>DanishProj</module>
-    <module>DyominaProj</module>
-    <module>KovalProj</module>
-    <module>KolosaiProj</module>
-    <module>KonevProj</module>
-    <module>KostenkoProj</module>
-    <module>KotelnikovProj</module>
-    <module>LishchukProj</module>
-    <module>MarukProj</module>
-    <module>NikitinProj</module>
-  </modules>
 </project>
