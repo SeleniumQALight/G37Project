@@ -6,6 +6,7 @@ import org.junit.Test;
 
 /**
  * Unit test for simple App. dan test
+ * new committ ver2
  */
 public class AppTest 
 {
