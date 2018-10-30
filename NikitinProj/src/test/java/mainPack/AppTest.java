@@ -6,6 +6,7 @@ import org.junit.Test;
 
 /**
  * Unit test for simple App.
+ * Just added new comment
  */
 public class AppTest 
 {
