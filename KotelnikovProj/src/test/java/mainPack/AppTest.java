@@ -6,6 +6,8 @@ import org.junit.Test;
 
 /**
  * Unit test for simple App.
+ * First commit
+ * Second commit
  */
 public class AppTest 
 {
