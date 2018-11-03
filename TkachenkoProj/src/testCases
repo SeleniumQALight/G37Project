@@ -1,1 +1,73 @@
 test case hw-1
+1. studentLogIn
+
+- go to http://v3.test.itpmgroup.com/login
+- enter "Student" in email field
+- enter "909090" in password field
+- click "Вход"
+expected result: redirect to http://v3.test.itpmgroup.com, user profile icon has loaded, status is online, page name "Главная" is present
+post condition: click on user name on the right corner and click "Выход"
+
+
+2.addNewApparat
+
+- go to http://v3.test.itpmgroup.com/login
+- enter "Student" in email field
+- enter "909090" in password field
+- click "Вход"
+- click on "Словари"
+- select "Аппарат" from the list
+- click on "add" button on the right corner
+- fill in "Apparat number" field with value "1"
+- fill in "Apparat comment" field with "test" value
+- click "Создать" button
+expecter result: new value was added to the list and displaying at the bottom of the list with parameters (number:1, comment: test)
+post condition: click on user name on the right corner and click "Выход"
+
+3. editApparatValue
+- go to http://v3.test.itpmgroup.com/login
+- enter "Student" in email field
+- enter "909090" in password field
+- click "Вход"
+- click on "Словари"
+- select "Аппарат" from the list
+- find value with parameters (number:1, comment: test) and click on it
+- enter in "Apparat number" field "2" and click "Сохранить"
+expected result: redirect to Apparat list page, edited value is displaying in the list with new params
+(number:2, comment: test)
+post condition: click on user name on the right corner and click "Выход"
+
+4. deleteApparatValue
+- go to http://v3.test.itpmgroup.com/login
+- enter "Student" in email field
+- enter "909090" in password field
+- click "Вход"
+- click on "Словари"
+- select "Аппарат" from the list
+- find value with parameters (number:2, comment: test) and click on it
+- click "Удалить" button
+expected result: redirect to http://v3.test.itpmgroup.com/dictionary/apparat, value with params(number:2, comment:test)
+was deleted from the list
+post condition: click on user name on the right corner and click "Выход"
+
+5. addNewWorker
+- go to http://v3.test.itpmgroup.com/login
+- enter "Student" in email field
+- enter "909090" in password field
+- click "Вход"
+- click on "Словари"
+- click on "Сотрудники"
+- click on "add" button
+- fill in "Worker surname" with value "test"
+- fill in "Worker name" with value "worker"
+- fill in "Worker middle name" with value "middle name"
+- fill in "Worker phone" with value "+3801234567"
+- click on "Создать" button
+expected result: new worker was added to list and displaying at the bottom of the list with entered params
+(surname:test, name:test, middle name: middle name, phone:+3801234567)
+
+
+
+
+
+
