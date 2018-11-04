@@ -81,7 +81,7 @@ Steps:
 1. Сlick on user avatar in right upper corner
 2. In appeared pop-up click on [Выход]
 Expected result:
-Authorization page should be opened
+Authorization page should be opened with field "Login" and "Password"
 
 
 
