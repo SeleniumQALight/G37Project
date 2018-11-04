@@ -6,6 +6,7 @@ import org.junit.Test;
 
 /**
  * Unit test for simple App. Supper double check update.and another changes as second change!
+ * and Another changes))
  */
 public class AppTest 
 {
