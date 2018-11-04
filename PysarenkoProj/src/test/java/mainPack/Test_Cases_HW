@@ -92,6 +92,33 @@ ER: User is able to find created record on "Ustanovka" page, WHERE
 
 ----
 
+[V]. Adding "Deal sides" (Storony zdelok) with flagging check
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slocari" in menu to open dropdown;
+6. Click on "Storony zdelok" option from dropdown;
+7. Click on "+" button;
+8. Fill in "Pro cust name" with string value;
+9. Fill in "Pro cust address" with string value;
+10. Fill in "Pro cust phone" with string value;
+11. Click on "Private person" checkbox to enable it;
+12. Click on "Sozdat'" button -> User is transferred to "Storony zdelok" page (http://v3.test.itpmgroup.com/dictionary/providers);
+
+ER: User can find just created record on "Storony zdelok" page WHERE
+    a) name = value of Pro cust name;
+    b) Address = value of Pro cust address;
+    c) phone = value of Pro cust phone;
+    d) "Fiz litso" field contains value
+
+
+---
+
+
+
+
+
 
 
 
