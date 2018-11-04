@@ -1,1 +1,87 @@
 test
+
+Test Case №1
+Title: The user can log in using valid inputs
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+3. Fill out the email field with Student;
+4. Fill out the password field with 909090;
+5. Press Вход;
+
+Expected Result:
+The user transfer to http://v3.test.itpmgroup.com/ and the title Главная is displayed
+
+Test Case №2
+Title: The user can log in using invalid inputs
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 9090;
+4. Press Вход.
+
+Expected Result:
+The password field highlighted as red and informing text about incorrect password is displayed under this field
+
+Test Case №3
+Title: The user can logout
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on Student tab (upper right corner);
+6. Click on Выход button.
+
+Expected Result:
+The user transfer to http://v3.test.itpmgroup.com/login and see the log in form
+
+
+
+Test Case №4
+Title: The left student panel disappears after clicking the button
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on the button with three horizontal stripes on the blue panel;
+
+Expected Result:
+The student panel disappears and Главная page is displayed.
+
+Test Case №4
+Title: The left student panel disappears after clicking the button
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on the button with three horizontal stripes on the blue panel;
+
+Expected Result:
+The student panel disappears and Главная page is displayed.
+
+Test Case №5
+Title: The radio button it is highlighted by a dot inside after clicking on it
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on Словари tab;
+6. Click on Аппарат radio button.
+
+Expected Result:
+The radio button it is highlighted by a dot.
+
