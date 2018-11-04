@@ -115,6 +115,19 @@ ER: User can find just created record on "Storony zdelok" page WHERE
 
 ---
 
+[VI]. Checking validation text for field
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slovari" in menu to open dropdown;
+6. Click on "Sotrudniki" option from dropdown;
+7. On "Sotrudniki" page click on "+" button;
+8. Click on "Sozdat'" button -> user is transferred to Sotrudniki page;
+
+ER: Pop-up with text "Zapovnit ce pole" should appear above "Worker Surname" field should appear
+    AND
+    User should remain on current page (no api call for creating record should be sent)
 
 
 
