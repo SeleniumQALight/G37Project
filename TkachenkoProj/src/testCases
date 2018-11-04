@@ -66,7 +66,23 @@ post condition: click on user name on the right corner and click "Выход"
 expected result: new worker was added to list and displaying at the bottom of the list with entered params
 (surname:test, name:test, middle name: middle name, phone:+3801234567)
 
-
+6. addNewService
+- go to http://v3.test.itpmgroup.com/login
+- enter "Student" in email field
+- enter "909090" in password field
+- click "Вход"
+- click on "Обслуживание"
+- click on "add" button
+- fill in "Service changes" with value "test changes"
+- fill in "Service operations" with value "test operation"
+- set "Service date" - "10 ноября 2018 00:00"
+- click on "Аппарат" field
+- find and select "Test Tkachenko" from the list
+- click on "Сотрудник" field
+- find and select "test test test" from the list
+- click on "Создать"
+expected result: redirect to http://v3.test.itpmgroup.com/dictionary/service
+new service was added and displaying at the bottom of the list with entered params,
 
 
 
