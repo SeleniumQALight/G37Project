@@ -23,7 +23,7 @@ STR:
 4. Press Вход.
 
 Expected Result:
-The password field highlighted as red and informing text about incorrect password is displayed under this field
+The password field is empty.
 
 Test Case №3
 Title: The user can logout
@@ -38,7 +38,7 @@ STR:
 6. Click on Выход button.
 
 Expected Result:
-The user transfer to http://v3.test.itpmgroup.com/login and see the log in form
+The user transfer to http://v3.test.itpmgroup.com/login and see the empty login form
 
 
 
@@ -71,7 +71,7 @@ Expected Result:
 The student panel disappears and Главная page is displayed.
 
 Test Case №5
-Title: The radio button it is highlighted by a dot inside after clicking on it
+Title: The click on Аппарат button opens Список аппаратов
 
 STR:
 1. Open browser FireFox 40.0;
@@ -83,5 +83,5 @@ STR:
 6. Click on Аппарат radio button.
 
 Expected Result:
-The radio button it is highlighted by a dot.
 
+The user transfers to http://v3.test.itpmgroup.com/dictionary/apparat and Список аппаратов is displayed.
