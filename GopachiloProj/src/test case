@@ -9,8 +9,10 @@ TC01.
      4. Click [Вход] button;
  Expected result: Successful login with valid credentials.
    Post condition:
-   1.Click avatar in the top right side.
-   2.Click [Выход] button
+   1.Click avatar in  top right side.
+   2.Click [Выход] button;
+
+
 
  TC02.
  Summary:" Successful  profile adding with "Сотридники" form"
