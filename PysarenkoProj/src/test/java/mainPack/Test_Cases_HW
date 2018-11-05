@@ -49,7 +49,7 @@ Post-conditions:
 8. Type the same value for "Podtvergdenie parol'a" field;
 9. Click on "Sohranit'";
 10. Click on "Profile" button on Main panel -> Pop-up is shown;
-11.On pop-up, click on "Vyhod" button -> user is transferred to "http://v3.test.itpmgroup.com/login";
+11. On pop-up, click on "Vyhod" button -> user is transferred to "http://v3.test.itpmgroup.com/login";
 12. In "Email" field type proper Login (same as in step 2);
 13. In "Password" field type updated Password;
 14. Click on "Vhod" button;
@@ -59,6 +59,11 @@ ER: Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.
     Same login, that was used for step 2 and 12 should be displayed on Main Panel bar
     AND
     User should see "Glavnaya" Page Title
+
+Post-conditions:
+1. Open User's profile
+2. Change password back to initial (type in "Parol'" and "Podtvergdenie parol'a" field)
+3. Click on "Sohranit'"
 
 ----
 [IV]. Creating new "Ustanovka" record from previosly created values as "Sotrudniki" and "Apparat"
