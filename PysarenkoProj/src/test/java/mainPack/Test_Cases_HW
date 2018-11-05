@@ -54,7 +54,8 @@ Post-conditions:
 13. In "Password" field type updated Password;
 14. Click on "Vhod" button;
 
-ER: Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.test.itpmgroup.com/login"
+ER: User logged in successfully with new credentials, which means that:
+    Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.test.itpmgroup.com/login"
     AND
     Same login, that was used for step 2 and 12 should be displayed on Main Panel bar
     AND
