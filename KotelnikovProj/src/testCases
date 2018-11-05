@@ -1,1 +1,55 @@
-test
+Test case 1:
+LoginWithValidAccount
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+4) Into "Password" field enter value "909090"
+5) Click on "Вход" button
+
+Expected result:
+User successfully logged in. User icon and login are displayed in the right-top corner.
+
+Test case 2:
+CheckErrorMessageUnderEmptyPasswordField
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+4) Click on "Вход" button
+
+Expected result:
+"Required" text should be displayed under "Password" field
+
+Test case 3:
+CheckErrorMessageUnderEmptyEmailField
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Password" field enter value "909090"
+4) Click on "Вход" button
+
+Expected result:
+"Required" text should be displayed under "Email" field
+
+Test case 4:
+CheckErrorMessageUnderEmptyEmailAndPasswordFields
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Click on "Вход" button
+
+Expected result:
+"Required" text should be displayed under "Email" and "Password" fields
+
+Test case 5:
+CheckResetPassword
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Click on "Напомнить пароль" link
+4) Into "Email" field enter value "Student"
+5) Click on "Reset" button
+
+Expected result:
+"Please, check your e-mail." text displayed
