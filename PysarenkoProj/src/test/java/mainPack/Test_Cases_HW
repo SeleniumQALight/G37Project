@@ -127,7 +127,11 @@ ER: User can find just created record on "Storony zdelok" page WHERE
     a) name = value of Pro cust name;
     b) Address = value of Pro cust address;
     c) phone = value of Pro cust phone;
-    d) "Fiz litso" field contains value
+    d) "Fiz litso" field contains value;
+    e) ID of record = ID, received after creation.
+
+Post-conditions:
+1. Added record of "Storony zdelok" should be found by ID and removed(deleted).
 
 
 ---
