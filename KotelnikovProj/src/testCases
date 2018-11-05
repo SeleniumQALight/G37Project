@@ -11,7 +11,7 @@ Expected result:
 User successfully logged in. User icon and login are displayed in the right-top corner.
 
 Test case 2:
-CheckErrorMessageUnderEmptyPasswordField
+CheckThatUserCannotLogInWithoutPassword
 
 1) Open FireFox browser
 2) Open web page with URL "http://v3.test.itpmgroup.com/login"
@@ -19,37 +19,59 @@ CheckErrorMessageUnderEmptyPasswordField
 4) Click on "Вход" button
 
 Expected result:
-"Required" text should be displayed under "Password" field
+User stayed on logIn page
 
 Test case 3:
-CheckErrorMessageUnderEmptyEmailField
+CheckLogout
 
 1) Open FireFox browser
 2) Open web page with URL "http://v3.test.itpmgroup.com/login"
-3) Into "Password" field enter value "909090"
-4) Click on "Вход" button
+3) Into "Email" field enter value "Student"
+4) Into "Password" field enter value "909090"
+5) Click on "Вход" button
+6) Click on icon in the right-top corner
+7) Click on "Выход" button
 
 Expected result:
-"Required" text should be displayed under "Email" field
+User is logout and redirect to login page
 
 Test case 4:
-CheckErrorMessageUnderEmptyEmailAndPasswordFields
-
-1) Open FireFox browser
-2) Open web page with URL "http://v3.test.itpmgroup.com/login"
-3) Click on "Вход" button
-
-Expected result:
-"Required" text should be displayed under "Email" and "Password" fields
-
-Test case 5:
 CheckResetPassword
 
 1) Open FireFox browser
 2) Open web page with URL "http://v3.test.itpmgroup.com/login"
 3) Click on "Напомнить пароль" link
-4) Into "Email" field enter value "Student"
-5) Click on "Reset" button
 
 Expected result:
-"Please, check your e-mail." text displayed
+User is redirected to empty page
+
+Test case 5:
+CheckCreationOfService
+
+Pre-conditions:
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+3) Into "Password" field enter value "909090"
+4) Click on "Вход" button
+5) In sidebar-menu click on "Обслужывание"
+6) Check that in table "Список работ" isn't created record with "Проведенные изменения" - "777", "Проведенные операции" - "Service operations", "Сотрудник" - "Tad Jones Brian" and "Дата" - "10.07.2015 00:00"
+
+Steps:
+7) Click on "+" button
+8) Into "Service changes" field enter value "777"
+9) Into "Service operations" field enter value "Service operation"
+10) From "Service date" select date&time "10.07.2015 00:00"
+11) From "Аппарат" combobox select value "Сломан датчик"
+12) From "Сотрудник" combobox select value "Tad Jones Brian"
+13) Click on "Создать" button
+
+Post-conditions:
+14) Click on record with "Проведенные изменения" - "777", "Проведенные операции" - "Service operations", "Сотрудник" - "Tad Jones Brian" and "Дата" - "10.07.2015 00:00"
+15) Click on "Удалить" button
+
+Expected result:
+Record with "Проведенные изменения" - "777",
+            "Проведенные операции" - "Service operations",
+            "Сотрудник" - "Tad Jones Brian"
+            "Дата" - "10.07.2015 00:00" is created and appears in "Список работ" table
