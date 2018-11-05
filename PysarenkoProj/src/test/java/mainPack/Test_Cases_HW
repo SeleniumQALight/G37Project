@@ -25,9 +25,9 @@ ER: Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.
 8. Fill in "Apparat number" with any integer;
 9. Fill in "Apparat Comment" with any string;
 10. Click on "Sozdat'" button -> user is transferred to Apparat page;
-11. Find on "Apparat" page just created "apparat" (by number and comment) -> click on it;
+11. Find on "Apparat" page just created "apparat" (by received ID number) -> click on it;
 12. Update values for fields "Apparat number" and "Apparat comment" with proper values and click on "Sohranit'" button -> user is transferred to Apparat page;
-13. Find on "Apparat" page just updated "apparat" (by number and comment) -> click on it;
+13. Find on "Apparat" page just updated "apparat" (by received ID number) -> click on it;
 14. Click on "Udalit'" button -> user is transferred to "Apparat page";
 
 ER: Created and updated "aparat" can't be found on "Apparat page".
