@@ -1,1 +1,105 @@
 test
+
+
+ДЗ 9:
+1. Написать 5 тесткейсов на сайт http://v3.test.itpmgroup.com .
+Кейсы пишем в файле TestCases , что мы добавили на занятии. Комитим, пушим и создаем ПулРиквест
+2. Определяемся со своим екзаменационным проектом и сбрасываем мне в телеграм ссылку на него для апрува.
+3. Пишем 5 кейсов на свой экзам проект. Эти кейсы мне не сбрасываем, а храним у себя и потом отправляем
+мне вместе с проектом в конце курса
+
+Логин Student
+Пароль 909090
+
+Pre-condition:
+pen Web broser Firefox.
+2. Go to http://v3.test.itpmgroup.com.
+3. Enter Username "Student"
+4. Enter password "909090"
+5. Press "Вход"  button.
+
+
+
+Post -condition:
+Log out from http://v3.test.itpmgroup.com.
+
+Test 1
+1. Open Web broser Firefox.
+2. Go to http://v3.test.itpmgroup.com.
+3. Check available page for log in.
+4. Check available main window to enter Username and Password
+Expected result: Page for log in is available.
+
+
+Log out from http://v3.test.itpmgroup.com.
+
+
+Test 2
+1. Open Web broser Firefox.
+2. Go to http://v3.test.itpmgroup.com.
+3. Enter Username "Student"
+4. Enter password "909090"
+5. Press "Вход"  button.
+6. Check text "Главная" and "Добро пожаловать в систему учета запчастей!"in opened page.
+Expected result:  The new page is opened and have text "Главная" and "Добро пожаловать в систему учета запчастей!"
+
+Post -condition
+Log out from http://v3.test.itpmgroup.com.
+
+Test 3
+Pre-conditon:
+1. Open Web broser Firefox.
+2. Go to http://v3.test.itpmgroup.com.
+3. Enter Username "Student"
+4. Enter password "909090"
+5. Press "Вход"  button.
+6. Click on "Словари" on the left side, by the left mouse button
+7. Choose "Аппарат" in pop-up menu. Click on "Словари" by left mouse button.
+8. Add new item to "Аппарат". Click "Add" button on the right side of the main window, by the left mouse button.
+9. Enter "12345" to "Apparat number" field.
+10. Enter "test variant" to "Apparat comment" field.
+11. Click on "Создать" button.
+Expected result: New line with "Apparat number" and "Apparat comment" was created
+and available on the list "Список аппаратов".
+
+Post -condition
+Log out from http://v3.test.itpmgroup.com.
+
+
+Test 4
+
+Pre-conditon:
+1. Open Web broser Firefox.
+2. Go to http://v3.test.itpmgroup.com.
+3. Enter Username "Student"
+4. Enter password "909090"
+5. Press "Вход"  button.
+6. Click on "Словари" on the left side, by left mouse button.
+7. Find item with parameters: "12345" in "Apparat number" and "test variant" in "Apparat comment".
+8. Click on found item  by the left mouse button.
+9. Change "12345"  to "00011" in "Apparat number" field.
+10 Click on "Сохранить" button.
+11 Find item with parameters: "00011" in "Apparat number" and "test variant" in "Apparat comment"
+Expected result:
+New number was saved "00011" in "Apparat number" field.
+
+Post -condition
+Log out from http://v3.test.itpmgroup.com.
+
+
+Test 5
+Pre-conditon:
+1. Open Web broser Firefox.
+2. Go to http://v3.test.itpmgroup.com.
+3. Enter Username "Student"
+4. Enter password "909090"
+5. Press "Вход"  button.
+6. Find item with parameters: "00011" in "Apparat number" and "test variant" in "Apparat comment".
+7. Click on found item  by the left mouse button.
+8. Click on "Удалить" button.
+Expected result:
+Item was deleted from "Список аппаратов" list.
+Try to find item with parameters: "00011" in "Apparat number" and "test variant" in "Apparat comment".
+
+
+
