@@ -100,6 +100,12 @@ ER: User is able to find created record on "Ustanovka" page, WHERE
     a) date and time = values from step 19;
     b) apparat = "Apparat Comment" from step 9;
     c) sotrudnik = String "Worker name " + String "Worker surname" (from steps 15 and 14); // TODO should be updated for middle name also;
+    d) ID ustanovki = ID ustanovki from step 22 (received after creation)
+
+Post-conditions:
+1. Find and delete created "Ustanovka" (by ID from creation);
+2. Find and delete created "Aparat" (by ID from creation);
+3. Find and delete created "Sotrudnik" (by ID from creation);
 
 ----
 
