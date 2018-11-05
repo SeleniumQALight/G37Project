@@ -46,7 +46,7 @@ Expected result:
 User is redirected to empty page
 
 Test case 5:
-CheckCreationOfService
+CheckCreationOfServiceRecord
 
 Pre-conditions:
 1) Open FireFox browser
@@ -54,24 +54,31 @@ Pre-conditions:
 3) Into "Email" field enter value "Student"
 3) Into "Password" field enter value "909090"
 4) Click on "Вход" button
-5) In sidebar-menu click on "Обслужывание"
-6) Check that in table "Список работ" isn't created record with "Проведенные изменения" - "777", "Проведенные операции" - "Service operations", "Сотрудник" - "Tad Jones Brian" and "Дата" - "10.07.2015 00:00"
+5) In sidebar-menu click on "Словари" -> "Аппарат"
+8) Click on "+" button
+9) Into "Apparat number" field enter valid number
+10) Into "Apparat comment" field enter valid comment
+11) In sidebar-menu click on "Словари" -> "Сотрудники"
+12) Click on "+" button
+13) Into "Worker surname" field enter valid worker surname
+14) Into "Worker name" field enter valid worker name
+15) Into "Worker middle name" field enter valid worker middle name
+16) Into "Worker phone" field enter valid Worker phone name
+
 
 Steps:
-7) Click on "+" button
-8) Into "Service changes" field enter value "777"
-9) Into "Service operations" field enter value "Service operation"
-10) From "Service date" select date&time "10.07.2015 00:00"
-11) From "Аппарат" combobox select value "Сломан датчик"
-12) From "Сотрудник" combobox select value "Tad Jones Brian"
-13) Click on "Создать" button
-
-Post-conditions:
-14) Click on record with "Проведенные изменения" - "777", "Проведенные операции" - "Service operations", "Сотрудник" - "Tad Jones Brian" and "Дата" - "10.07.2015 00:00"
-15) Click on "Удалить" button
+1) In sidebar-menu click on "Обслуживание"
+2) Click on "+" button
+3) Into "Service changes" field enter valid service changes
+4) Into "Service operations" field enter valid service operation
+5) From "Service date" select valid date&time
+6) From "Аппарат" combobox select valid value
+7) From "Сотрудник" combobox select valid value
+8) Click on "Создать" button
 
 Expected result:
-Record with "Проведенные изменения" - "777",
-            "Проведенные операции" - "Service operations",
-            "Сотрудник" - "Tad Jones Brian"
-            "Дата" - "10.07.2015 00:00" is created and appears in "Список работ" table
+Record with is created and appears in "Список работ" table
+
+Post-conditions:
+1) Click on created record
+2) Click on "Удалить" button
