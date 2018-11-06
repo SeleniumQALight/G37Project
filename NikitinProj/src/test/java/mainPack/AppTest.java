@@ -8,6 +8,7 @@ import org.junit.Test;
  * Unit test for simple App.
  * Just added new comment
  * And now this is a SECOND commit
+ * Comment from the NOVEMBER FIRST
  */
 public class AppTest 
 {
