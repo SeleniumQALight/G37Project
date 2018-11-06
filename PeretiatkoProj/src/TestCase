@@ -1,0 +1,124 @@
+==================
+Test Case #1
+==================
+
+Summary:
+    Enter a account
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1. go to url "http://v3.test.itpmgroup.com"
+    2. enter a login -> "Student" text area
+    3. enter a password -> "909090" text area
+    4. click button "Вход"
+
+ER:
+    We enter a account on this site "http://v3.test.itpmgroup.com"
+
+==================
+Test Case #2
+==================
+
+Summary:
+    Sing in (Registration)
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1. click a link "Зарегистрироваться"
+    2. popup will appear "Регистрация" with input fields
+    3. input text area a "Имя", "Фалилию", "возраст", "Email", "номер мобильного"
+    4. click "Регистрация"
+
+ER:
+    We need to see the message "Вы зарегистрированы" Log in to your account
+
+==================
+Test Case #3
+==================
+
+Summary:
+    Add a new deal to list
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1.  go to url "http://v3.test.itpmgroup.com"
+    2.  enter Login -> "Student"
+    3.  enter password -> "909090"
+    4.  click button "Вход"
+    5.  click on the left SideBar by link "Deal"
+    6.  click right "+" (popup "Add")
+    7.  change "Deal Date" to "08-мая-2020-06-05"
+    8.  change "Тип сделки" to "мошеничество"
+    9.  change "Покупатель" to "OAO"МММ"
+    10. change "Я, Олег Ляшко"
+    11. click button "Создать"
+
+
+ER:
+    We need to see "Сделки => Список"
+    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+
+
+==================
+Test Case #4
+==================
+
+Summary:
+    Delete a deal to list
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1.  go to url "http://v3.test.itpmgroup.com"
+    2.  insert a text area Login -> 'Student'
+    3.  insert a text area Password -> '909090'
+    4.  click button "Вход"
+    5.  click on the left SideBar by link "Deal"
+    6.  scroll down to list
+    7.  click "Deal Date" to "08-мая-2020-06-05"
+    8.  change "Тип сделки" to "мошеничество"
+    9.  click button "Удалить"
+
+ER:
+    We need to see "Сделки -> Список"
+    with out 08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+
+
+==================
+Test Case #5
+==================
+
+Summary:
+    Add to new side a deal
+
+Precondition:
+    Open a Firefox
+
+STR Before:
+    1.  go on the url "http://v3.test.itpmgroup.com"
+    2.  insert a text area Login -> 'Student'
+    3.  insert a text area Password -> '909090'
+    4.  click button "Вход"
+    5.  click on the left SideBar by link "Deal"
+    6.  click button "Словари"
+    7.  select a drop down "Стороны сделок" and click selected
+    8.  click button "+"
+    9.  insert to text area "Pro cust name" -> "Чепуха Олексеевич"
+    10. insert to text area "Pro cust address" -> "Pro cust address"
+    11. insert to text area "Pro cust phone" -> "09889900451"
+    12. click checkbox "Private person" -> enabled
+    13. click "Создать"
+
+ER:
+    We will see a create a new line of List Deal
+    Чепуха Олексеевич  Свиридова 23б кв.12    09889900451
+
+
+
