@@ -14,26 +14,62 @@ ER: Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.
     User should see "Glavnaya" Page Title
 
 ---
-[II]. Adding and updating new "Apparat"
+[II-A]. Adding and updating new "Apparat"
+
+Pre-conditions:
+
 1.In X browser, go to link http://v3.test.itpmgroup.com;
 2. In "Email" field type proper Login;
 3. In "Password" field type proper Password;
 4. Click on "Vhod" button;
-5. Click on "Slocari" in menu to open dropdown;
+
+Steps:
+5. Click on "Slovari" in menu to open dropdown;
 6. Click on "Aparat" option from dropdown;
 7. On "Aparat" page click on "+" button;
-8. Fill in "Apparat number" with any integer;
-9. Fill in "Apparat Comment" with any string;
+8. Fill in "Apparat number" with randomly generated integer (from 1 to 99999999);
+9. Fill in "Apparat Comment" with specific unique String (TestAparat + "Current date (up tp miliseconds)");
 10. Click on "Sozdat'" button -> user is transferred to Apparat page;
-11. Find on "Apparat" page just created "apparat" (by received ID number) -> click on it;
-12. Update values for fields "Apparat number" and "Apparat comment" with proper values and click on "Sohranit'" button -> user is transferred to Apparat page;
 
-ER: Created and updated "aparat" CAN be found on "Apparat page" WHERE
-    "Aparat number" and "Aparat Comment" = added values from step 12
+
+ER: Created "Aparat" CAN be found on "Apparat page" WHERE
+    "Aparat number" and "Aparat Comment" = added values from steps 8 and 9
 
 Post-conditions:
-1. Find on "Apparat" page just updated "apparat" (by received ID number) -> click on it;
+1. Find on "Apparat" page created "apparat" (by values from steps 8 and 9) -> click on it;
 2. Click on "Udalit'" button -> user is transferred to "Apparat page";
+3. Check, that "Aparat" with values from steps 2 and 3 is not displayed on Page
+    OR
+    Delete from base directly
+
+[II-B]. Updating new "Apparat"
+
+Pre-conditions:
+
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slovari" in menu to open dropdown;
+6. Click on "Aparat" option from dropdown;
+7. On "Aparat" page click on "+" button;
+8. Fill in "Apparat number" with randomly generated integer (from 1 to 99999999);
+9. Fill in "Apparat Comment" with specific unique String (TestAparat + "Current date (up tp miliseconds)");
+10. Click on "Sozdat'" button -> user is transferred to Apparat page;
+
+Steps:
+1. Find on "Apparat" page created "apparat" (by values from steps 8 and 9) -> click on it;
+2. Update value for field "Apparat number" with unique integer value
+3. Updated value for field "Apparat comment" with randomly generated String (UpdatedTestAparat + "Current date (up tp miliseconds)")
+4. Click on "Sohranit'" button -> user is transferred to Apparat page;
+
+ER: Updated "Aparat" CAN be found on "Apparat page" WHERE
+    "Aparat number" and "Aparat Comment" = values from steps 2 and 3 of MainCase
+
+Post-conditions:
+1. Find on "Apparat" page updated "apparat" (by values from steps 2 and 3) -> click on it;
+2. Click on "Udalit'" button -> user is transferred to "Apparat page";
+3. Check, that "Aparat" with values from steps 2 and 3 is not displayed on Page
     OR
     Delete from base directly
 
