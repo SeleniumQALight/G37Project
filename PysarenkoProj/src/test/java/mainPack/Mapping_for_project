@@ -1,0 +1,5 @@
+#LoginPage
+Login.Input.Field=xpath(".//input[@class = 'form-control' and @name= '_username']")
+Password.Input.Field=xpath(".//input[@class = 'form-control' and @name = '_password']")
+Button.Enter=xpath(".//button[@type = 'submit']")
+
