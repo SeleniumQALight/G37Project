@@ -1,0 +1,84 @@
+Test case 1:
+LoginWithValidAccount
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+4) Into "Password" field enter value "909090"
+5) Click on "Вход" button
+
+Expected result:
+User successfully logged in. User icon and login are displayed in the right-top corner.
+
+Test case 2:
+CheckThatUserCannotLogInWithoutPassword
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+4) Click on "Вход" button
+
+Expected result:
+User stayed on logIn page
+
+Test case 3:
+CheckLogout
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+4) Into "Password" field enter value "909090"
+5) Click on "Вход" button
+6) Click on icon in the right-top corner
+7) Click on "Выход" button
+
+Expected result:
+User is logout and redirect to login page
+
+Test case 4:
+CheckResetPassword
+
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Click on "Напомнить пароль" link
+
+Expected result:
+User is redirected to empty page
+
+Test case 5:
+CheckCreationOfServiceRecord
+
+Pre-conditions:
+1) Open FireFox browser
+2) Open web page with URL "http://v3.test.itpmgroup.com/login"
+3) Into "Email" field enter value "Student"
+3) Into "Password" field enter value "909090"
+4) Click on "Вход" button
+5) In sidebar-menu click on "Словари" -> "Аппарат"
+8) Click on "+" button
+9) Into "Apparat number" field enter valid number
+10) Into "Apparat comment" field enter valid comment
+11) In sidebar-menu click on "Словари" -> "Сотрудники"
+12) Click on "+" button
+13) Into "Worker surname" field enter valid worker surname
+14) Into "Worker name" field enter valid worker name
+15) Into "Worker middle name" field enter valid worker middle name
+16) Into "Worker phone" field enter valid Worker phone name
+
+
+Steps:
+1) In sidebar-menu click on "Обслуживание"
+2) Click on "+" button
+3) Into "Service changes" field enter valid service changes
+4) Into "Service operations" field enter valid service operation
+5) From "Service date" select valid date&time
+6) From "Аппарат" combobox select valid value
+7) From "Сотрудник" combobox select valid value
+8) Click on "Создать" button
+
+Expected result:
+Record with is created and appears in "Список работ" table
+
+Post-conditions:
+1) Click on created record
+2) Click on "Удалить" button
