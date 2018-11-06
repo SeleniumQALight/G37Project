@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * Unit test for simple App.1122
- * My Test
+ * test changes
  */
 public class AppTest 
 {
