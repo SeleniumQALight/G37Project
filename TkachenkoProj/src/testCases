@@ -22,7 +22,7 @@ post condition: click on user name on the right corner and click "Выход"
 - fill in "Apparat number" field with value "1"
 - fill in "Apparat comment" field with "test" value
 - click "Создать" button
-expecter result: new value was added to the list and displaying at the bottom of the list with parameters (number:1, comment: test)
+expected result: new value was added to the list and displaying at the bottom of the list with parameters (number:1, comment: test)
 post condition: delete created value (number:1, comment:test) from the list, click on user name on the right corner and click "Выход"
 
 3. editApparatValue
