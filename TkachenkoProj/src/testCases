@@ -17,12 +17,13 @@ post condition: click on user name on the right corner and click "Выход"
 - click "Вход"
 - click on "Словари"
 - select "Аппарат" from the list
+- check that value with params (number:1, comment: test) not exists at the ist
 - click on "add" button on the right corner
 - fill in "Apparat number" field with value "1"
 - fill in "Apparat comment" field with "test" value
 - click "Создать" button
 expecter result: new value was added to the list and displaying at the bottom of the list with parameters (number:1, comment: test)
-post condition: click on user name on the right corner and click "Выход"
+post condition: delete created value (number:1, comment:test) from the list, click on user name on the right corner and click "Выход"
 
 3. editApparatValue
 - go to http://v3.test.itpmgroup.com/login
@@ -31,11 +32,16 @@ post condition: click on user name on the right corner and click "Выход"
 - click "Вход"
 - click on "Словари"
 - select "Аппарат" from the list
-- find value with parameters (number:1, comment: test) and click on it
+- check that value with params (number:1, comment: test) not exists at the ist
+- click on "add" button on the right corner
+- fill in "Apparat number" field with value "1"
+- fill in "Apparat comment" field with "test" value
+- click "Создать" button
+- find value with parameters (number:1, comment: test) at list and click on it
 - enter in "Apparat number" field "2" and click "Сохранить"
 expected result: redirect to Apparat list page, edited value is displaying in the list with new params
 (number:2, comment: test)
-post condition: click on user name on the right corner and click "Выход"
+post condition: delete edited value (number:2, comment:test) from the list, click on user name on the right corner and click "Выход"
 
 4. deleteApparatValue
 - go to http://v3.test.itpmgroup.com/login
@@ -44,6 +50,13 @@ post condition: click on user name on the right corner and click "Выход"
 - click "Вход"
 - click on "Словари"
 - select "Аппарат" from the list
+- check that value with params (number:1, comment: test) not exists at the ist
+- click on "add" button on the right corner
+- fill in "Apparat number" field with value "1"
+- fill in "Apparat comment" field with "test" value
+- click "Создать" button
+- find value with parameters (number:1, comment: test) at list and click on it
+- enter in "Apparat number" field "2" and click "Сохранить"
 - find value with parameters (number:2, comment: test) and click on it
 - click "Удалить" button
 expected result: redirect to http://v3.test.itpmgroup.com/dictionary/apparat, value with params(number:2, comment:test)
@@ -57,6 +70,7 @@ post condition: click on user name on the right corner and click "Выход"
 - click "Вход"
 - click on "Словари"
 - click on "Сотрудники"
+- check that value with params (surname:test,name: worker,middle name:middle name,phone:+3801234567) does not exist at the ist
 - click on "add" button
 - fill in "Worker surname" with value "test"
 - fill in "Worker name" with value "worker"
@@ -65,6 +79,8 @@ post condition: click on user name on the right corner and click "Выход"
 - click on "Создать" button
 expected result: new worker was added to list and displaying at the bottom of the list with entered params
 (surname:test, name:test, middle name: middle name, phone:+3801234567)
+post condition: delete created value (surname:test,name: worker,middle name:middle name,phone:+3801234567) from the list,
+click on user name on the right corner and click "Выход"
 
 6. addNewService
 - go to http://v3.test.itpmgroup.com/login
@@ -72,6 +88,7 @@ expected result: new worker was added to list and displaying at the bottom of th
 - enter "909090" in password field
 - click "Вход"
 - click on "Обслуживание"
+- check that value with params (Service changes:test changes,Service operations:test operation, Сотрудник:test test test) does not exist at the ist
 - click on "add" button
 - fill in "Service changes" with value "test changes"
 - fill in "Service operations" with value "test operation"
@@ -82,7 +99,8 @@ expected result: new worker was added to list and displaying at the bottom of th
 - find and select "test test test" from the list
 - click on "Создать"
 expected result: redirect to http://v3.test.itpmgroup.com/dictionary/service
-new service was added and displaying at the bottom of the list with entered params,
+new service was added and displaying at the bottom of the list with entered params
+post condition: delete created value from the list, click on user name on the right corner and click "Выход"
 
 
 
