@@ -1,1 +1,23 @@
-test
+test 1
+Description
+Войти на сайт v3.test.itpmgroup.com уже зарегистрированным пользователем
+Steps
+открыть браузер
+ввести адрес страницы http://v3.test.itpmgroup.com/login
+убедиться в наличии текста "Учет запчастей"
+найти на открывшейся странице login-box Авторизация
+ввести в placeholder="Email"   валидный login Student
+ввести в placeholder="Password"  валидный пароль пользователя: 909090
+найти кнопку ВХОД и нажать на нее
+
+Postconditions
+нажать на dropdown  user-menu где avatar.png="Student"
+выбрать в dropdown  user-menu  кнопку Выход  -> разлогиниться
+
+Expected result
+перейти на страницу http://v3.test.itpmgroup.com/
+убедиться в наличии:
+1.заголовка Главная
+2.dropdown  user-menu где avatar.png="Student"
+3.ссылки -лого "Учет запчастей"
+
