@@ -1,6 +1,6 @@
-==================
-Test Case #1
-==================
+========================================================================
+===========================| Test Case #1 |=============================
+========================================================================
 
 Summary:
     Enter a account
@@ -9,17 +9,22 @@ Precondition:
     Open a Firefox
 
 STR:
-    1. go to url "http://v3.test.itpmgroup.com"
-    2. enter a login -> "Student" text area
-    3. enter a password -> "909090" text area
-    4. click button "Вход"
+    1. Go to url "http://v3.test.itpmgroup.com"
+    2. Enter a login -> "Student" text area
+    3. Enter a password -> "909090" text area
+    4. Click button "Вход"
 
 ER:
-    We enter a account on this site "http://v3.test.itpmgroup.com"
+    We enter from account on "Главная"
 
-==================
-Test Case #2
-==================
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================
+===========================| Test Case #2 |=============================
+========================================================================
 
 Summary:
     Sing in (Registration)
@@ -28,17 +33,24 @@ Precondition:
     Open a Firefox
 
 STR:
-    1. click a link "Зарегистрироваться"
-    2. popup will appear "Регистрация" with input fields
-    3. input text area a "Имя", "Фалилию", "возраст", "Email", "номер мобильного"
-    4. click "Регистрация"
+    1. Click a link "Зарегистрироваться"
+    2. Popup will appear "Регистрация" with input fields
+    3. Input text area a "Имя", "Фалилию", "возраст",
+     "Email", "номер мобильного"
+    4. Click "Регистрация"
 
 ER:
-    We need to see the message "Вы зарегистрированы" Log in to your account
+    We need to see the message "Вы зарегистрированы"
+    Log in to your account
 
-==================
-Test Case #3
-==================
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================
+===========================| Test Case #3 |=============================
+========================================================================
 
 Summary:
     Add a new deal to list
@@ -47,27 +59,40 @@ Precondition:
     Open a Firefox
 
 STR:
-    1.  go to url "http://v3.test.itpmgroup.com"
-    2.  enter Login -> "Student"
-    3.  enter password -> "909090"
-    4.  click button "Вход"
-    5.  click on the left SideBar by link "Deal"
-    6.  click right "+" (popup "Add")
-    7.  change "Deal Date" to "08-мая-2020-06-05"
-    8.  change "Тип сделки" to "мошеничество"
-    9.  change "Покупатель" to "OAO"МММ"
-    10. change "Я, Олег Ляшко"
-    11. click button "Создать"
-
+    1.  Go to url "http://v3.test.itpmgroup.com"
+    2.  Enter Login -> "Student"
+    3.  Enter password -> "909090"
+    4.  Click button "Вход"
+    5.  Click on the left SideBar by link "Deal"
+    6.  Click right "+" (popup "Add")
+    7.  Change "Deal Date" to "08-мая-2020-06-05"
+    8.  Change "Тип сделки" to "мошеничество"
+    9.  Change "Покупатель" to "OAO "МММ"
+    10. Change "Я, Олег Ляшко"
+    11. Click button "Создать"
 
 ER:
     We need to see "Сделки => Список"
     08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
 
+Post condition:
+    1.  Scroll down to list
+    2.  Click "Deal Date" to "08-мая-2020-06-05"
+    3.  Change "Тип сделки" to "мошеничество"
+    4.  Click button "Удалить"
 
-==================
-Test Case #4
-==================
+ER:
+    We need to see "Сделки => Список" with out
+    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================
+===========================| Test Case #4 |=============================
+========================================================================
 
 Summary:
     Delete a deal to list
@@ -77,23 +102,27 @@ Precondition:
 
 STR:
     1.  go to url "http://v3.test.itpmgroup.com"
-    2.  insert a text area Login -> 'Student'
-    3.  insert a text area Password -> '909090'
-    4.  click button "Вход"
-    5.  click on the left SideBar by link "Deal"
-    6.  scroll down to list
-    7.  click "Deal Date" to "08-мая-2020-06-05"
-    8.  change "Тип сделки" to "мошеничество"
-    9.  click button "Удалить"
+    2.  Insert a text area Login -> 'Student'
+    3.  Insert a text area Password -> '909090'
+    4.  Click button "Вход"
+    5.  Click on the left SideBar by link "Deal"
+    6.  Scroll down to list
+    7.  Click "Deal Date" to "08-мая-2020-06-05"
+    8.  Change "Тип сделки" to "мошеничество"
+    9.  Click button "Удалить"
 
 ER:
     We need to see "Сделки -> Список"
     with out 08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
 
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
 
-==================
-Test Case #5
-==================
+========================================================================
+===========================| Test Case #5 |=============================
+========================================================================
 
 Summary:
     Add to new side a deal
@@ -102,23 +131,27 @@ Precondition:
     Open a Firefox
 
 STR Before:
-    1.  go on the url "http://v3.test.itpmgroup.com"
-    2.  insert a text area Login -> 'Student'
-    3.  insert a text area Password -> '909090'
-    4.  click button "Вход"
-    5.  click on the left SideBar by link "Deal"
-    6.  click button "Словари"
-    7.  select a drop down "Стороны сделок" and click selected
-    8.  click button "+"
-    9.  insert to text area "Pro cust name" -> "Чепуха Олексеевич"
-    10. insert to text area "Pro cust address" -> "Pro cust address"
-    11. insert to text area "Pro cust phone" -> "09889900451"
-    12. click checkbox "Private person" -> enabled
-    13. click "Создать"
+    1.  Go on the url "http://v3.test.itpmgroup.com"
+    2.  Insert a text area Login -> 'Student'
+    3.  Insert a text area Password -> '909090'
+    4.  Click button "Вход"
+    5.  Click on the left SideBar by link "Deal"
+    6.  Click button "Словари"
+    7.  Select a drop down "Стороны сделок" and click selected
+    8.  Click button "+"
+    9.  Insert to text area "Pro cust name" -> "Чепуха Олексеевич"
+    10. Insert to text area "Pro cust address" -> "Pro cust address"
+    11. Insert to text area "Pro cust phone" -> "09889900451"
+    12. Click checkbox "Private person" -> enabled
+    13. Click "Создать"
 
 ER:
     We will see a create a new line of List Deal
     Чепуха Олексеевич  Свиридова 23б кв.12    09889900451
 
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
 
-
+========================================================================
