@@ -1,1 +1,142 @@
-test
+TEST 1: Login with valid credentials
+
+Summary: this test case verifies ability to log in to application with valid credentials.
+
+Preconditions:
+- User with @firstName, @lastName and @userIcon exists in database and is active.
+- User has valid credentials: @login/email, @password.
+- Browser window is opened.
+
+Steps to reproduce:
+1. Go to http://v3.test.itpmgroup.com/
+2. Enter @login/email into ‘Email’ text field
+3. Enter @password in ‘Password’ text field
+4. Click ‘Вход’ button
+
+Expected result:
+‘Главная’ page is opened
+User is successfully logged in
+@firstName, @lastName, @userIcon are displaying in the header (upper-right corner)
+@firstName, @lastName, @userIcon are displaying at the left panel
+
+Postconditions:
+Log out by clicking ‘Выход’ button
+Close browser window.
+
+
+
+
+
+TEST 2: Review User information
+
+Summary: this test case verifies ability to review information about logged user
+
+Preconditions:
+- User with valid credentials exists in database and has @username, @userEmail
+- User with @firstName, @lastName and @userIcon exists in database and is active
+- Browser window is opened
+
+Steps to reproduce:
+1. Go to http://v3.test.itpmgroup.com/
+2. Enter valid credentials into ‘Email’, 'Password' fields
+3. Click ‘Вход’ button
+4. Click @userIcon in upper-right corner in the header
+5. Click ‘Профиль’ button
+
+Expected result:
+‘Профиль’ page is opened and contains following values:
+- ‘Профиль пользователя @username’ link
+- ‘Адрес email’ text field with @userEmail
+- ‘Пользователь’ text field with @username text
+- ‘Логин’ text field is empty
+- ‘Пароль’ text field is empty
+- ‘Сохранить’, ‘Удалить’ buttons
+
+Postcondition:
+Log out by clicking ‘Выход’ button
+Close browser window
+
+
+
+
+TEST 3: Change user email
+
+Summary: this test case verifies ability to change email address for selected user
+
+Preconditions:
+- User with valid credentials exists in database and has @userEmail1
+- User with @firstName, @lastName and @userIcon exists in database and is active.
+- Browser window is opened
+
+Steps to reproduce:
+1. Go to http://v3.test.itpmgroup.com/
+2. Enter valid credentials into ‘Email’, 'Password' fields
+3. Click ‘Вход’ button
+4. Click @userIcon in upper-right corner
+5. Click ‘Профиль’ button
+6. Remove @userEmail1 from ‘Адрес email’ text field
+7. Add @userEmail2 to ‘Адрес email’ text field
+8. Click ‘Сохранить’ button
+9. Navigate to ‘Главная’ page
+10. Click @userIcon in upper-right corner in header, click ‘Профиль’ button
+
+
+Expected result:
+‘Адрес email’ contains @userEmail2 value
+
+Postcondition:
+Log out by clicking ‘Выход’ button
+Close browser window
+
+
+
+
+TEST 4: Verify ability to add new Аппарат
+
+Preconditions:
+- User with valid credentials exists in database
+- User with @firstName, @lastName and @userIcon exists in database and is active
+- Browser window is opened
+
+Steps to reproduce:
+1. Go to http://v3.test.itpmgroup.com/
+2. Enter valid credentials into ‘Email’, 'Password' fields
+3. Click ‘Вход’ button
+4. Navigate to: ‘Словари’ - ‘Аппарат’ menu item
+5. Click ‘+’ button to add new entity
+6. Enter @apparatNumber in ‘Apparat number’ text field
+7. Enter @apparatComment in ‘Apparat comment’ text field
+8. Click ‘Создать’ button
+
+
+Expected result:
+‘Список аппаратов’ page is opened
+Newly created entity is displaying at the end of the list
+@apparatNumber is displaying in ‘Номер’ column
+@apparatComment is displaying in ‘Комментарий’ column
+
+Postcondition:
+Log out by clicking ‘Выход’ button
+Close browser window
+
+
+
+TEST 5: Edit entity from ‘Aппарат’ list
+Preconditions:
+- User with valid credentials exists in database
+- User with @firstName, @lastName and @userIcon exists in database and is active
+- @apparat1 entity with @number, @comment values exists in 'Aппарат' page
+- Browser window is opened.
+
+Steps to reproduce:
+1. Go to http://v3.test.itpmgroup.com/
+2. Login with valid credentials
+3. Navigate to: ‘Словари’ - ‘Аппарат’
+4. Select @apparat1 entity
+5. Enter @number2 in 'Apparat number' text field
+7. Enter @comment2 in 'Apparat comment' text field
+8. Click 'Сохранить' button
+
+Expected result:
+'Список аппаратов' page is opened
+@apparat1 entity is displaying with @number2, @comment2 values
