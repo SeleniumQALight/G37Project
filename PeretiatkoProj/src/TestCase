@@ -130,7 +130,7 @@ Summary:
 Precondition:
     Open a Firefox
 
-STR Before:
+STR:
     1.  Go on the url "http://v3.test.itpmgroup.com"
     2.  Insert a text area Login -> 'Student'
     3.  Insert a text area Password -> '909090'
