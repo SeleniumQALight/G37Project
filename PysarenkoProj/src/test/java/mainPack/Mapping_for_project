@@ -3,3 +3,16 @@ Login.Input.Field=xpath(".//input[@class = 'form-control' and @name= '_username'
 Password.Input.Field=xpath(".//input[@class = 'form-control' and @name = '_password']")
 Button.Enter=xpath(".//button[@type = 'submit']")
 
+#MainPannel
+User.Login.On.UpperMain.Panel=xpath(".//span[@class='hidden-xs']")
+User.Login.On.LeftSide.Panel=xpath(".//div[@class = 'pull-left info']//p")
+Glavnaya.Option.On.LeftSide.Panel=xpath(".//li[@id='dashboard']")
+Slovari.Option.On.LeftSide.Panel=xpath(".//li[@id='dictionary']")
+Obslugivanie.Option.On.LeftSide.Panel=xpath(".//li[@id='service_apparat']")
+Ustanovka.Option.On.LeftSide.Panel=xpath(".//li[@id='installation']")
+Sdelki.Option.On.LeftSide.Panel=xpath(".//li[@id='deal']")
+Otchet.Option.On.LeftSide.Panel=xpath(".//li[@id='report']")
+
+
+#GlavnayaPage
+Glavnaya.Header=xpath(".//section[@class='content-header']//h1[contains(text(),'Главная')]")
