@@ -1,1 +1,44 @@
-test
+CASE_1: Verify that user can login with correct credentials
+
+Pre-conditions^
+1. Open FireFox v.46.0.1
+2. Open http://v3.test.itpmgroup.com/login in the browser
+
+Steps to reproduce:
+1. Enter "Student" in the "Email" field
+2. Enter "909090" in the "Password" field
+3. Click to "Вход" button
+
+Expected result:
+- User should be successfully logged;
+- Home page should be opened with icon and user name in the left corner
+
+-------------------------------------------------------------------------
+
+CASE_2: Verify that user can logout from the site
+
+Pre-conditions:
+1. Open FireFox v.46.0.1
+2. Open http://v3.test.itpmgroup.com/login in the browser
+3. User is logged to site
+
+Steps to reproduce:
+1. Click to profile icon in the right corner
+2. Click to "Выход" button
+
+Expected result: User should be navigated to login page
+
+--------------------------------------------------------------------------
+
+CASE_3: Verify that can add new installation
+
+Pre-conditions:
+1. Open FireFox v.46.0.1
+2. Open http://v3.test.itpmgroup.com/login in the browser
+3. User is logged to site
+
+Steps to reproduce:
+1. Click to "Установка" item in the navigation menu
+2. Click to "Add" button ("+")
+3. Set installation date "10 сент 2015, 12:00"
+4. Select "QA Test Edited" in the "Аппарат" field
