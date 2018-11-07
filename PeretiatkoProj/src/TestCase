@@ -3,34 +3,38 @@
 ========================================================================
 
 Summary:
-    Enter a account
+    login into account
 
 Precondition:
-    Open a Firefox
+    - Open a Firefox browser
+    - Make sure that we are not logged in yet.
+
 
 STR:
     1. Go to url "http://v3.test.itpmgroup.com"
-    2. Enter a login -> "Student" text area
-    3. Enter a password -> "909090" text area
-    4. Click button "Вход"
+    2. Login as user -> 'Student'
+    3. Login as password -> '909090'
+    4. Click button 'Вход'
 
 ER:
-    We enter from account on "Главная"
+    We have to be sure that we have logged in and we are at the "Главная страница"
 
-Post condition:
-    1. Click into avatar in a upper right side "Student"
-    2. Click a button "Выход"
-    3. Close a Firebox browser
+Post-condition:
+    - Click into avatar in a upper right side "Student"
+    - Click a button "Выход"
+    - Close a Firebox browser
 
 ========================================================================
 ===========================| Test Case #2 |=============================
 ========================================================================
 
 Summary:
-    Sing in (Registration)
+    Sing in
 
 Precondition:
-    Open a Firefox
+    - Open a Firefox
+    - Will make sure that you does not have account
+    - You are still on stay in "Учет запчастей"
 
 STR:
     1. Click a link "Зарегистрироваться"
@@ -40,7 +44,7 @@ STR:
     4. Click "Регистрация"
 
 ER:
-    We need to see the message "Вы зарегистрированы"
+    We must can see the message "Вы зарегистрированы"
     Log in to your account
 
 Post condition:
