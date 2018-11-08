@@ -13,6 +13,13 @@ Ustanovka.Option.On.LeftSide.Panel=xpath(".//li[@id='installation']")
 Sdelki.Option.On.LeftSide.Panel=xpath(".//li[@id='deal']")
 Otchet.Option.On.LeftSide.Panel=xpath(".//li[@id='report']")
 
+SlovariDropdownMenu
+Aparat.Dropdown.Option.Slovari=xpath(".//li[@id='apparat']")
+Sotrudniki.Dropdown.Option.Slovari=xpath=(".//li[@id='workers']")
+TipyZapchastea.Dropdown.Option.Slovari=xpath(".//li[@id='spareType']")
+Zapchasti.Dropdown.Option.Slovari=xpath(".//li[@id='spares']")
+StoronyZdelok.Dropdown.Option.Slovari=xpath(".//li[@id='prov_cus']")
+TipyZdelok.Dropdown.Option.Slovari=xpath(".//li[@id='deal_type']")
 
 #GlavnayaPage
 Glavnaya.Header=xpath(".//section[@class='content-header']//h1[contains(text(),'Главная')]")
