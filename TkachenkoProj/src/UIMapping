@@ -66,3 +66,4 @@ editServicePage.button.save=xpath(".//button[@name='save']")
 editServicePage.button.delete=xpath(".//button[@name='delete']")
 
 
+переделать пасы где отображение элемента.//table[@class='table-class']//tr[.//td[contains(text(),'Sergei')] and .//td[contains(text(),'Плохой отзыв')]]
