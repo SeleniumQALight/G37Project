@@ -94,9 +94,9 @@ click on user name on the right corner and click "Выход"
 - fill in "Service operations" with value "test operation"
 - set "Service date" - "10 ноября 2018 00:00"
 - click on "Аппарат" field
-- find and select "Test Tkachenko" from the list
+- find and select "test" from the list
 - click on "Сотрудник" field
-- find and select "test test test" from the list
+- find and select "test worker middle name" from the list
 - click on "Создать"
 expected result: redirect to http://v3.test.itpmgroup.com/dictionary/service
 new service was added and displaying at the list with entered params
