@@ -1,0 +1,13 @@
+Авторизация.
+Кейс №1
+1. Зайти на сайт                                http://v3.test.itpmgroup.com
+2. Нажать на кнопку "Вход"
+3. Ввести E mail                                //*[@placeholder="Email"]
+4. Ввести Пароль                                //*[@placeholder="Password"]
+5. Нажать на кнопку "Вход"                      //*[@class='btn btn-primary btn-block btn-flat']
+6. Открывается главная страница                 http://v3.test.itpmgroup.com/
+
+Вводимые значения и результат
+1.Логин Student Пароль 909090
+2. Логин Student  Пароль 12345
+3. Логин Student Пароль 123
