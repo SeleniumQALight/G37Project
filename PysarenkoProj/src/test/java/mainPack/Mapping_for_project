@@ -23,3 +23,10 @@ TipyZdelok.Dropdown.Option.Slovari=xpath(".//li[@id='deal_type']")
 
 #GlavnayaPage
 Glavnaya.Header=xpath(".//section[@class='content-header']//h1[contains(text(),'Главная')]")
+
+#AparatPage
+Add.New.Apparat.Button=xpath(".//a[@class='btn btn-info btn-sm' and @href='http://v3.test.itpmgroup.com/dictionary/apparat/edit']")
+New.Aparat.Number.Field=xpath(".//input[@id='apparat_apparatNumber']")
+New.Aparat.Comment.Field=xpath(".//input[@id='apparat_apparatComment']")
+New.Aparat.Sozdat.Button=xpath(".//button[@class='btn btn-info' and @name='add']")
+
