@@ -22,7 +22,7 @@ post condition: click on user name on the right corner and click "Выход"
 - fill in "Apparat number" field with value "1"
 - fill in "Apparat comment" field with "test" value
 - click "Создать" button
-expected result: new value was added to the list and displaying at the bottom of the list with parameters (number:1, comment: test)
+expected result: new value was added to the list and displaying at the list with parameters (number:1, comment: test)
 post condition: delete created value (number:1, comment:test) from the list, click on user name on the right corner and click "Выход"
 
 3. editApparatValue
@@ -77,7 +77,7 @@ post condition: click on user name on the right corner and click "Выход"
 - fill in "Worker middle name" with value "middle name"
 - fill in "Worker phone" with value "+3801234567"
 - click on "Создать" button
-expected result: new worker was added to list and displaying at the bottom of the list with entered params
+expected result: new worker was added to list and displaying at the list with entered params
 (surname:test, name:test, middle name: middle name, phone:+3801234567)
 post condition: delete created value (surname:test,name: worker,middle name:middle name,phone:+3801234567) from the list,
 click on user name on the right corner and click "Выход"
@@ -99,7 +99,7 @@ click on user name on the right corner and click "Выход"
 - find and select "test test test" from the list
 - click on "Создать"
 expected result: redirect to http://v3.test.itpmgroup.com/dictionary/service
-new service was added and displaying at the bottom of the list with entered params
+new service was added and displaying at the list with entered params
 post condition: delete created value from the list, click on user name on the right corner and click "Выход"
 
 
