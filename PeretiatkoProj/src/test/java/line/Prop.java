@@ -13,7 +13,7 @@ public class Prop {
     public static final String PASSWORD         = "909090";
     public static final String BUTTON           = "button";
     public static final String AVATAR           = ".//*[@class='pull-left image']";
-    public static final String LOGIN_PAGE         = ".//div[@class='login-box']";
+    public static final String LOGIN_PAGE       = ".//div[@class='login-box']";
 
     //Wrong data
     public static final String WRONG_PASSWORD   = "808080";
