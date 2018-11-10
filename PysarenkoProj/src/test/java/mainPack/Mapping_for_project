@@ -30,3 +30,15 @@ New.Aparat.Number.Field=xpath(".//input[@id='apparat_apparatNumber']")
 New.Aparat.Comment.Field=xpath(".//input[@id='apparat_apparatComment']")
 New.Aparat.Sozdat.Button=xpath(".//button[@class='btn btn-info' and @name='add']")
 
+
+Existing.Aparat.sohranit.Button=xpath(".//button[@class='btn btn-info' and @name ='save']")
+Existing.Aparat.udalit.Button=xpath(".//button[@class = 'btn btn-danger pull-right' and @name = 'delete']")
+
+
+#ProfileOperations
+Profile.Open.Dropdown=xpath(".//a[@class= 'dropdown-toggle' and @data-toggle = 'dropdown']")
+Profil.Edit.button.In.Profile.Dropdown=xpath(".//a[@class = 'btn btn-default btn-flat' and contains(text(),'Профиль')]")
+Pole.Vvoda.Parola=xpath(".//input[@id='userProfileEdit_user_password_password']")
+Pole.Podtvergdenia.Parola=xpath(".//input[@id='userProfileEdit_user_password_password_confirm']")
+Sohranit.Button=xpath(".//button[@class= 'btn btn-info' and @name = 'save']")
+Profil.Vyhod.Button.In.Profile.Dropdown=xpath(".//a[@class= 'btn btn-default btn-flat' and contains(text(),'Выход')]")
