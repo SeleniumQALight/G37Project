@@ -29,13 +29,7 @@ public class Login {
     @Test
     public void validLogin() {
 
-        File file = new File("./src/drivers/chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 
-        webDriver = new ChromeDriver();
-
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         webDriver.get("http://v3.test.itpmgroup.com");
         webDriver.findElement(By.name("_username")).clear();
@@ -59,13 +53,7 @@ public class Login {
 
     @Test
     public void inValidLogin(){
-        File file = new File("./src/drivers/chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 
-        webDriver = new ChromeDriver();
-
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         webDriver.get("http://v3.test.itpmgroup.com");
         webDriver.findElement(By.name("_username")).clear();
