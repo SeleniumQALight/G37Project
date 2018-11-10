@@ -64,11 +64,11 @@ public class LogIn {
         webDriver.findElement(By.id("password")).sendKeys("909090");
 
         webDriver.findElement(By.tagName("button")).click();
-        Assert.assertTrue("Button is not presented", isButtonPresented());
+        Assert.assertTrue("Button is not presented", isButtonPresentedd());
 
     }
 
-    private boolean isButtonPresented() {
+    private boolean isButtonPresentedd() {
         try {
             return webDriver.findElement(By.xpath(".//*[@class='col-xs-4']")).isDisplayed();
 
