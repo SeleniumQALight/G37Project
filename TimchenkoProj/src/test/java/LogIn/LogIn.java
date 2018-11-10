@@ -15,17 +15,18 @@ public class LogIn {
     WebDriver webDriver;
 
     @Before
-    public  void  setUp (){
+    public void setUp() {
         File file = new File("./src/drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
+
     @Test
-    public  void  volidLogIn (){
-        webDriver.get ("http://v3.test.itpmgroup.com");
+    public void volidLogIn() {
+        webDriver.get("http://v3.test.itpmgroup.com");
         webDriver.findElement(By.name("_username")).clear();
         webDriver.findElement(By.name("_username")).sendKeys("Student");
 
@@ -33,22 +34,53 @@ public class LogIn {
         webDriver.findElement(By.id("password")).sendKeys("909090");
 
         webDriver.findElement(By.tagName("button")).click();
-        Assert.assertTrue("Avatar is not presented",isAvatarPresented());
+        Assert.assertTrue("Avatar is not presented", isAvatarPresented());
 
     }
-    private  boolean isAvatarPresented (){
-      try {return  webDriver.findElement(By.xpath (".//*[@class='pull-left image']")).isDisplayed();
 
-    } catch ( Exception e) {
-          return  false;
+    private boolean isAvatarPresented() {
+        try {
+            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
 
-}
+        } catch (Exception e) {
+            return false;
+
+        }
     }
 
     @After
-    public  void tearDown () {
+    public void tearDown() {
 
         webDriver.quit();
     }
 
+    @Test
+    public void invalidLogIn() {
+        webDriver.get("http://v3.test.itpmgroup.com");
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("St");
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("909090");
+
+        webDriver.findElement(By.tagName("button")).click();
+        Assert.assertTrue("Button is not presented", isButtonPresented());
+
+    }
+
+    private boolean isButtonPresented() {
+        try {
+            return webDriver.findElement(By.xpath(".//*[@class='col-xs-4']")).isDisplayed();
+
+        } catch (Exception e) {
+            return false;
+
+        }
+    }
+
+    @After
+    public void tearsDown() {
+
+        webDriver.quit();
+    }
 }
