@@ -1,4 +1,4 @@
-TEST-CASE 1: Authorisation
+TEST-CASE - 1: Authorisation
 
 SUMMARY:
 Проверка функции авторизации
@@ -37,7 +37,7 @@ ER:
 
 
 
-TEST-CASE2: ADD employee
+TEST-CASE - 2: ADD employee
 
 SUMMARY:
 Добавление сотрудника в список сотрудников.
@@ -81,7 +81,7 @@ Post-conditions:
 4. Закрыть браузер.
 
 
-TEST-CASE3: ADD Аппарат
+TEST-CASE - 3: ADD Аппарат
 
 SUMMARY:
 Добавление Аппарата.
@@ -121,7 +121,7 @@ Post-conditions:
 4. Закрыть браузер.
 
 
-TEST-CASE3: ADD spare_type
+TEST-CASE - 4: ADD spare_type
 
 SUMMARY:
 Добавление Типа запчасти.
@@ -159,7 +159,7 @@ Post-conditions:
 3. Нажать навигационное меню>> Student>>Кнопка Выход
 4. Закрыть браузер.
 
-TEST-CASE3: ADD spares
+TEST-CASE - 5: ADD spares
 
 SUMMARY:
 Добавление Запчасти.
