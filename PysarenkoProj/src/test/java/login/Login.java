@@ -55,4 +55,58 @@ public class Login {
     public void tearDown(){
         webDriver.quit();
     }
+
+
+    @Test
+    public void invalidLoginName(){
+        webDriver.get("http://v3.test.itpmgroup.com");
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("NotAStudent");
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("909090");
+
+        webDriver.findElement(By.tagName("button")).click();
+        try{
+            Thread.sleep(3000);
+        }catch(Exception e){
+
+        }
+
+        Assert.assertTrue("User logged in with wrong Login",
+                isLoginLogoDisplayed());
+
+
+    }
+
+    private boolean isLoginLogoDisplayed(){
+        try{
+           return webDriver.findElement(By.xpath(".//div[@class = 'login-logo']")).isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    @Test
+    public void invalidPassword(){
+        webDriver.get("http://v3.test.itpmgroup.com");
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("Student");
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("Chupakabra");
+
+        webDriver.findElement(By.tagName("button")).click();
+        try{
+            Thread.sleep(3000);
+        }catch(Exception e){
+
+        }
+
+
+        Assert.assertTrue("User logged in with wrong Password",
+                isLoginLogoDisplayed());
+
+
+    }
 }
