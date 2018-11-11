@@ -4,84 +4,120 @@ Test-cases:
 
 ID: 1
 Title: User's authorization at website "Учет запчастей"
+
 Pre-conditions:
-1. Open http://v3.test.itpmgroup.com
+1. Open browser
+2. Open http://v3.test.itpmgroup.com
+
 Steps:
-1. Enter valid login in 'Login' field (Student)
-2. Enter valid password in "Password" field (909090)
+1. Enter login "Student" in 'Login' field
+2. Enter password "909090" in 'Password' field
 3. Click on [Вход]
+
 Expected result:
 User should be navigated to Main page with user avatar
 
+Post-conditions:
+1. Close browser
+
+
 ID:2
-Title:  Adding new deal at site "Учет запчастей"
+Title:  Adding new deal on site "Учет запчастей"
+
 Pre-conditions:
-1. Open http://v3.test.itpmgroup.com
-2. Enter valid login in 'Login' field (Student)
-3. Enter valid password in "Password" field (909090)
-4. Click on [Вход]
+1. Open browser
+2. Open http://v3.test.itpmgroup.com
+3. Login in site (login "Student", password "909090")
+4. Create new deal type "KM_12_DT"
+5. Create new customer "KM_12_C"
+6. Create new provider "KM_12_P"
+
 Steps:
-1. At sidebar menu click on "Сделки" option
+1. In sidebar menu click on 'Сделки' option
 2. Click on [+] in right upper corner
-3. Set 'Deal Date'
-4. Select 'Deal Type'
-5. Set Сustomer name in "Покупатель" field
-6. Set Provider name in "Поставщик" field
+3. Leave 'Deal Date' by default
+4. In 'Deal Type' list select "KM_12_DT"
+5. In 'Покупатель' select 'KM_12_C'
+6. In "Поставщик" list select 'KM_12_P'
 7. Click on [Создать]
+
 Expected result:
-Newly created deal should be displayed in the bottom of Deals list
+1. Newly created deal should be displayed in the bottom of Deals list
+2. Deal Type is displayed in 'Тип' column; customer name in 'Покупатель' column ; provider name in 'Поставщик' column
+
+Post-conditions:
+1. Delete created deal with type "KM_12_DT"
+2. Delete 'KM_12_DT' type, customer 'KM_12_C' and provider 'KM_12_P'
+3. Close browser
 
 ID:3
 Title: Creating new type of deal
+
 Pre-conditions:
-1. Open http://v3.test.itpmgroup.com
-2. Enter valid login in 'Login' field (Student)
-3. Enter valid password in "Password" field (909090)
-4. Click on [Вход]
+1. Open browser
+2. Open http://v3.test.itpmgroup.com
+3. Login in site (login "Student", password "909090")
+4. In sidebar menu click on option "Словари"
+5. In drop-down list click on item "Типы сделок"
+6. Find type "KM_12_DT" (if such exists, then click on it -> [Удалить])
+
 Steps:
-1. In sidebar menu click on option "Словари"
-2. In drop-down list click on item "Типы сделок"
-3. Сlick on [+] in right upper corner
-4. Enter name for deal type into "Deal type name" field
-5. Click on [Создать]
+1. Сlick on [+] in right upper corner
+2. Enter name "KM_12_DT" into "Deal type name" field
+3. Click on [Создать]
 
 Expected result:
 Newly created deal type should be displayed at the end of Deal Types List
 
+Post-conditions:
+1. Delete type "KM_12_DT"
+2. Close browser
+
+
 ID: 4
 Title: Adding new worker to Workers List
+
 Pre-conditions:
-1. Open http://v3.test.itpmgroup.com
-2. Enter valid login in 'Login' field (Student)
-3. Enter valid password in "Password" field (909090)
-4. Click on [Вход]
+1. Open browser
+2. Open http://v3.test.itpmgroup.com
+3. Login in site (login "Student", password "909090")
+4. In sidebar menu click on option "Словари"
+5. In drop-down list click on item "Сотрудники"
+6. Find worker with phone number '+380969476125' (if such worker is present, then click on it -> [Удалить])
 
 Steps:
-1. In sidebar menu click on option "Словари"
-2. In drop-down list click on item "Сотрудники"
-3. Сlick on [+] in the right upper corner
-4. Enter worker surname into "Worker surname" field
-5. Enter worker name into "Worker name" field
-6. Enter worker middle name into "Worker middle name" field
-7. Enter worker phone into "Worker phone" field
-8. Click on [Cоздать]
+1. Сlick on [+] in the right upper corner
+2. Enter surname "Maruk" into "Worker surname" field
+3. Enter name "Kate" into "Worker name" field
+4. Enter middle name "Olek" into "Worker middle name" field
+5. Enter phone '+380969476125' into "Worker phone" field
+6. Click on [Cоздать]
 
 Expected result:
-New worker should be added to the end of Workers list;
-Worker name, surname and middle name should be displayed in 'Сотрудник' column and phone in 'Телефон' column
+1. New worker should be added to the end of Workers list;
+2. Worker name, surname and middle name should be displayed in 'Сотрудник' column; phone in 'Телефон' column
+
+Post-conditions:
+1. Delete worker with phone '+380969476125'
+2. Close browser
 
 ID: 5
 Title: Logout from user account on site "Учет запчастей"
+
 Pre-conditions:
-1. Open http://v3.test.itpmgroup.com
-2. Enter valid login in 'Login' field (Student)
-3. Enter valid password in "Password" field (909090)
-4. Click on [Вход]
+1. Open browser
+2. Open http://v3.test.itpmgroup.com
+3. Login in site (login "Student", password "909090")
+
 Steps:
 1. Сlick on user avatar in right upper corner
 2. In appeared pop-up click on [Выход]
+
 Expected result:
-Authorization page should be opened with field "Login" and "Password"
+Authorization page should be opened with fields "Login" and "Password"
+
+Post-conditions:
+1. Close browser
 
 
 
