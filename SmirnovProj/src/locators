@@ -5,33 +5,33 @@
 
 #Login
 Login.Logo=xpath(".//a[@href="http://v3.test.itpmgroup.com/"]")
-Login.Email.input=xpath("")
-Login.Password.input=xpath("")
-Login.Login.button=xpath("")
+Login.Email.input=xpath(".//input[@name="_username"]")
+Login.Password.input=xpath(".//input[@name="_password"]")
+Login.Login.button=xpath(".//button[@type="submit"]")
 
 
 #Main
-Main.Logo=xpath("")
-Main.ContentHeader=xpath("")
-Main.UserMenu=xpath("")
-Main.MainMenu=xpath("")
-Main.Logout.button=xpath("")
-Main.Dashboard=xpath("")
-Main.Dictionary=xpath("")
-Main.ServiceApparat=xpath("")
-Main.Installation=xpath("")
-Main.Deal=xpath("")
-Main.Report=xpath("")
+Main.Logo=xpath(".//a[@class="logo"]")
+Main.ContentHeader=xpath(".//section[@class="content-header"]//h1[contains(text(),'Главная')]")
+Main.UserImage=xpath(".//img[@class="user-image"]")
+Main.LeftMenu=xpath(".//*[@class="sidebar"]")
+Main.Logout.button=xpath(".//a[@href="/logout"]")
+Main.Dashboard=xpath(".//li[@id="dashboard"]")
+Main.Dictionary=xpath(".//li[@id="dictionary"]")
+Main.ServiceApparat=xpath(".//li[@id="service_apparat"]")
+Main.Installation=xpath(".//li[@id="installation"]")
+Main.Deal=xpath(".//li[@id="deal"]")
+Main.Report=xpath(".//li[@id="report"]")
 
 #Deal
-Deal.ContentHeader=xpath("")
-Deal.Row=xpath("")
-Deal.Add.button=xpath("")
-Deal.DealDate.select=xpath("")
-Deal.DealType.select=xpath("")
-Deal.Customer.select=xpath("")
-Deal.Provider.select=xpath("")
-Deal.Create.button=xpath("")
+Deal.ContentHeader=xpath(".//section[@class="content-header"]//h1[contains(text(),'Сделки')]")
+Deal.Row=xpath(".//div[@class="row"]")
+Deal.Add.button=xpath(".//a[@data-original-title="Add"]")
+Deal.DealDate.select=xpath(".//div[@id="deal_dealDate"]")
+Deal.DealType.select=xpath(".//select[@id="deal_dealType"]")
+Deal.Customer.select=xpath(".//select[@id="deal_customer"]")
+Deal.Provider.select=xpath(".//select[@id="deal_provider"]")
+Deal.Create.button=xpath(".//button[@name="add"]")
 
 
 #Report
