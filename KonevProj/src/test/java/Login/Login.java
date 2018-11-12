@@ -29,28 +29,42 @@ public class Login {
     @Test
     public void validLogin() {
 
-
         webDriver.get("http://v3.test.itpmgroup.com");
 
-        webDriver.findElement(By.name("_username")).clear();
-        webDriver.findElement(By.name("_username")).sendKeys("student");
-
-        webDriver.findElement(By.id("password")).clear();
-        webDriver.findElement(By.id("password")).sendKeys("909090");
-
-        webDriver.findElement(By.tagName("button")).click();
-
+        login("student", "9090902");
         Assert.assertTrue("Avatar is not present", isAvatarPresent());
 
     }
-private  boolean isAvatarPresent(){
+
+    @Test
+    public void invalidLogin() {
+
+        webDriver.get("http://v3.test.itpmgroup.com");
+        login("", "");
+        login("wrr", "909090");
+        login("student", "909045");
+        Assert.assertEquals("Account of spare:Авторизация", webDriver.getTitle());
+    }
+
+    private void login(String log, String pas) {
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys(log);
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys(pas);
+
+        webDriver.findElement(By.tagName("button")).click();
+
+    }
+
+    private boolean isAvatarPresent() {
         try {
             return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
 
-        }catch (Exception e){
-                return false;
-            }
+        } catch (Exception e) {
+            return false;
         }
+    }
 
     @After
     public void tearDown() {
