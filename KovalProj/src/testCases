@@ -1,6 +1,6 @@
 CASE_1: Verify that user can login with correct credentials
 
-Pre-conditions^
+Pre-conditions:
 1. Open FireFox v.46.0.1
 2. Open http://v3.test.itpmgroup.com/login in the browser
 
@@ -99,7 +99,7 @@ Pre-conditions:
 Steps to reproduce:
 1. Click to "Установка" item in the navigation menu
 2. Click "Add" button ("+")
-3. Set installation date "10 сент 2015, 12:00"
+3. Set installation date "10 сент 2015, 12:01"
 4. Select "Koval Test Project" in the "Аппарат" field
 5. Select "Коваль Александр Сергеевич" in the "Сотрудник" field
 6. Click "Создать" button
