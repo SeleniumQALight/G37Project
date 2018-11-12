@@ -45,9 +45,21 @@ Pre-conditions:
 3. User is logged to site (login: Student, password: 909090)
 
 Steps to reproduce:
-"Коваль Александр Сергеевич"
+1. Click to "Словари" in the navigation menu
+2. Select "Сотрудники" item
+3. Click "Add" button ("+")
+4. Enter the worker surname "Коваль"
+5. Enter the worker name "Александр"
+6. Enter the worker middle name "Сергеевич"
+7. Enter the worker phone "0979367299"
+8. Click "Создать" button
+9. Make sure that new employer is added
+
+Expected result: "Коваль Александр Сергеевич" employer should be successfully added
 
 POST conditions:
+1. Delete "Коваль Александр Сергеевич" employer
+2. Logout from the site
 
 ---------------------------------------------------------------------
 
@@ -59,10 +71,19 @@ Pre-conditions:
 3. User is logged to site (login: Student, password: 909090)
 
 Steps to reproduce:
-"Koval Test Project"
+1. Click to "Словари" in the navigation menu
+2. Select "Аппарат" item
+3. Click "Add" button ("+")
+4. Enter the Apparat number "1987"
+5. Enter the Apparat comment "Koval Test Project"
+6. Click "Создать" button
+7. Make sure that new apparat is added
 
+Expected result: "Koval Test Project" apparat should be successfully added
 
 POST conditions:
+1. Delete "Koval Test Project" apparat
+2. Logout from the site
 
 ----------------------------------------------------------------------
 
@@ -77,13 +98,17 @@ Pre-conditions:
 
 Steps to reproduce:
 1. Click to "Установка" item in the navigation menu
-2. Click to "Add" button ("+")
+2. Click "Add" button ("+")
 3. Set installation date "10 сент 2015, 12:00"
 4. Select "Koval Test Project" in the "Аппарат" field
 5. Select "Коваль Александр Сергеевич" in the "Сотрудник" field
+6. Click "Создать" button
+7. Make sure that new installation is added
 
-
+Expected result: New installation should be successfully added
 
 POST conditions:
+1. Delete created installation
+2. Logout from the site
 
 ----------------------------------------------------------------------
