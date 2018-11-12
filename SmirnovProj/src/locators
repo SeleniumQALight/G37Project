@@ -1,8 +1,3 @@
-//Login page
-
-//Main page
-
-
 #Login
 Login.Logo=xpath(".//a[@href="http://v3.test.itpmgroup.com/"]")
 Login.Email.input=xpath(".//input[@name="_username"]")
@@ -35,35 +30,7 @@ Deal.Create.button=xpath(".//button[@name="add"]")
 
 
 #Report
-Report.ContentHeader=xpath("")
-Report.RowСhart=xpath("")
-Report.Collapse.button=xpath("")
-Report.RowDataType=xpath("")
-
-
-#Main
-----Contacts.Name.input=xpath(".//*[@name='your-name']")
-----Contacts.Email.input=xpath(".//*[@name='your-email']")
-----Contacts.Phone.input=xpath(".//form//p[3]//input")
-----Contacts.FAQ.input=xpath(".//*[@name='comment']")
-----Contacts.Capcha.input=xpath(".//form//p[4]//input[@name='captcha-301']")
-----Contacts.Send.button=xpath(".//div[@class='one_third last']//form//*[@type='submit']")
-----Contacts.Clear.button=xpath(".//div[@class='one_third last']//form//*[@type='reset']")
-
-----Contacts.Button.Zapis=xpath(".//header//a[@href='http://qalight.com.ua/zapisatsya-na-kurs/']")
-
-
-#Transactions
-----Anketa.DropList=xpath(".//select")
-----Anketa.SecondName.input=xpath(".//input[@name='your-name']")
-----Anketa.FirstName.input=xpath(".//form[@class='wpcf7-form']//p[3]//input")
-----Anketa.Phone.input=xpath(".//form[@class='wpcf7-form']//p[4]//input")
-----Anketa.email.input=xpath(".//input[@name='your-email']")
-----Anketa.skype.input=xpath(".//form[@class='wpcf7-form']//p[6]//input")
-----Anketa.FAQ.input=xpath(".//textarea[@name='comment']")
-----Anketa.Capcha.input=xpath(".//form/p[9]//input[@name='captcha-696']")
-----Anketa.Buy.Button=xpath(".//form[@class='wpcf7-form']//input[@type='submit']")
-----Anketa.Clear.Button=xpath(".//form[@class='wpcf7-form']//input[@type='reset']")
-
-
-#Report
+Report.ContentHeader=xpath(".//section[@class="content-header"]//h1[contains(text(),'Отчет о продажах')]")
+Report.Сhart=xpath(".//*[@class="chart"]")
+Report.Collapse.button=xpath(".//button[@data-original-title="Collapse"]")
+Report.RowDataType=xpath(".//*[@class="row"]//div[@class="box"]")
