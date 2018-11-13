@@ -71,12 +71,7 @@ public class Login {
         }catch(Exception e){
             return false;
         }
-
-
-
     }
-
-
     // закриваємо повністю браузер, як саму сутність
     @After
     public void tearDown(){
