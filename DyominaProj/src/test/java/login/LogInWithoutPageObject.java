@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class LogInWithoutPageObject {
     WebDriver webDriver;
 
     @Before
@@ -23,6 +23,10 @@ public class Login {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
+
+    @After
+    public void tearDown(){
+        webDriver.quit(); }
 
     @Test
     public void validLogin(){
@@ -46,8 +50,5 @@ public class Login {
         }
     }
 
-    @After
-    public void tearDown(){
-        webDriver.quit();
-    }
+
 }
