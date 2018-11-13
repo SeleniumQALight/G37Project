@@ -23,6 +23,11 @@ public class LogIn {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    @After
+    public void tearDown(){
+        webDriver.quit();  //Закрывает браузер
+    }
+
     @Test
     public void validLogIn() {
         webDriver.get("http://v3.test.itpmgroup.com");
@@ -47,8 +52,27 @@ public class LogIn {
         }
     }
 
-    @After
-    public void tearDown(){
-        webDriver.quit();  //Закрывает браузер
+    @Test
+    public void inValidLogIn() {
+        webDriver.get("http://v3.test.itpmgroup.com");
+
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("student");
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("909090");
+
+        webDriver.findElement(By.tagName("button")).click();
+
+       Assert.assertTrue("Login page isn't displayed", isLogInPageDisplayed());
+
+    }
+
+    private boolean isLogInPageDisplayed(){
+        try{
+            return webDriver.findElement(By.xpath(".//*[@class='login-box-msg']")).isDisplayed();
+        } catch (Exception e){
+            return false;
+        }
     }
 }
