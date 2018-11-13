@@ -47,10 +47,37 @@ public class Login {
         }
 
     }
+     // homework
+    @Test
+    public void inValidLogin() {
+        webDriver.get("http://v3.test.itpmgroup.com");
 
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("Student");
+
+        webDriver.findElement(By.name("_password")).clear();
+        webDriver.findElement(By.name("_password")).sendKeys("909091");
+
+        webDriver.findElement(By.tagName("button")).click();
+
+
+        Assert.assertTrue("The Homepage is opened", isButtonPresent());
+    }
+
+    private boolean isButtonPresent(){
+        try{
+             return webDriver.findElement(By.tagName("button")).isDisplayed();
+
+        }catch(Exception e){
+            return false;
+        }
+    }
     // закриваємо повністю браузер, як саму сутність
     @After
     public void tearDown(){
         webDriver.quit();
     }
+
+
+
 }
