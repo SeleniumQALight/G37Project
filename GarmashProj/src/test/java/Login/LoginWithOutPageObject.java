@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class LoginWithOutPageObject {
     WebDriver webDriver;
 
 
@@ -40,6 +40,18 @@ public class Login {
         }
     }
 
+    @Test
+    public void invalidLogin() {
+        login("stu", "909090");
+        Assert.assertTrue("It is not a login page", isPresent(By.name("_username")));
+    }
+
+    @Test
+    public void validLogin() {
+        login();
+        Assert.assertTrue("Avata" +
+                "r is not present", isPresent(".//*[@class='pull-left info']"));
+    }
 
     @Before
     public void setUp() {
@@ -50,21 +62,9 @@ public class Login {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-
-    @Test
-    public void invalidLogin() {
-        login("stu", "909090");
-        Assert.assertTrue("It is not a login page", isPresent(By.name("_username")));
-    }
-
-    @Test
-    public void validLogin() {
-        login();
-        Assert.assertTrue("Avatar is not present", isPresent(".//*[@class='pull-left info']"));
-    }
-
     @After
     public void tearDown() {
         webDriver.quit();
     }
+
 }
