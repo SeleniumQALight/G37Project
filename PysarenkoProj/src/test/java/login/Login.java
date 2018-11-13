@@ -67,11 +67,11 @@ public class Login {
         webDriver.findElement(By.id("password")).sendKeys("909090");
 
         webDriver.findElement(By.tagName("button")).click();
-        try{
-            Thread.sleep(3000);
-        }catch(Exception e){
-
-        }
+//        try{
+//            Thread.sleep(3000);
+//        }catch(Exception e){
+//
+//        }
 
         Assert.assertTrue("User logged in with wrong Login",
                 isLoginLogoDisplayed());
@@ -97,11 +97,11 @@ public class Login {
         webDriver.findElement(By.id("password")).sendKeys("Chupakabra");
 
         webDriver.findElement(By.tagName("button")).click();
-        try{
-            Thread.sleep(3000);
-        }catch(Exception e){
-
-        }
+//        try{
+//            Thread.sleep(3000);
+//        }catch(Exception e){
+//
+//        }
 
 
         Assert.assertTrue("User logged in with wrong Password",
