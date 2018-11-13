@@ -48,4 +48,19 @@ public class LogInPage extends ParentPage {
             Assert.fail("Cannot work with element");
         }
     }
+
+    public void clickButtonVhod() {
+        try{
+            webDriver.findElement(By.tagName("button")).click();
+            logger.info("Authorization passed correctly and user was navigated to Homepage");
+        }catch(Exception e){
+            logger.info("Cannot work with current element");
+            Assert.fail("Test cannot be continued");
+
+
+        }
+
+
+
+    }
 }
