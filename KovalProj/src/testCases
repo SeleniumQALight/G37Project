@@ -112,3 +112,23 @@ POST conditions:
 2. Logout from the site
 
 -----------------------------------------------------------------------
+
+CASE_6: Verify that user can not login with incorrect credentials
+
+Pre-conditions:
+1. Open FireFox v.46.0.1
+2. Open http://v3.test.itpmgroup.com/login in the browser
+
+Steps to reproduce:
+1. Enter "student" in the "Email" field
+2. Enter "909090" in the "Password" field
+3. Click to "Вход" button
+
+Expected result:
+- User should not be successfully logged;
+- Login page should be displayed
+
+POST conditions:
+- Close browser
+
+-----------------------------------------------------------------------
