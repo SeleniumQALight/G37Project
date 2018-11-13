@@ -39,11 +39,32 @@ public class Login {
         driver.findElement(By.tagName("button")).click();
 
         Assert.assertTrue("Avatar is not present on the main page", isAvatarPresent());
+    }
+    @Test
+    public void invalidLogin(){
+        driver.get("http://v3.test.itpmgroup.com");
 
+        driver.findElement(By.name("_username")).clear();
+        driver.findElement(By.name("_username")).sendKeys("Student1");
+
+        driver.findElement(By.id("password")).clear();
+        driver.findElement(By.id("password")).sendKeys("909090");
+
+        driver.findElement(By.tagName("button")).click();
+
+        Assert.assertTrue("User logged in with invalid credentials",isLogoPresent());
     }
     private boolean isAvatarPresent(){
         try {
             return driver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
+
+        }catch (Exception e){
+            return false;
+        }
+    }
+    private boolean isLogoPresent(){
+        try {
+            return driver.findElement(By.xpath(".//*[@class='login-logo']")).isDisplayed();
 
         }catch (Exception e){
             return false;
