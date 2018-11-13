@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +15,7 @@ public class LogIn {
     WebDriver webDriver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         File file = new File("./src/drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
@@ -24,7 +25,7 @@ public class LogIn {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         webDriver.quit();  //Закрывает браузер
     }
 
@@ -44,10 +45,10 @@ public class LogIn {
 
     }
 
-    private boolean isAvatarPresent(){
-        try{
+    private boolean isAvatarPresent() {
+        try {
             return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
@@ -64,14 +65,14 @@ public class LogIn {
 
         webDriver.findElement(By.tagName("button")).click();
 
-       Assert.assertTrue("Login page isn't displayed", isLogInPageDisplayed());
+        Assert.assertTrue("Login page isn't displayed", isLogInPageDisplayed());
 
     }
 
-    private boolean isLogInPageDisplayed(){
-        try{
+    private boolean isLogInPageDisplayed() {
+        try {
             return webDriver.findElement(By.xpath(".//*[@class='login-box-msg']")).isDisplayed();
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
