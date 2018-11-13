@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
@@ -21,7 +20,6 @@ public class LogIn {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
 
-        //webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
@@ -61,18 +59,13 @@ public class LogIn {
 
         webDriver.findElement(By.tagName("button")).click();
 
-        Assert.assertTrue("User is login", isUserIsNotLogIn());
+        Assert.assertTrue("User is login", isLoginBoxDisplayed());
     }
 
-    private boolean isUserIsNotLogIn(){
+    private boolean isLoginBoxDisplayed(){
         try {
-            WebElement passwordField = webDriver.findElement(By.id("password"));
-            String text = passwordField.getAttribute("value");
-            if(text.isEmpty()){
-                return true;
-            }else
-                return false;
-        }catch(Exception e){
+            return webDriver.findElement(By.xpath(".//p[@class='login-box-msg']")).isDisplayed();
+        }catch (Exception e){
             return false;
         }
     }
