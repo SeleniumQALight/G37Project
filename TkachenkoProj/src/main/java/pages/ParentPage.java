@@ -7,7 +7,7 @@ abstract public class ParentPage {
     WebDriver driver;
     Logger logger = Logger.getLogger(getClass());
 
-    public ParentPage(WebDriver webDriver) {
-        this.driver = webDriver;
+    public ParentPage(WebDriver driver) {
+        this.driver = driver;
     }
 }
