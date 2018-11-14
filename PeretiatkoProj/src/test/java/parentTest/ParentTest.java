@@ -13,20 +13,21 @@ import java.util.concurrent.TimeUnit;
 public class ParentTest {
     WebDriver webDriver;
     protected HomePage homePage;
-   protected LoginPage loginPage;
+    protected LoginPage loginPage;
+
     @Before
-    public void setUp(){
-        File file = new File("./src/drivers/chromedriver.exe");
+    public void setUp() {
+        File file = new File("./src/drivers/chromedriver");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
-        webDriver.manage().window().maximize();
+//        webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
-        homePage=new HomePage(webDriver);
+        homePage = new HomePage(webDriver);
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         webDriver.quit();
     }
 
