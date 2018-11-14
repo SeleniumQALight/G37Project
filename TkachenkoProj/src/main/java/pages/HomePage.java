@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends ParentPage{
 
 
-    public HomePage(WebDriver webDriver) {
-        super(webDriver);
+    public HomePage(WebDriver driver) {
+        super(driver);
     }
     public boolean isAvatarPresent(){
         try {
