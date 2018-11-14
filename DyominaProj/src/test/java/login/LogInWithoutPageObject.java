@@ -42,7 +42,7 @@ public class LogInWithoutPageObject {
                 isAvatarPresent());
     }
 
-     private boolean isAvatarPresent(){
+    private boolean isAvatarPresent(){
         try {
            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
         } catch(Exception e){
