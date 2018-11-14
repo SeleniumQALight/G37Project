@@ -1,0 +1,62 @@
+#Login
+
+Login.Username.input=xpath(".//input[@name='_username']")
+Login.Password.input=xpath(".//input[@name='_password']")
+Login.Submit.button=xpath(".//button[@type='submit']")
+
+#Main
+
+Main.Dictionary.button=xpath(".//*[@id='dictionary']")
+Main.Worker.button=xpath(".//*[@id='workers']")
+Main.Installation.button=xpath(".//*[@id='installation']//a")
+Main.Apparat.button=xpath(".//*[@id='apparat']/a")
+
+#Workers
+
+Workers.Add.button=xpath(".//i[@class='fa fa-plus']")
+Workers.Worker.record=xpath(".//*[text()='TestSurnameSKV TestNameSKV TestMidNameSKV']")
+Workers.WorkerPhone.record=xpath(".//*[text()='+333679998877']")
+
+#EditWorker
+
+EditWorker.Surname.input=xpath(".//input[@id='workers_workerSurname']"
+EditWorker.Name.input=xpath(".//input[@id='workers_workerName']")
+EditWorker.MiddleName.input=xpath(".//input[@id='workers_workerMiddleName']")
+EditWorker.Phone.input=xpath(".//input[@id='workers_workerPhone']")
+EditWorker.Submit.button=xpath(".//button[@name='add']")
+EditWorker.Delete.button=xpath(".//button[@name='delete']")
+
+#Apparat
+
+Apparat.Add.button=xpath(".//i[@class='fa fa-plus']")
+Apparat.Comment.record=xpath(".//*[text()='SKV Test Apparat']")
+Apparat.Number.record=xpath(".//*[text()='123456654321']")
+
+#EditApparat
+
+EditApparat.Number.input=xpath(".//input[@id='apparat_apparatNumber']")
+EditApparat.Comment.input=xpath(".//input[@id='apparat_apparatComment']")
+EditApparat.Submit.button=xpath(".//button[@name='add']")
+EditApparat.Delete.button=xpath(".//button[@name='delete']")
+
+#Installation
+
+Installation.Add.button=xpath(".//i[@class='fa fa-plus']")
+
+#EditInstallation
+
+EditInstallation.DateDay.select=xpath(".//select[@id='installation_installationDate_date_day']")
+EditInstallation.DateMonth.select=xpath(".//select[@id='installation_installationDate_date_month']")
+EditInstallation.DateYear.select=xpath(".//select[@id='installation_installationDate_date_year']")
+EditInstallation.DateHour.select=xpath(".//select[@id='installation_installationDate_time_hour']")
+EditInstallation.DateMinute.select=xpath(".//select[@id='installation_installationDate_time_minute']")
+EditInstallation.Apparat.select=xpath(".//select[@id='installation_apparat']")
+EditInstallation.Worker.select=xpath(".//select[@id='installation_worker']")
+EditInstallation.Submit.button=xpath(".//button[@name='add']")
+
+
+
+
+
+
+

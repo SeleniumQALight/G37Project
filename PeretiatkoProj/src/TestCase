@@ -1,0 +1,161 @@
+========================================================================
+===========================| Test Case #1 |=============================
+========================================================================
+
+Summary:
+    login into account
+
+Precondition:
+    - Open a Firefox browser
+    - Make sure that we are not logged in yet.
+
+
+STR:
+    1. Go to url "http://v3.test.itpmgroup.com"
+    2. Login as user -> 'Student'
+    3. Login as password -> '909090'
+    4. Click button 'Вход'
+
+ER:
+    We have to be sure that we have logged in and we are at the "Главная страница"
+
+Post-condition:
+    - Click into avatar in a upper right side "Student"
+    - Click a button "Выход"
+    - Close a Firebox browser
+
+========================================================================
+===========================| Test Case #2 |=============================
+========================================================================
+
+Summary:
+    Sing in
+
+Precondition:
+    - Open a Firefox
+    - Will make sure that you does not have account
+    - You are still on stay in "Учет запчастей"
+
+STR:
+    1. Click a link "Зарегистрироваться"
+    2. Popup will appear "Регистрация" with input fields
+    3. Input text area a "Имя", "Фалилию", "возраст",
+     "Email", "номер мобильного"
+    4. Click "Регистрация"
+
+ER:
+    We must can see the message "Вы зарегистрированы"
+    Log in to your account
+
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================
+===========================| Test Case #3 |=============================
+========================================================================
+
+Summary:
+    Add a new deal to list
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1.  Go to url "http://v3.test.itpmgroup.com"
+    2.  Enter Login -> "Student"
+    3.  Enter password -> "909090"
+    4.  Click button "Вход"
+    5.  Click on the left SideBar by link "Deal"
+    6.  Click right "+" (popup "Add")
+    7.  Change "Deal Date" to "08-мая-2020-06-05"
+    8.  Change "Тип сделки" to "мошеничество"
+    9.  Change "Покупатель" to "OAO "МММ"
+    10. Change "Я, Олег Ляшко"
+    11. Click button "Создать"
+
+ER:
+    We need to see "Сделки => Список"
+    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+
+Post condition:
+    1.  Scroll down to list
+    2.  Click "Deal Date" to "08-мая-2020-06-05"
+    3.  Change "Тип сделки" to "мошеничество"
+    4.  Click button "Удалить"
+
+ER:
+    We need to see "Сделки => Список" with out
+    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================
+===========================| Test Case #4 |=============================
+========================================================================
+
+Summary:
+    Delete a deal to list
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1.  go to url "http://v3.test.itpmgroup.com"
+    2.  Insert a text area Login -> 'Student'
+    3.  Insert a text area Password -> '909090'
+    4.  Click button "Вход"
+    5.  Click on the left SideBar by link "Deal"
+    6.  Scroll down to list
+    7.  Click "Deal Date" to "08-мая-2020-06-05"
+    8.  Change "Тип сделки" to "мошеничество"
+    9.  Click button "Удалить"
+
+ER:
+    We need to see "Сделки -> Список"
+    with out 08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================
+===========================| Test Case #5 |=============================
+========================================================================
+
+Summary:
+    Add to new side a deal
+
+Precondition:
+    Open a Firefox
+
+STR:
+    1.  Go on the url "http://v3.test.itpmgroup.com"
+    2.  Insert a text area Login -> 'Student'
+    3.  Insert a text area Password -> '909090'
+    4.  Click button "Вход"
+    5.  Click on the left SideBar by link "Deal"
+    6.  Click button "Словари"
+    7.  Select a drop down "Стороны сделок" and click selected
+    8.  Click button "+"
+    9.  Insert to text area "Pro cust name" -> "Чепуха Олексеевич"
+    10. Insert to text area "Pro cust address" -> "Pro cust address"
+    11. Insert to text area "Pro cust phone" -> "09889900451"
+    12. Click checkbox "Private person" -> enabled
+    13. Click "Создать"
+
+ER:
+    We will see a create a new line of List Deal
+    Чепуха Олексеевич  Свиридова 23б кв.12    09889900451
+
+Post condition:
+    1. Click into avatar in a upper right side "Student"
+    2. Click a button "Выход"
+    3. Close a Firebox browser
+
+========================================================================

@@ -1,0 +1,73 @@
+Login page:
+
+emailField = XPath(.//input[@name='_username'])
+passwordField = XPath(.//input[@id='password'])
+submitButton = XPath(.//button[@type='submit'])
+rememberPasswordLink = XPath(.//a[@href='#'])
+registrationLink = XPath(.//a[@href='register.html'])
+
+Drop-down user menu:
+
+userLogo = XPath(.//img[@class='user-image'])
+userLogin = XPath(.//span[@class='hidden-xs'])
+dropDownMenu = XPath(.//a[@class='dropdown-toggle'])
+logoutButtonInDropDownMenu = XPath(.//a[@href='/logout'])
+profileButtonInDropDownMenu = XPath(.//a[@href='/users/profile/13'])
+deployButtonOnSideBarDictionary = XPath(.//li[@id='dictionary']/a/i[2])
+dictionaryTabOnSideBar = XPath(.//li[@id='dictionary']/a)
+apparatItemInDictionary = XPath(.//li[@id='apparat']/a)
+workersItemInDictionary = XPath(.//li[@id='workers']/a)
+spareTypeItemInDictionary = XPath(.//li[@id='spareType']/a)
+sparesItemInDictionary = XPath(.//li[@id='spares']/a)
+providersItemInDictionary = XPath(.//li[@id='prov_cus']/a)
+dealTypeItemInDictionary = XPath(.//a[@id='deal_type']/a)
+mainTabOnSideBar = XPath(.//li[@id='dashboard']/a)
+serviceTabOnSideBar = XPath(.//li[@id='service_apparat']/a)
+installationOnSideBar = XPath(.//li[@id='installation']/a)
+dealOnSideBar = XPath(.//li[@id='deal']/a)
+reportOnSideBar = XPath(.//li[@id='report']/a)
+
+Apparat Page:
+
+addApparatButton = XPath(.//*[@href='http://v3.test.itpmgroup.com/dictionary/apparat/edit'])
+findTextInNumberColumn = XPAth(.//*[@id='device_list']/tbody/tr[1]/td[1])
+findTextInCommentColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[2])
+apparatNumberField = XPath(.//*[@id='apparat_apparatNumber'])
+apparatCommentField = XPath(.//*[@id='apparat_apparatComment'])
+creatApparatButton = XPath(.//button[@name='add'])
+
+Workers Page:
+
+addWorkerButton = XPath(.//a[@href='http://v3.test.itpmgroup.com/dictionary/workers/edit'])
+findTextInWorkerColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[1])
+findTextInPhoneNumberColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[2])
+workerSurnameField = XPath(.//input[@id='workers_workerSurname'])
+workerName = XPath(.//input[@id='workers_workerName'])
+workerMiddleName = XPath(.//input[@id='workers_workerMiddleName'])
+workerPhone = XPath(.//*[@id='workers_workerPhone'])
+creatWorkerButton = XPath(.//button[@name='add'])
+
+Service Apparat Page
+
+addServiceApparatButton = XPath(.//a[@href='http://v3.test.itpmgroup.com/dictionary/service/edit'])
+findTextInApparatNumberColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[1])
+findTextInServiceChangesColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[2])
+findTextInServiceOperationsColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[3])
+findTextInWorkersColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[4])
+findTextInDateColumn = XPath(.//*[@id='device_list']/tbody/tr[1]/td[5])
+serviceChangesField = XPath(.//*[@id='service_apparat_serviceChanges'])
+serviceOperationsField = XPath(.//*[@id='service_apparat_serviceOperations'])
+dateDayField = XPath(.//*[@id='service_apparat_serviceDate_date_day'])
+selectDateDay = XPath(.//*[@id='service_apparat_serviceDate_date_day']/option[@value='1'])
+dateMonthField = XPath(.//*[@id='service_apparat_serviceDate_date_month'])
+selectMonth = XPath(.//*[@id='service_apparat_serviceDate_date_month']/option[@value='1'])
+dateYearField = XPath(.//*[@id='service_apparat_serviceDate_date_year'])
+selectYear = XPath(.//*[@id='service_apparat_serviceDate_date_year']/option[@value=2013])
+dateTimeHour = XPath(.//*[@id='service_apparat_serviceDate_time_hour'])
+selectTimeHour = XPath(.//*[@id='service_apparat_serviceDate_time_hour']/option[@value='0'])
+apparatField = XPath(.//*[@id='service_apparat_apparat'])
+workerField = XPath(.//*[@id='service_apparat_worker'])
+addServiceApparatButton = XPath(.//button[@name='add'])
+
+
+
