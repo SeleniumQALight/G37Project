@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class LogInWithOutPageObject {
     WebDriver webDriver;  // create variable
     @Before
     public void setUp(){
@@ -27,7 +27,7 @@ public class Login {
     public void validLogin() {
         webDriver.get("http://v3.test.itpmgroup.com"); // вказуємо URL
 
-        webDriver.findElement(By.name("_username")).clear(); // знаходимо поле Login, clearing
+        webDriver.findElement(By.name("_username")).clear(); // знаходимо поле LogInWithOutPageObject, clearing
         webDriver.findElement(By.name("_username")).sendKeys("Student"); // відправляємо по букві наш логін
 
         webDriver.findElement(By.id("password")).clear();
