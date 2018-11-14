@@ -40,4 +40,12 @@ public class LoginPage extends ParentPage {
             Assert.fail("Cannot work with element");
         }
     }
+    public void clickButtonVhod() {
+        try {
+            webDriver.findElement(By.tagName("button")).click();
+        }catch (Exception e){
+            logger.error("Can't find submit button");
+            Assert.fail("Can't find submit button");
+        }
+    }
 }
