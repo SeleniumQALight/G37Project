@@ -42,25 +42,7 @@ public class LogInWithoutPageObject {
                 isAvatarPresent());
     }
 
-    public void invalidLogin (){
-        webDriver.get("http://v3.test.itpmgroup.com");
-
-        webDriver.findElement(By.name("_username")).clear();
-        webDriver.findElement(By.name("_username")).sendKeys("Teacher");
-
-        webDriver.findElement(By.id("password")).clear();
-        webDriver.findElement(By.id("password")).sendKeys("909090");
-
-        webDriver.findElement(By.tagName("button")).click();
-
-        Assert.assertFalse("Avatar is not present" ,
-                isAvatarPresent());
-
-    }
-
-
-
-    private boolean isAvatarPresent(){
+     private boolean isAvatarPresent(){
         try {
            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
         } catch(Exception e){
