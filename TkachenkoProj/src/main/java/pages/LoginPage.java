@@ -43,6 +43,12 @@ public class LoginPage extends ParentPage{
     }
 
     public void clickButtonVhod() {
-
+        try {
+            driver.findElement(By.xpath(".//button[@type='submit']")).click();
+            logger.info("User is successfully logged in");
+        }catch (Exception e){
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
     }
 }
