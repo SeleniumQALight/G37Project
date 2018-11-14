@@ -56,4 +56,29 @@ public class Login {
     public void tearDown() {
         webDriver.quit();
     }
+
+
+    @Test
+     public void notValidLogin(){
+        webDriver.get("http://v3.test.itpmgroup.com");
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("Admin");
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("qwerty");
+
+        webDriver.findElement(By.tagName("button")).click();
+
+
+        Assert.assertTrue("Avatar is not present", authorizationForm());
+
+     }
+    private boolean authorizationForm() {
+        try {
+            return webDriver.findElement(By.xpath(".//p[@class='login-box-msg']")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }
