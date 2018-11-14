@@ -40,4 +40,14 @@ public class LoginPage extends ParentPage {
             Assert.fail("Can't work with element");
         }
     }
+
+    public void clickButtonVhod() {
+        try {
+            webDriver.findElement(By.xpath(".//button[@type='submit']")).click();
+            logger.info("User logged successfully");
+        } catch (Exception e) {
+            logger.error("Can't work with element");
+            Assert.fail("Can't work with element");
+        }
+    }
 }
