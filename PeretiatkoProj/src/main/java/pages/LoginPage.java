@@ -25,7 +25,7 @@ public class LoginPage extends ParentPage {
         try {
             webDriver.findElement(By.name("_username")).clear();
             webDriver.findElement(By.name("_username")).sendKeys(login);
-            logger.info(login + "was inputted into element");
+            logger.info(login + " was inputted into element");
         } catch (Exception e) {
             logger.error("Cannot work with element");
             Assert.fail("Cannot work with element");
@@ -36,7 +36,7 @@ public class LoginPage extends ParentPage {
         try {
             webDriver.findElement(By.name("_password")).clear();
             webDriver.findElement(By.name("_password")).sendKeys(passWord);
-            logger.info(passWord + "was inputted into element");
+            logger.info(passWord + " was inputted into element");
         } catch (Exception e) {
             logger.error("Cannot work with element");
             Assert.fail("Cannot work with element");
@@ -46,7 +46,7 @@ public class LoginPage extends ParentPage {
     public void clickButton() {
         try {
             webDriver.findElement(By.xpath(".//button[@type='submit']")).click();
-            logger.info("was clicked in a button");
+            logger.info("Clicked button");
         } catch (Exception e) {
             logger.error("Doest not work");
             Assert.fail("Doest not work");
