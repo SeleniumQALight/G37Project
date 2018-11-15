@@ -1,0 +1,46 @@
+#LoginPage
+Login.Input.Field=xpath(".//input[@class = 'form-control' and @name= '_username']")
+Password.Input.Field=xpath(".//input[@class = 'form-control' and @name = '_password']")
+Button.Enter=xpath(".//button[@type = 'submit']")
+
+#MainPannel
+User.Login.On.UpperMain.Panel=xpath(".//span[@class='hidden-xs']")
+User.Login.On.LeftSide.Panel=xpath(".//div[@class = 'pull-left info']//p")
+Glavnaya.Option.On.LeftSide.Panel=xpath(".//li[@id='dashboard']")
+Slovari.Option.On.LeftSide.Panel=xpath(".//li[@id='dictionary']")
+Obslugivanie.Option.On.LeftSide.Panel=xpath(".//li[@id='service_apparat']")
+Ustanovka.Option.On.LeftSide.Panel=xpath(".//li[@id='installation']")
+Sdelki.Option.On.LeftSide.Panel=xpath(".//li[@id='deal']")
+Otchet.Option.On.LeftSide.Panel=xpath(".//li[@id='report']")
+
+SlovariDropdownMenu
+Aparat.Dropdown.Option.Slovari=xpath(".//li[@id='apparat']")
+Sotrudniki.Dropdown.Option.Slovari=xpath=(".//li[@id='workers']")
+TipyZapchastea.Dropdown.Option.Slovari=xpath(".//li[@id='spareType']")
+Zapchasti.Dropdown.Option.Slovari=xpath(".//li[@id='spares']")
+StoronyZdelok.Dropdown.Option.Slovari=xpath(".//li[@id='prov_cus']")
+TipyZdelok.Dropdown.Option.Slovari=xpath(".//li[@id='deal_type']")
+
+#GlavnayaPage
+Glavnaya.Header=xpath(".//section[@class='content-header']//h1[contains(text(),'Главная')]")
+
+#AparatPage
+Add.New.Apparat.Button=xpath(".//a[@class='btn btn-info btn-sm' and @href='http://v3.test.itpmgroup.com/dictionary/apparat/edit']")
+New.Aparat.Number.Field=xpath(".//input[@id='apparat_apparatNumber']")
+New.Aparat.Comment.Field=xpath(".//input[@id='apparat_apparatComment']")
+New.Aparat.Sozdat.Button=xpath(".//button[@class='btn btn-info' and @name='add']")
+
+
+Existing.Aparat.sohranit.Button=xpath(".//button[@class='btn btn-info' and @name ='save']")
+Existing.Aparat.udalit.Button=xpath(".//button[@class = 'btn btn-danger pull-right' and @name = 'delete']")
+
+
+#ProfileOperations
+Profile.Open.Dropdown=xpath(".//a[@class= 'dropdown-toggle' and @data-toggle = 'dropdown']")
+Profil.Edit.button.In.Profile.Dropdown=xpath(".//a[@class = 'btn btn-default btn-flat' and contains(text(),'Профиль')]")
+Pole.Vvoda.Parola=xpath(".//input[@id='userProfileEdit_user_password_password']")
+Pole.Podtvergdenia.Parola=xpath(".//input[@id='userProfileEdit_user_password_password_confirm']")
+Sohranit.Button=xpath(".//button[@class= 'btn btn-info' and @name = 'save']")
+Profil.Vyhod.Button.In.Profile.Dropdown=xpath(".//a[@class= 'btn btn-default btn-flat' and contains(text(),'Выход')]")
+
+#Other
