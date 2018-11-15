@@ -10,7 +10,7 @@ public class HomePage extends ParentPage {
 
     public boolean isAvatarPresent() {
         try {
-            return webDriver.findElement(By.name(".//*[@class='pull-left image']")).isDisplayed();
+            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
         } catch (Exception e) {
             return false;
         }

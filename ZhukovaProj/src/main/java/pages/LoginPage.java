@@ -41,5 +41,15 @@ public class LoginPage extends ParentPage {
             Assert.fail("Cannot work with element");
         }
     }
+    public void clickButtonVhod(){
+        try {
+            webDriver.findElement(By.tagName("button")).click();
+
+            logger.info( "Was clicked on button 'Vhod' ");
+        }catch (Exception e){
+            logger.error("Cannot work with element button 'Vhod'");
+            Assert.fail("Cannot work with element button 'Vhod'");
+        }
+    }
 }
 
