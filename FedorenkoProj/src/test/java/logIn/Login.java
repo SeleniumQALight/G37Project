@@ -37,16 +37,45 @@ public class Login {
 
         webDriver.findElement(By.tagName("button")).click();
 
-        Assert.assertTrue("Avater is not prezent",
+        Assert.assertTrue("Avatar is not present",
                 isAvatarPresent());
     }
-    private  boolean isAvatarPresent(){
-        try{
+
+    @Test
+    public void invalidLogin() {
+        webDriver.get("http://v3.test.itpmgroup.com");
+
+
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("студент");
+
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("909090");
+
+        webDriver.findElement(By.tagName("button")).click();
+
+        Assert.assertTrue("incorrect Login input validation",
+                isLoginFormPresent());
+    }
+
+
+    private boolean isAvatarPresent() {
+        try {
             return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
+
+    private boolean isLoginFormPresent() {
+        try {
+            return webDriver.findElement(By.name("_username")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
     @After
     public void tearDown() {
         webDriver.quit();

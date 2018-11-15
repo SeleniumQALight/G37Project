@@ -1,0 +1,32 @@
+#Source
+#Source.Weblink.=xpath(".//p//*[@href='http://v3.test.itpmgroup.com/login/']")
+
+#Login
+Login.Name.input=xpath(".//*[@name='_username']")
+Login.Password.input=xpath(".//*[@id='password']")
+Login.Submmit.button=xpath(".//*[@type='submit']")
+Login.Student.button=xpath(".//span[@class='hidden-xs'][contains(.,'Student')]")
+Login.Logout.button=xpath(".//a[@href='/logout']")
+
+#Dictionary
+#Dictionary.DictionaryOpen.button=xpath(".//*[@id='dictionary']/a")
+#Dictionary.Apparat.button=xpath(".//*[@id='apparat']/a")
+#Dictionary.ApparatAdd.button=xpath(".//i[@class='fa fa-plus']")
+#Dictionary.ApparatNumber.input=xpath(".//*[@id='apparat_apparatNumber']")
+#Dictionary.ApparatComment.input=xpath(".//*[@id='apparat_apparatComment']")
+#Dictionary.ApparatSubmmit.button=xpath(".//*[@name='add']")
+#Dictionary.ApparatDelete.button=xpath(".//*[@name='delete']")
+
+#Spares
+#Spares.SparesAll.button=xpath(".//a[@href='/dictionary/spares']")
+#Spares.SparesAdd.button=xpath("//i[@class='fa fa-plus']")
+#Spares.SpareName.input=xpath(".//input[@id='spares_spareName']")
+#Spares.SparesType.input=xpath("//select[@id='spares_spareType']")
+#Spares.SparesSubmmit.button=xpath(".//button[@type='submit']")
+#Spares.SparesDelete.button=xpath("//button[@name='delete']")
+
+
+
+
+
+
