@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 import static line.Prop.*;
 
 
-public class LoginWithOutPageObject {
+public class LoginWithoutPageObject {
     WebDriver webDriver;
 
     private void beforeTestStart() {
