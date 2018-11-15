@@ -1,6 +1,5 @@
 package login;
 
-import com.sun.source.tree.AssertTree;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 import static line.Prop.*;
 
 
-public class Login {
+public class LoginWithoutPageObject {
     WebDriver webDriver;
 
     private void beforeTestStart() {
