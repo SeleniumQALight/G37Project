@@ -2,7 +2,7 @@
 #http://v3.test.itpmgroup.com/login
 Login.form.name          = xpath(".//p[text()='Авторизация']")
 Login.input.email        = xpath(".//input[@name='_username']")
-Login.input.password     = xpath(".//input[@id='password']")
+Login.input.password     = xpath(".//input[@id='_password']")
 Login.input.submit       = xpath(".//button[@type='submit']")
 login.form.href          =xpath(".//a[@href='#' and text()='Напомнить пароль']")
 login.form.href          =xpath(".//a[@href='register.html' and text()='Зарегистрироваться']")
