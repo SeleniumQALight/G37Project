@@ -1,0 +1,39 @@
+Test Case 1:
+    1. Open link in the latest Chrome http://v3.test.itpmgroup.com
+    2. Enter valid credentials for the fields "Email" and "Password" (in my case "Student" and "909090")
+    3. Verify that you're logged as Student, by clicking on the username in the top right corner of the main page.
+
+Test Case 2:
+    1. Open link in the latest Chrome http://v3.test.itpmgroup.com
+    2. Login with the next credentials: login "Student", pass "909090" and verify that you're logged by asserting username on the main page
+    3. Verify presence of the listed below items in the left side panel:
+        - Главная
+        - Словари
+        - Обслуживание
+        - Установка
+        - Сделки
+        - Отчет
+
+Test Case 3:
+    1. Open link in the latest Chrome http://v3.test.itpmgroup.com
+    2. Login with the next credentials: login "Student", pass "909090" and verify that you're logged by asserting username on the main page
+    3. Click on the "Словари" treeview item and verify presence of the next items in the opened list:
+        - Аппарат
+        - Сотрудники
+        - Типы запчастей
+        - Запчасти
+        - Стороны сделок
+        - Типы сделок
+
+Test Case 4:
+    1. Open link in the latest Chrome http://v3.test.itpmgroup.com
+    2. Login with the next credentials: login "Student", pass "909090" and verify that you're logged by asserting username on the main page
+    3. Click on the toggle button in the header of the main page
+    4 Check that sidebar is hidden
+
+Test Case 5:
+    1. Open link in the latest Chrome http://v3.test.itpmgroup.com
+    2. Login with the next credentials: login "Student", pass "909090" and verify that you're logged by asserting username on the main page
+    3. Click on the username in the top right corner of the main page
+    4. In the opened dropdown menu click the button "выход"
+    5. Check that login page opened

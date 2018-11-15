@@ -1,0 +1,77 @@
+package Login;
+
+import com.sun.xml.internal.ws.policy.AssertionSet;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+public class Login {
+    WebDriver webDriver;
+
+    @Before
+    public void setup() {
+        File file = new File("./src/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+        webDriver = new ChromeDriver();
+
+        //webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+    }
+
+    @Test
+    public void validLogin() {
+
+        webDriver.get("http://v3.test.itpmgroup.com");
+
+
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("Student");
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("909090");
+
+        webDriver.findElement(By.tagName("button")).click();
+
+
+        Assert.assertTrue("Avatar is not present",
+                isAvatarPresent());
+
+    }
+
+    @Test
+    public void invalidLogin() {
+        webDriver.get("http://v3.test.itpmgroup.com");
+
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("Student111");
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("959595");
+
+
+        webDriver.findElement(By.tagName("button")).click();
+
+
+    }
+
+    private  boolean isAvatarPresent() {
+        try {
+            return webDriver.findElement(By.xpath(".//*[@class=\'pull-left image\']")).isDisplayed();
+        }
+            catch (Exception e) {
+            return false;
+        }
+    }
+
+    @After
+    public void tearDown() {
+        webDriver.quit();
+
+    }
+}

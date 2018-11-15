@@ -1,0 +1,90 @@
+test
+
+1) Adding a new employer
+
+Precondition:
+Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+Steps to reproduce:
+1. From the Menu left choose "Словари", then click "Сотрудники"
+2. In the opening list of registered employers click on "PLUS" sign in the right top corner
+3. Add Worker's name, surname, middle name and phone number
+4. Click "Создать" button
+
+
+Expected result:
+
+A new employer is added to the list
+
+
+
+
+2) Editing details of counter parties
+
+Precondition:
+Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+Steps to reproduce:
+1. From the Menu left choose "Словари", then click "Стороны сделок"
+2. Tap on any of counter parties from the opening list
+3. Edit any of Pro cust name, Pro cust address or Pro cust phone
+4. Click "Сохранить" button
+
+
+Expected result:
+
+The details of counter parts are successfully edited
+
+
+3) Changing user's Email address
+
+Precondition:
+Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+Steps to reproduce:
+1. Click the user's icon in the right top corner, then click "Профиль"
+2. Make any changes in "Адрес email" field
+3. Click "Сохранить" button
+
+
+Expected result:
+
+The Email address is successfully edited and saved
+
+
+4) Adding a new employer
+
+Precondition:
+Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+Steps to reproduce:
+1. From the Menu left choose "Сделки"
+2. In the opening list tap any deal from the existent list
+3. Click "Удалить" button
+
+
+Expected result:
+
+The chosen deal is successfully deleted
+
+
+5) Editing the service date
+
+Precondition:
+Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+Steps to reproduce:
+1. From the Menu left choose "Обслуживание"
+2. Tap on any work from the opening work list
+3. Change the Service date
+4. Click "Сохранить" button
+
+
+Expected result:
+
+A newly set date is successfully edited and saved

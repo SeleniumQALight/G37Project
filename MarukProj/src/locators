@@ -1,0 +1,25 @@
+#LoginPage
+LoginPage.Login.input = xpath(".//input[@name = '_username']")
+LoginPage.Password.input = xpath(".//input[@id = 'password']")
+LoginPage.Entrance.button = xpath.(".//button")
+
+
+#MainPage
+MainPage.Avatar.image = xpath(".//img[@class = 'user-image']")
+MainPage.Exit.button = xpath(".//*[text()='Выход']")
+MainPage.Slovari.span = xpath(".//li[@id = 'dictionary']//span")
+MainPage.Otchet.link = xpath(".//a[@href = '/statistic']")
+MainPage.Workers.link = xpath(".//a[@href='/dictionary/workers']")
+MainPage.Deal_Types.link = xpath(".//li[@id='deal_type']//a")
+MainPage.Storony_sdelok.link = xpath(".//a[@href  ='/dictionary/providers']")
+
+
+#DealsPage
+DealsPage.Add.button = xpath(".//i[@class='fa fa-plus']")
+
+#DictionaryPage
+DictionaryPage.Deal_type.select = xpath(".//select[@id='deal_dealType']")
+DictionaryPage.Customer.select = xpath(".//select[@name='deal[customer]']")
+DictionaryPage.Provider.select = xpath(".//select[@id='deal_provider']")
+DictionaryPage.Create.button = xpath(".//button[@type='submit']")
+DictionaryPage.Delete.button = xpath(".//button[@name='delete']")
