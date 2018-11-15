@@ -6,9 +6,12 @@ Summary:
     login into account
 
 Precondition:
-    - Open a Firefox browser
+    - Open a Firefox browser ver. 42.0
     - Make sure that we are not logged in yet.
-
+    - If we are already logged in:
+        - Click into avatar in a upper right side "Student"
+        - Click a button "Выход"
+        - Close browser
 
 STR:
     1. Go to url "http://v3.test.itpmgroup.com"
@@ -22,35 +25,41 @@ ER:
 Post-condition:
     - Click into avatar in a upper right side "Student"
     - Click a button "Выход"
-    - Close a Firebox browser
+    - Close browser
 
 ========================================================================
 ===========================| Test Case #2 |=============================
 ========================================================================
 
 Summary:
-    Sing in
+    Create a new type deal
 
 Precondition:
-    - Open a Firefox
-    - Will make sure that you does not have account
-    - You are still on stay in "Учет запчастей"
+    - Open a Firefox browser ver. 42.0
+    - Make sure that we are not logged in yet
+    - Go to url "http://v3.test.itpmgroup.com"
+    - Enter Login -> "Student"
+    - Enter password -> "909090"
+    - Click button "Вход"
+    - Click on the left SideBar "Библиотеки" and click link "Типы сделок"
+    - Check that the entity "обмен гаража" does not exist
+    - If such entity exists "обмен гаража":
+        - Click button "Удалить"
 
 STR:
-    1. Click a link "Зарегистрироваться"
-    2. Popup will appear "Регистрация" with input fields
-    3. Input text area a "Имя", "Фалилию", "возраст",
-     "Email", "номер мобильного"
-    4. Click "Регистрация"
-
+    1. Click on the left SideBar "Библиотеки" and click link "Типы сделок"
+    2. Click on the button "+"
+    3. Insert into input "Deal type name" -> "обмен гаража"
+    4. Click button "Создать"
 ER:
-    We must can see the message "Вы зарегистрированы"
-    Log in to your account
+    We must can see the entity "обмен гаража" in a "Типы сделок"
 
 Post condition:
-    1. Click into avatar in a upper right side "Student"
-    2. Click a button "Выход"
-    3. Close a Firebox browser
+    - Click into entity "обмен гаража"
+    - Click button "Удалить"
+    - Click into avatar in a upper right side "Student"
+    - Click a button "Выход"
+    - Close browser
 
 ========================================================================
 ===========================| Test Case #3 |=============================
@@ -60,39 +69,40 @@ Summary:
     Add a new deal to list
 
 Precondition:
-    Open a Firefox
+    - Open a Firefox browser ver. 42.0
+    - Make sure that we are not logged in yet
+    - Go to url "http://v3.test.itpmgroup.com"
+    - Enter Login -> "Student"
+    - Enter password -> "909090"
+    - Click button "Вход"
+    - Click on the left SideBar "Сделки"
+    - Scroll down in "Список сделок"
+    - If such entity existsIf have been "мошеничество ОАО "МММ" Я, Олег Ляшко":
+        - Click a entity "08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко"
+        - Click button "Удалить"
 
 STR:
-    1.  Go to url "http://v3.test.itpmgroup.com"
-    2.  Enter Login -> "Student"
-    3.  Enter password -> "909090"
-    4.  Click button "Вход"
-    5.  Click on the left SideBar by link "Deal"
-    6.  Click right "+" (popup "Add")
-    7.  Change "Deal Date" to "08-мая-2020-06-05"
-    8.  Change "Тип сделки" to "мошеничество"
-    9.  Change "Покупатель" to "OAO "МММ"
-    10. Change "Я, Олег Ляшко"
-    11. Click button "Создать"
+    1. Click on the left SideBar by link "Deal"
+    2. Click right "+"
+    3. Change "Deal Date" to "08-мая-2020-06-05"
+    4. Change "Тип сделки" to "мошеничество"
+    5. Change "Покупатель" to "OAO "МММ"
+    6. Change "Я, Олег Ляшко"
+    7. Click button "Создать"
+    8. Scroll down "Сделки список"
 
 ER:
-    We need to see "Сделки => Список"
-    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+    We will see that sure "Сделки => Список"
+    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко that such an entity exists
 
 Post condition:
-    1.  Scroll down to list
-    2.  Click "Deal Date" to "08-мая-2020-06-05"
-    3.  Change "Тип сделки" to "мошеничество"
-    4.  Click button "Удалить"
-
-ER:
-    We need to see "Сделки => Список" with out
-    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
-
-Post condition:
-    1. Click into avatar in a upper right side "Student"
-    2. Click a button "Выход"
-    3. Close a Firebox browser
+    - Scroll down to list
+    - Click "Deal Date" to "08-мая-2020-06-05"
+    - Change "Тип сделки" to "08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко"
+    - Click button "Удалить"
+    - Click into avatar in a upper right side "Student"
+    - Click a button "Выход"
+    - Close browser
 
 ========================================================================
 ===========================| Test Case #4 |=============================
@@ -102,27 +112,38 @@ Summary:
     Delete a deal to list
 
 Precondition:
-    Open a Firefox
+    - Open a Firefox browser ver. 42.0
+    - Make sure that we are not logged in yet
+    - Go to url "http://v3.test.itpmgroup.com"
+    - Enter Login -> "Student"
+    - Enter password -> "909090"
+    - Click button "Вход"
+    - Click left Sidebar "Сделки"
+    - Check entity "мошеничество ОАО "МММ" Я, Олег Ляшко"
+    - If such entity does not exist "мошеничество ОАО "МММ" Я, Олег Ляшко":
+        - Scroll up page
+        - Click button "+"
+        - Select "Deal Time" 08.05.2020 06:05
+        - Select "Тип сделки" -> "мошеничество"
+        - Select "Покупатель" -> "ОАО "МММ""
+        - Select "Поставщик" -> "Я, Олег Ляшко"
+        - Click button "Создать"
 
 STR:
-    1.  go to url "http://v3.test.itpmgroup.com"
-    2.  Insert a text area Login -> 'Student'
-    3.  Insert a text area Password -> '909090'
-    4.  Click button "Вход"
-    5.  Click on the left SideBar by link "Deal"
-    6.  Scroll down to list
-    7.  Click "Deal Date" to "08-мая-2020-06-05"
-    8.  Change "Тип сделки" to "мошеничество"
-    9.  Click button "Удалить"
+    1. Click on the left SideBar by link "Deal"
+    2. Scroll down to list
+    3. Click "Deal Date" to "08-мая-2020-06-05"
+    4. Change "Тип сделки" to "мошеничество"
+    5. Click button "Удалить"
 
 ER:
     We need to see "Сделки -> Список"
-    with out 08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко
+    08.05.2020 06:05 мошеничество ОАО "МММ" Я, Олег Ляшко  that such an entity exists
 
 Post condition:
-    1. Click into avatar in a upper right side "Student"
-    2. Click a button "Выход"
-    3. Close a Firebox browser
+    - Click into avatar in a upper right side "Student"
+    - Click a button "Выход"
+    - Close browser
 
 ========================================================================
 ===========================| Test Case #5 |=============================
@@ -132,30 +153,40 @@ Summary:
     Add to new side a deal
 
 Precondition:
-    Open a Firefox
+    - Open a Firefox browser ver. 42.0
+    - Make sure that we are not logged in yet
+    - Go on the url "http://v3.test.itpmgroup.com"
+    - Insert a text area Login -> 'Student'
+    - Insert a text area Password -> '909090'
+    - Click button "Вход"
+    - Click on the left SideBar by link "Сделки"
+    - Click button "Словари"
+    - Select a "Стороны сделок" and click selected
+    - If such entity exists "Чепуха Олексеевич Свиридова 23б кв.12 09889900451":
+        - Click into entity "Чепуха Олексеевич Свиридова 23б кв.12 09889900451" in a "Стороны сделок список"
+        - Click button "Удалить"
 
 STR:
-    1.  Go on the url "http://v3.test.itpmgroup.com"
-    2.  Insert a text area Login -> 'Student'
-    3.  Insert a text area Password -> '909090'
-    4.  Click button "Вход"
-    5.  Click on the left SideBar by link "Deal"
-    6.  Click button "Словари"
-    7.  Select a drop down "Стороны сделок" and click selected
-    8.  Click button "+"
-    9.  Insert to text area "Pro cust name" -> "Чепуха Олексеевич"
-    10. Insert to text area "Pro cust address" -> "Pro cust address"
-    11. Insert to text area "Pro cust phone" -> "09889900451"
-    12. Click checkbox "Private person" -> enabled
-    13. Click "Создать"
+
+    1. Click on the left SideBar by link "Deal"
+    2. Click button "Словари"
+    3. Select a "Стороны сделок" and click selected
+    4. Click button "+"
+    5. Insert to text area "Pro cust name" -> "Чепуха Олексеевич"
+    6. Insert to text area "Pro cust address" -> "Свиридова 23б кв.12"
+    7. Insert to text area "Pro cust phone" -> "09889900451"
+    8. Click checkbox "Private person" -> enabled
+    9. Click "Создать"
 
 ER:
     We will see a create a new line of List Deal
-    Чепуха Олексеевич  Свиридова 23б кв.12    09889900451
+    "Чепуха Олексеевич Свиридова 23б кв.12 09889900451" that such an entity exists
 
 Post condition:
-    1. Click into avatar in a upper right side "Student"
-    2. Click a button "Выход"
-    3. Close a Firebox browser
+    - Click into entity "Чепуха Олексеевич Свиридова 23б кв.12 09889900451" in a "Стороны сделок список"
+    - Click button "Удалить"
+    - Click into avatar in a upper right side "Student"
+    - Click a button "Выход"
+    - Close browser
 
 ========================================================================
