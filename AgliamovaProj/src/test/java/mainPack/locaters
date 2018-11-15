@@ -1,0 +1,5 @@
+http://v3.test.itpmgroup.com
+ //*[@placeholder="Email"]
+ //*[@placeholder="Password"]
+ //*[@class='btn btn-primary btn-block btn-flat']
+  http://v3.test.itpmgroup.com/
