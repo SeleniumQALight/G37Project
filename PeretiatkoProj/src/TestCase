@@ -41,13 +41,14 @@ Precondition:
     - Enter Login -> "Student"
     - Enter password -> "909090"
     - Click button "Вход"
-    - Click on the left SideBar "Библиотеки" and click link "Типы сделок"
+    - Click on the left SideBar "Словари"
+    - Click button "Типы сделок"
     - Check that the entity "обмен гаража" does not exist
     - If such entity exists "обмен гаража":
         - Click button "Удалить"
 
 STR:
-    1. Click on the left SideBar "Библиотеки" and click link "Типы сделок"
+    1. Click on the left SideBar "Словари" and click link "Типы сделок"
     2. Click on the button "+"
     3. Insert into input "Deal type name" -> "обмен гаража"
     4. Click button "Создать"
@@ -75,6 +76,7 @@ Precondition:
     - Enter Login -> "Student"
     - Enter password -> "909090"
     - Click button "Вход"
+    - Click button "Словари"
     - Click on the left SideBar "Сделки"
     - Scroll down in "Список сделок"
     - If such entity existsIf have been "мошеничество ОАО "МММ" Я, Олег Ляшко":
@@ -118,6 +120,7 @@ Precondition:
     - Enter Login -> "Student"
     - Enter password -> "909090"
     - Click button "Вход"
+    - Click button "Словари"
     - Click left Sidebar "Сделки"
     - Check entity "мошеничество ОАО "МММ" Я, Олег Ляшко"
     - If such entity does not exist "мошеничество ОАО "МММ" Я, Олег Ляшко":
