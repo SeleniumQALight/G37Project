@@ -58,7 +58,7 @@ public class LogInWithOutPageObject {
         webDriver.get("http://v3.test.itpmgroup.com");
 
         webDriver.findElement(By.name("_username")).clear();
-        webDriver.findElement(By.name("_username")).sendKeys("student");
+        webDriver.findElement(By.name("_username")).sendKeys("Studen");
 
         webDriver.findElement(By.id("password")).clear();
         webDriver.findElement(By.id("password")).sendKeys("909090");
@@ -66,7 +66,7 @@ public class LogInWithOutPageObject {
         webDriver.findElement(By.tagName("button")).click();
 
         Assert.assertTrue("Login page isn't displayed", isLogInPageDisplayed());
-
+//        Assert.assertFalse("Login page isn't displayed", isAvatarPresent());
     }
 
     private boolean isLogInPageDisplayed() {
