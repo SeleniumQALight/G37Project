@@ -7,11 +7,11 @@ public class HomePage extends ParentPage {
     public HomePage(WebDriver webDriver) {
         super(webDriver);
     }
-
-    public boolean isAvatarPresent() {
+    public boolean isAvatarPresent(){
         try {
-            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
-        } catch (Exception e) {
+            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']"))
+                    .isDisplayed();
+        }catch (Exception e){
             return false;
         }
     }

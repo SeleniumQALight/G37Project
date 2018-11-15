@@ -11,11 +11,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class InvalidLoginWithoutPageObject {
     WebDriver webDriver;
 
     @Before
-    public void seatUp() {
+
+    public void setUp(){
         File file = new File("./src/drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
@@ -23,32 +24,33 @@ public class Login {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    @After
+
+    public void tearDown(){
+        webDriver.quit();
+    }
+
     @Test
-    public void validLogin() {
+
+    public void invalidLogin(){
 
         webDriver.get("http://v3.test.itpmgroup.com");
         webDriver.findElement(By.name("_username")).clear();
-        webDriver.findElement(By.name("_username")).sendKeys("Student");
+        webDriver.findElement(By.name("_username")).sendKeys("12345678");
         webDriver.findElement(By.id("password")).clear();
-        webDriver.findElement(By.id("password")).sendKeys("909090");
+        webDriver.findElement(By.id("password")).sendKeys("123456");
         webDriver.findElement(By.tagName("button")).click();
 
-        Assert.assertTrue("Avatar is not present",
-                isAvatarPresent());
+        Assert.assertTrue("Password and login are not match",
+                isLoginPresent());
+        }
 
-    }
-    private boolean isAvatarPresent(){
-        try {
-            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
-
+    public boolean isLoginPresent(){
+        try{
+            return webDriver.findElement(By.xpath(".//*[@href='http://v3.test.itpmgroup.com/']")).isDisplayed();
         }catch (Exception e){
             return false;
         }
     }
 
-    @After
-    public void tearDown() {
-        webDriver.quit();
-
-    }
 }

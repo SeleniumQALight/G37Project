@@ -1,0 +1,108 @@
+Test case 1:
+*Steps:*
+1. Open http://v3.test.itpmgroup.com/login
+2. Fill login field with "Student" data
+3. Fill password field with "909090" data
+4. Login to system
+
+*Expected result:*
+System should login user to system
+
+Test case 2:
+Precondition:
+1. Open http://v3.test.itpmgroup.com/login
+2. Login with existing credentials (Student/909090)
+
+Steps:
+3.1 Go to "Словари" page
+3.2 Go to "Аппарат" page
+3.3 Click on plus to load create new apparat page
+3.4 Add apparat number - 111
+3.5 Add apparat comment - "The Wall"
+3.6 Click "Create"
+4.1 After system successfully added apparat click on "Employees"
+4.2 Click on plus to load create new employee page
+4.3 Add worker surname - Doe
+4.4 Add worker name - Jane
+4.5 Add worker middle name - Smith
+4.6 Add worker phone - +1234567890
+4.7 Click "Create"
+5.1 After system successfully added new worker go to "Обслуживание" page
+5.2 Click on plus to load create new list page
+5.3 Add data to "Service changes" field - Lorem Ipsum
+5.4 Add data to "Service operations" field- Lorem Ipsum
+5.5 Add data to "Service date" field - 01.08.2018
+5.6 Choose "The Wall" option in "Аппарат" select
+5.7 Choose "Jane Doe" option in "Cотрудник" select
+5.8 Click "Создать"
+
+*Expected result:*
+System should successfully add new report list to the system
+
+Postcondition:
+6. Go to Apparat page
+6.1 Remove "The Wall" apparat
+7. Go to employee page
+7.1 Remove "Jane Doe" employee
+8. Go to Support page
+8.1 Remove "Lorem Ipsum" list
+
+Test case 3:
+Precondition:
+1. Open http://v3.test.itpmgroup.com/login
+2. Login with existing credentials (Student/909090)
+
+Steps:
+3. Open Support page
+4. Click on plus to load create new list page
+5. Add data to "Service changes" field - Lorem Ipsum
+6. Add data to "Service operations" field- Lorem Ipsum
+7. Add data to "Service date" field - 31.02.2018
+
+Expected result:
+System should validate date and notify user 31st of February could not be valid date
+
+Test case 4:
+Precondition:
+1. Open http://v3.test.itpmgroup.com/login
+2. Login with existing credentials (Student/909090)
+3. Go to "Словари" page
+4. Go to "Аппарат" page
+5. Click on plus to load create new apparat page
+6. Add apparat number - 111
+7. Add apparat comment - "The Wall"
+8. Click "Create"
+
+Steps:
+9. Click on "Vocabularies"
+10. Click on "Apparat"
+11. Click on "The Wall" apparat
+12. When system loads edit screen click "Delete"
+
+Expected result:
+System should successfully delete apparat
+
+Test case 5:
+Precondition:
+1. Open http://v3.test.itpmgroup.com/login
+2. Login with existing credentials (Student/909090)
+3. Go to "Словари" page
+4. Go to "Аппарат" page
+5. Click on plus to load create new apparat page
+6. Add apparat number - 111
+7. Add apparat comment - "The Wall"
+8. Click "Create"
+
+Steps:
+9. Click on "Vocabularies"
+10. Click on "Apparat"
+11. Click on "The Wall" apparat
+12. Change "The Wall" to "Twin Peaks" name
+13. Click "Save"
+
+Expected result:
+System should successfully change apparat's name
+
+Post-Condition:
+14. Go to Apparat page
+14.1 Remove "The Wall" apparat
