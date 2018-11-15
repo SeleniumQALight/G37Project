@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class LoginWithoutPageObject {
     WebDriver webDriver;
 
     @Before
@@ -45,7 +45,18 @@ public class Login {
             return false;
         }
     }
+    @Test
+     public void inValidLogin(){
+         webDriver.get("http://v3.test.itpmgroup.com");
+         webDriver.findElement(By.name("_username")).clear();
+         webDriver.findElement(By.name("_username")).sendKeys("Stydent");
+         webDriver.findElement(By.id("password")).clear();
+         webDriver.findElement(By.id("password")).sendKeys("909090");
+         webDriver.findElement(By.tagName("button")).click();
 
+         Assert.assertFalse("You enter not corect login",isAvatarPresent());
+
+     }
     @After
     public void tearDown() {
         webDriver.quit();
