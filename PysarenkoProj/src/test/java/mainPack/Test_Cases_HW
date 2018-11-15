@@ -1,0 +1,209 @@
+/*
+Here is my candidates of automation test cases for shared project (http://v3.test.itpmgroup.com)
+---
+[I]. Logging in as user with proper credentials
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+
+ER: Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.test.itpmgroup.com/login"
+    AND
+    Same login, that was used for step 2 should be displayed on Main Panel bar
+    AND
+    User should see "Glavnaya" Page Title
+
+---
+[II-A]. Adding and updating new "Apparat"
+
+Pre-conditions:
+
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+
+Steps:
+5. Click on "Slovari" in menu to open dropdown;
+6. Click on "Aparat" option from dropdown;
+7. On "Aparat" page click on "+" button;
+8. Fill in "Apparat number" with randomly generated integer (from 1 to 99999999);
+9. Fill in "Apparat Comment" with specific unique String (TestAparat + "Current date (up tp miliseconds)");
+10. Click on "Sozdat'" button -> user is transferred to Apparat page;
+
+
+ER: Created "Aparat" CAN be found on "Apparat page" WHERE
+    "Aparat number" and "Aparat Comment" = added values from steps 8 and 9
+
+Post-conditions:
+1. Find on "Apparat" page created "apparat" (by values from steps 8 and 9) -> click on it;
+2. Click on "Udalit'" button -> user is transferred to "Apparat page";
+3. Check, that "Aparat" with values from steps 2 and 3 is not displayed on Page
+    OR
+    Delete from base directly
+
+[II-B]. Updating new "Apparat"
+
+Pre-conditions:
+
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slovari" in menu to open dropdown;
+6. Click on "Aparat" option from dropdown;
+7. On "Aparat" page click on "+" button;
+8. Fill in "Apparat number" with randomly generated integer (from 1 to 99999999);
+9. Fill in "Apparat Comment" with specific unique String (TestAparat + "Current date (up tp miliseconds)");
+10. Click on "Sozdat'" button -> user is transferred to Apparat page;
+
+Steps:
+1. Find on "Apparat" page created "apparat" (by values from steps 8 and 9) -> click on it;
+2. Update value for field "Apparat number" with unique integer value
+3. Updated value for field "Apparat comment" with randomly generated String (UpdatedTestAparat + "Current date (up tp miliseconds)")
+4. Click on "Sohranit'" button -> user is transferred to Apparat page;
+
+ER: Updated "Aparat" CAN be found on "Apparat page" WHERE
+    "Aparat number" and "Aparat Comment" = values from steps 2 and 3 of MainCase
+
+Post-conditions:
+1. Find on "Apparat" page updated "apparat" (by values from steps 2 and 3) -> click on it;
+2. Click on "Udalit'" button -> user is transferred to "Apparat page";
+3. Check, that "Aparat" with values from steps 2 and 3 is not displayed on Page
+    OR
+    Delete from base directly
+
+----
+[III]. User changes password for his credentials
+
+Pre-conditions:
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+
+Steps:
+1. Click on "Profile" button on Main panel -> Pop-up is shown;
+2. On pop-up, click on "Profil'" button;
+3. Type new string to "Parol'" field (Nubers, registers, special symbols);
+4. Type the same value for "Podtvergdenie parol'a" field;
+5. Click on "Sohranit'";
+6. Click on "Profile" button on Main panel -> Pop-up is shown;
+7. On pop-up, click on "Vyhod" button -> user is transferred to "http://v3.test.itpmgroup.com/login";
+8. In "Email" field type proper Login (same as in step 2 in Pre-conditions);
+9. In "Password" field type updated Password (from field 4);
+10. Click on "Vhod" button;
+
+ER: User logged in successfully with new credentials, which means that:
+    Address should be changed to "http://v3.test.itpmgroup.com" from "http://v3.test.itpmgroup.com/login"
+    AND
+    Same login, that was used for step 2 and 12 should be displayed on Main Panel bar
+    AND
+    User should see "Glavnaya" Page Title
+
+Post-conditions:
+
+1. Click on "Profile" button on Main panel -> Pop-up is shown;
+2. On pop-up, click on "Profil'" button;
+3. Change password back to initial to "Parol'" field;
+4. Type the same value for "Podtvergdenie parol'a" field;
+5. Click on "Sohranit'";
+
+----
+[IV]. Creating new "Ustanovka" record from previously created values as "Sotrudniki" and "Apparat"
+
+Pre-conditions:
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slocari" in menu to open dropdown;
+6. Click on "Aparat" option from dropdown;
+7. On "Aparat" page click on "+" button;
+8. Fill in "Apparat number" with randomly generated integer (from 1 to 99999999);
+9. Fill in "Apparat Comment" with specific unique String (UstAparat + "Current date (up tp miliseconds)")
+10. Click on "Sozdat'" button -> user is transferred to Apparat page;
+11. Click on "Slocari" in menu to open dropdown;
+12. Click on "Sotrudniki" option from dropdown;
+13. On "Sotrudniki" page click on "+" button;
+14. Fill in "Worker surname" specific unique String (Jackson + "Current date (up tp miliseconds)";
+15. Fill in "Worker name" with string "Ivanushka";
+16.Click on "Sozdat'" button -> user is transferred to Sotrudniki page;
+
+Steps:
+1. Click on "Ustanovka" in menu to open dropdown;
+2. On "Ustanovka" page click on "+" button;
+3. Set Current date as "installation date" (every field should be selected from dropdown):
+    a) day = current day;
+    b) month = current month;
+    c) year = current year;
+    d) hours = current hours;
+    e) minutes = current minutes
+4. Click on "Aparat" field -> find and click on created "aparat" from step 10 pre-conditions (name = "Apparat Comment" from step 9);
+5. Click on "Sotrudnik" field -> find and click on created "Sotrudnik" from step step 14 and 15 pre-conditions (fulname = String "Worker name " + String "Worker surname" (from steps 15 and 14))
+6. Click on "Sozdat'" button -> User is transferred to "Ustanovka" page (http://v3.test.itpmgroup.com/dictionary/installation);
+
+ER: User is able to find created record on "Ustanovka" page, WHERE
+    a) date and time = values from step 3 MainCase;
+    b) apparat = "Apparat Comment" from step 10 pre-conditions;
+    c) sotrudnik = String "Worker name " + String "Worker surname" (from steps 15 and 14); // TODO should be updated for middle name also;
+
+Post-conditions:
+1. For "Ustanovka" page, click on record with values from ER -> Click on ""Uadalit'"; //Maybe API?
+2. Find and delete created "Aparat" (by ID from creation); //Maybe API?
+3. Find and delete created "Sotrudnik" (by ID from creation); //Maybe API?
+
+----
+
+[V]. Adding "Deal sides" (Storony zdelok) with flagging check
+
+Pre-conditions:
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slocari" in menu to open dropdown;
+6. Click on "Storony zdelok" option from dropdown;
+7. Click on "+" button;
+8. Fill in "Pro cust name" with specific unique String (NewCust + "Current date (up tp miliseconds)";
+9. Fill in "Pro cust address" with randomly generated string;
+10. Fill in "Pro cust phone" with randomly generated integer;
+11. Click on "Private person" checkbox to enable it;
+12. Click on "Sozdat'" button -> User is transferred to "Storony zdelok" page (http://v3.test.itpmgroup.com/dictionary/providers);
+
+ER: User can find just created record on "Storony zdelok" page WHERE
+    a) name = value of Pro cust name;
+    b) Address = value of Pro cust address;
+    c) phone = value of Pro cust phone;
+    d) "Fiz litso" field contains value;
+
+Post-conditions:
+1. Click on record from ER;
+2. Click on "Udalit'" button;
+3. Check, that "Storony zdelok" page doesn't display record with name = "Pro cust name" from step 8
+
+
+---
+
+[VI]. Checking validation text for field
+1.In X browser, go to link http://v3.test.itpmgroup.com;
+2. In "Email" field type proper Login;
+3. In "Password" field type proper Password;
+4. Click on "Vhod" button;
+5. Click on "Slovari" in menu to open dropdown;
+6. Click on "Sotrudniki" option from dropdown;
+7. On "Sotrudniki" page click on "+" button;
+8. Click on "Sozdat'" button -> user is transferred to Sotrudniki page;
+
+ER: Pop-up with text "Zapovnit ce pole" should appear above "Worker Surname" field should appear
+    AND
+    User should remain on current page (no api call for creating record should be sent)
+
+
+
+
+
+
+
+
+*/
