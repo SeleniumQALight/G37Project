@@ -42,3 +42,5 @@ Pole.Vvoda.Parola=xpath(".//input[@id='userProfileEdit_user_password_password']"
 Pole.Podtvergdenia.Parola=xpath(".//input[@id='userProfileEdit_user_password_password_confirm']")
 Sohranit.Button=xpath(".//button[@class= 'btn btn-info' and @name = 'save']")
 Profil.Vyhod.Button.In.Profile.Dropdown=xpath(".//a[@class= 'btn btn-default btn-flat' and contains(text(),'Выход')]")
+
+#Other
