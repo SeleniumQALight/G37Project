@@ -3,8 +3,19 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage{
+    @FindBy(name = "_username")
+    WebElement inputLogin;
+
+    @FindBy(name = "_password")
+    WebElement inputPassword;
+
+    @FindBy(tagName = "button")
+    WebElement buttonVhod;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -20,34 +31,29 @@ public class LoginPage extends ParentPage{
     }
 
     public void enterLogin(String login) {
-        try{
-            webDriver.findElement(By.name("_username")).clear();
-            webDriver.findElement(By.name("_username")).sendKeys(login);
-            logger.info(login + "was inputed into Input");
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+       actionsWithOurElements.enterTextIntoElement(inputLogin, login);
     }
 
     public void enterPassword(String password) {
-        try{
-            webDriver.findElement(By.name("_password")).clear();
-            webDriver.findElement(By.name("_password")).sendKeys(password);
-            logger.info(password + "was inputed into Input");
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+//        try{
+//            inputPassword.clear();
+//            inputPassword.sendKeys(password);
+//            logger.info(password + "was inputed into Input");
+//        }catch (Exception e){
+//            logger.error("Cannot work with element");
+//            Assert.fail("Cannot work with element");
+//        }
+        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
     }
     public void clickButtonVhod(){
-        try{
-            webDriver.findElement(By.tagName("button")).click();
-            logger.info("Button was clicked");
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+//        try{
+//            buttonVhod.click();
+//            logger.info("Button was clicked");
+//        }catch (Exception e){
+//            logger.error("Cannot work with element");
+//            Assert.fail("Cannot work with element");
+//        }
+        actionsWithOurElements.clickOnElement(buttonVhod);
     }
 
 }
