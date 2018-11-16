@@ -25,7 +25,7 @@ public class LoginNew extends ParentTest {
         Assert.assertTrue("User logged in with invalid credentials",loginPage.isLogoPresent());
     }
     @Test
-    public void studentLogInHW(){
+    public void studentValidLogInHW(){
         loginPage.loginInToApp("Student", "909090");
         Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
     }
