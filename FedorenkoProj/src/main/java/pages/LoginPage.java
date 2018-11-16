@@ -35,6 +35,21 @@ public class LoginPage extends ParentPage {
 
     public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonSubmit);
+    }
+    public void loginInToApp (String login, String password){
+
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
+        }
+    public boolean isLoginFormPresent() {
+        try {
+            return webDriver.findElement(By.name("_username")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 //        try {
 //            buttonSubmit.click();
@@ -43,5 +58,5 @@ public class LoginPage extends ParentPage {
 //            logger.error("Can't find submit button");
 //            Assert.fail("Can't find submit button");
 //        }
-    }
+
 }
