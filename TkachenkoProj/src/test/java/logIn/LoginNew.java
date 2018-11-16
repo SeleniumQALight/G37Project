@@ -2,6 +2,7 @@ package logIn;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pages.LoginPage;
 import parentTest.ParentTest;
 
 public class LoginNew extends ParentTest {
@@ -13,7 +14,24 @@ public class LoginNew extends ParentTest {
         loginPage.clickButtonVhod();
 
         Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
-
     }
+    @Test
+    public void invalidLogin(){
+        loginPage.openLoginPage();
+        loginPage.enterLogin("Student1");
+        loginPage.enterPassword("9090909");
+        loginPage.clickButtonVhod();
 
+        Assert.assertTrue("User logged in with invalid credentials",loginPage.isLogoPresent());
+    }
+    @Test
+    public void studentLogInHW(){
+        loginPage.loginInToApp("Student", "909090");
+        Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
+    }
+    @Test
+    public void studentInvalidLogInHW(){
+        loginPage.loginInToApp("Student1", "9090909");
+        Assert.assertTrue("User logged in with invalid credentials", loginPage.isLogoPresent());
+    }
 }
