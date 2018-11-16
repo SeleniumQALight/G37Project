@@ -33,7 +33,7 @@ public class Login {
 
         webDriver.get("http://v3.test.itpmgroup.com/");
 
-        webDriver.findElement(By.name("_username"));
+        webDriver.findElement(By.name("_username")).clear();
         webDriver.findElement(By.name("_username")).sendKeys("Student");
 
         webDriver.findElement(By.name("_password")).sendKeys("909090");
