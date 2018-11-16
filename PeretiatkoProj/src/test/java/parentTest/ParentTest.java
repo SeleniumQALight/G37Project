@@ -20,10 +20,9 @@ public class ParentTest {
         File file = new File("./src/drivers/chromedriver");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
-//        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
-        homePage = new HomePage(webDriver);
+        homePage  = new HomePage(webDriver);
     }
 
     @After
