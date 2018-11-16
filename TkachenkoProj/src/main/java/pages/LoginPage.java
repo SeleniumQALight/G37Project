@@ -19,6 +19,9 @@ public class LoginPage extends ParentPage{
     @FindBy(tagName = "button")
     WebElement buttonVhod;
 
+    @FindBy(xpath = ".//*[@class='login-logo']")
+    WebElement loginLogo;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -42,12 +45,21 @@ public class LoginPage extends ParentPage{
 
     public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonVhod);
-//        try {
-//            buttonVhod.click();
-//            logger.info("User is successfully logged in");
-//        }catch (Exception e){
-//            logger.error("Can not work with element");
-//            Assert.fail("Can not work with element");
-//        }
+    }
+
+    public void loginInToApp(String login, String passWord){
+        openLoginPage();
+        actionsWithOurElements.enterTextIntoElement(inputLogin, login);
+        actionsWithOurElements.enterTextIntoElement(inputPassword, passWord);
+        actionsWithOurElements.clickOnElement(buttonVhod);
+    }
+
+    public boolean isLogoPresent(){
+        try {
+            return loginLogo.isDisplayed();
+
+        }catch (Exception e){
+            return false;
+        }
     }
 }
