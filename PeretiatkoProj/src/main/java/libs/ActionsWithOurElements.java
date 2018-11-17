@@ -15,14 +15,24 @@ public class ActionsWithOurElements {
 
     }
 
-    public void enterTextIntoElement(WebElement element, String text) {
+    public void openBrowser() {
+        try {
+            webDriver.get("http://v3.test.itpmgroup.com");
+            logger.info("Login page was opened");
+        } catch (Exception e) {
+            logger.error(" Don't work open Login Page");
+            Assert.fail(" Don't work open Login Page");
+        }
+    }
+
+    public void enterTextIntoElement(WebElement element, String textInput) {
         try {
             element.clear();
-            element.sendKeys(text);
-            logger.info(text + "was inputted into element");
+            element.sendKeys(textInput);
+            logger.info(textInput + " Has inputted into element");
         } catch (Exception e) {
-            logger.error("Cannot work with element" + e);
-            Assert.fail("Cannot work with element" + e);
+            logger.error(" Doest'nt work with element" + e);
+            Assert.fail(" Doest'nt work with element" + e);
         }
 
     }
@@ -30,10 +40,10 @@ public class ActionsWithOurElements {
     public void clickOnElement(WebElement element) {
         try {
             element.click();
-            logger.info("Element was ckicked");
+            logger.info("Element was clicked");
         } catch (Exception e) {
-            logger.error("Cannot work with element" + e);
-            Assert.fail("Cannot work with element" + e);
+            logger.error(" Don't click on element" + e);
+            Assert.fail(" Don't click on element" + e);
         }
     }
 }
