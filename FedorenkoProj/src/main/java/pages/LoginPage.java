@@ -44,4 +44,17 @@ public class LoginPage extends ParentPage {
 //            Assert.fail("Can't find submit button");
 //        }
     }
+    public void loginInToApp(String login, String password) {
+            openLoginPage();
+            enterLogin(login);
+            enterPassword(password);
+            clickButtonVhod();
+    }
+    public boolean isLoginInputPresent(){
+        try {
+            return inputLogin.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
