@@ -24,7 +24,6 @@ public class LoginPage extends ParentPage {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
 
-
         }catch (Exception e){
 
             Assert.fail("Cannot open Login Page");
@@ -68,5 +67,16 @@ public class LoginPage extends ParentPage {
 //            logger.error("Cannot work with element");
 //            Assert.fail("Cannot work with element");
 //        }
+    }
+    public void loginInToApp(String login, String password){
+        try {
+            openLoginPage();
+            enterLogin(login);
+            enterPassword(password);
+            clickButtonVhod();
+        }catch (Exception e){
+            logger.error("Cannot work with element");
+            Assert.fail("Cannot work with element");
+        }
     }
 }
