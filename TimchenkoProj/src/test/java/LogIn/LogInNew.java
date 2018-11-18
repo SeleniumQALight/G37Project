@@ -13,15 +13,19 @@ public class LogInNew extends ParentTest {
         logInPage.enterLogin ("Student");
         logInPage.enterPassWord ("909090");
         logInPage.clickButtonEnter();
-        logInPage.clickStudentButton();
-        logInPage.exitButton();
+        //logInPage.clickStudentButton();
+        //logInPage.exitButton();
 
         Assert.assertTrue("Avatar is not present", homePage.isAvatarPresented());
 
 
-
+    }
+    @Test
+    public  void inValidLogIn () {
+        logInPage.loginInToApp("Student","906090");
+        Assert.assertTrue("Attention! User enters with invalid inputs", logInPage.isButtonPresent());
+    }
 
     }
 
 
-}
