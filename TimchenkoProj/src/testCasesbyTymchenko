@@ -1,0 +1,94 @@
+
+Test Case №1
+
+Title: The user can log in using valid inputs
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+3. Fill out the email field with Student;
+4. Fill out the password field with 909090;
+5. Press Вход;
+ Expected Result:
+The user transfer to http://v3.test.itpmgroup.com/ and the title Главная is displayed
+
+Test Case №2
+
+Title: The user can log in using invalid inputs
+ STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 9090;
+4. Press Вход.
+
+Expected Result:
+The password field is empty.
+
+
+Test Case №3
+
+Title: The user can logout
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on Student tab (upper right corner);
+6. Click on Выход button.
+
+Expected Result:
+The user transfers to http://v3.test.itpmgroup.com/login and see the empty login form
+
+ Test Case №4
+
+Title: The left student panel disappears after clicking the button
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on the button with three horizontal stripes on the blue panel;
+ Expected Result:
+The student panel disappears and Главная page is displayed.
+
+
+Test Case №5
+
+Title: The click on Аппарат button opens Список аппаратов
+
+STR:
+1. Open browser FireFox 40.0;
+2. Go to http://v3.test.itpmgroup.com/;
+2. Fill out the email field with Student;
+3. Fill out the password field with 909090;
+4. Press Вход;
+5. Click on Словари tab;
+6. Click on Аппарат radio button.
+
+Expected Result:
+The user transfers to http://v3.test.itpmgroup.com/dictionary/apparat and Список аппаратов is displayed.
+
+
+The list of locators
+
+
+LogInPage:
+
+1. Поле email -  By.name ( "_username") ,  By.xpath ("//input[@name='_username'and @type='text']" , By.className("form-control"),
+   By.xpath(".//*[@class='form-control'])
+2. Поле password - By.name ( "_password") , By.xpath ("//input[@name='_username'and @type='password']"
+3. Кнопка Вход -  By.className("col-xs-4")), By.tagName("button"),  By.xpath(".//*[@class='col-xs-4']",
+   By.xpath("//button[@type='submit']")
+
+   ParentPage:
+
+1. Иконка Student (верхний правый угол) - By.xpath(".//*[@class='user-image']"), By.className("user-image"))
+2. Кнопка Выход -  By.linkText("Выход"), By.xpath(".//*[@class='btn btn-default btn-flat']"),  By.className("btn btn-default btn-flat"))
+3.  Sidebar toggle button - By.className("sidebar-toggle"))
+4. Словари - By.xpath(".//*[@id='dictionary']/a")
+5.  Аппараты - By.xpath(.//*[@id='apparat']/a/i)
