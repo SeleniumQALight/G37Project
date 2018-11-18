@@ -18,10 +18,10 @@ public class ActionsWithOurElements {
         try{
             element.clear();
             element.sendKeys(text);
-            logger.info(text + " was inputted into Inpout");
+            logger.info(text + " was inputted into Input ");
         }catch (Exception e) {
-            logger.error("Cannot work with element" + e);
-            Assert.fail("Cannot work with element" + e);
+            logger.error("Cannot work with element " + e);
+            Assert.fail("Cannot work with element " + e);
         }
 
 
@@ -32,8 +32,20 @@ public class ActionsWithOurElements {
             element.click();
             logger.info("Element was clicked ");
         }catch (Exception e){
-            logger.error("Cannot work with element" + e);
-            Assert.fail("Cannot work with element" + e);
+            logger.error("Cannot work with element " + e);
+            Assert.fail("Cannot work with element " + e);
         }
+    }
+
+    public void cheсkVisibleElement(WebElement element) {
+        try {
+            element.isDisplayed();
+            logger.info("Element was visible ");
+        }catch (Exception e) {
+            logger.error("Invisible element " + e);
+            Assert.fail("Invisible element " + e);
+
+        }
+
     }
 }

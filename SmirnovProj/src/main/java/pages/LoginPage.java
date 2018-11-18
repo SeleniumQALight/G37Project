@@ -16,6 +16,9 @@ public class LoginPage extends ParentPage {
     @FindBy(xpath = ".//button[@type='submit']")
     WebElement buttonVhod;
 
+    @FindBy(xpath = ".//a[@href='http://v3.test.itpmgroup.com/']")
+    WebElement loginLogo;
+
 
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
@@ -61,4 +64,9 @@ public class LoginPage extends ParentPage {
         actionsWithOurElements.clickOnElement(buttonVhod);
 
     }
+    public void chekVisibleLoginPage () {
+        actionsWithOurElements.cheсkVisibleElement(loginLogo);
+    }
+
+
 }
