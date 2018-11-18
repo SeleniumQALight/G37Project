@@ -18,12 +18,22 @@ public class ActionsWithOurElements {
         try{
             element.clear();
             element.sendKeys(text);
-            logger.info(text + " was inputted into Inout");
+            logger.info(text + " was inputted into Inpout");
         }catch (Exception e) {
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
         }
 
 
+    }
+
+    public void clickOnElement(WebElement element) {
+        try{
+            element.click();
+            logger.info("Element was clicked ");
+        }catch (Exception e){
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
     }
 }

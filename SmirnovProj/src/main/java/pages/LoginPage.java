@@ -34,34 +34,31 @@ public class LoginPage extends ParentPage {
 
 
     public void enterLogin(String login) {
-        try{
-            inputLogin.clear();
-            inputLogin.sendKeys(login);
-            logger.info(login + " was inputted into Inout");
-        }catch (Exception e) {
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+        actionsWithOurElements.enterTextInToElement(inputLogin,login);
     }
 
     public void enterPassword (String passWord) {
-        try{
-            inputPassWord.clear();
-            inputPassWord.sendKeys(passWord);
-            logger.info(passWord + " was inputted into Inout");
-        }catch (Exception e) {
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+//        try{
+//            inputPassWord.clear();
+//            inputPassWord.sendKeys(passWord);
+//            logger.info(passWord + " was inputted into Inout");
+//        }catch (Exception e) {
+//            logger.error("Cannot work with element");
+//            Assert.fail("Cannot work with element");
+//        }
+        actionsWithOurElements.enterTextInToElement(inputPassWord,passWord);
+
     }
 
     public void clickButtonVhod () {
-        try {
-            buttonVhod.click();
-            logger.info("Button submit pressed");
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+//        try {
+//            buttonVhod.click();
+//            logger.info("Button submit pressed");
+//        }catch (Exception e){
+//            logger.error("Cannot work with element");
+//            Assert.fail("Cannot work with element");
+//        }
+        actionsWithOurElements.clickOnElement(buttonVhod);
+
     }
 }
