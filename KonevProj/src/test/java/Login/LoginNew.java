@@ -16,7 +16,6 @@ public class LoginNew extends ParentTest {
 
     @Test
     public void invalidLogin() {
-        loginPage.openLoginPage();
         loginPage.loginInToApp("Student", "906090");
         Assert.assertEquals("Account of spare:Авторизация", loginPage.pageTitle());
 
