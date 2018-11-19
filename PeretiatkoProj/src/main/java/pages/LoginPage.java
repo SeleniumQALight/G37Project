@@ -20,7 +20,7 @@ public class LoginPage extends ParentPage {
     }
 
     public void openLoginPage() {
-        actionsWithOurElements.openBrowser();
+        actionsWithOurElements.openLoginPage();
     }
 
     public void enterLogin(String login) {

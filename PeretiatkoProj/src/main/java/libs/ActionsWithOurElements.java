@@ -15,7 +15,7 @@ public class ActionsWithOurElements {
 
     }
 
-    public void openBrowser() {
+    public void openLoginPage() {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
             logger.info("Login page was opened");
