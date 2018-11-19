@@ -62,6 +62,20 @@ public class LoginPage extends ParentPage {
         }
 
     }
+    public void loginInToApp(String login, String password){
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
+
+    }
+    public boolean isAuthorizationFormPresent() {
+        try {
+            return webDriver.findElement(By.xpath(".//p[@class='login-box-msg']")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonVhod);
