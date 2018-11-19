@@ -1,90 +1,111 @@
 test
 
-1) Adding a new employer
+Preconditions:
+1. Make sure that Email field is empty and insert "Student"
+2. Make sure that Password field is empty and insert "909090"
+3. Press "Вход" button
 
-Precondition:
-Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+1) Adding a new employer
 
 
 Steps to reproduce:
-1. From the Menu left choose "Словари", then click "Сотрудники"
-2. In the opening list of registered employers click on "PLUS" sign in the right top corner
-3. Add Worker's name, surname, middle name and phone number
-4. Click "Создать" button
+1. Find and click "Словари", then click "Сотрудники"
+2. Make sure that the list of employers doesn't contain users with the same values that you'd like to add
+3. In the opening list of registered employers click "PLUS" sign in the right top corner
+4. Add Worker's surname, name, middle name and phone number (Like "Jones", "Blake", "Michael", "+1803667776")
+5. Click "Создать" button
 
 
 Expected result:
-
 A new employer is added to the list
+
+
+Post conditions:
+1. Click on the added user, then click "Удалить" button
+2. Make sure the user has been deleted
 
 
 
 
 2) Editing details of counter parties
 
-Precondition:
-Log in by any valid user (E.g.: Student, Pass: 909090)
-
 
 Steps to reproduce:
-1. From the Menu left choose "Словари", then click "Стороны сделок"
+1. Find and click "Словари", then click "Стороны сделок"
 2. Tap on any of counter parties from the opening list
 3. Edit any of Pro cust name, Pro cust address or Pro cust phone
 4. Click "Сохранить" button
+5. Make sure that the entered values have been edited
 
 
 Expected result:
-
 The details of counter parts are successfully edited
+
+Post condition:
+Return those values as they were before editing
+
 
 
 3) Changing user's Email address
 
-Precondition:
-Log in by any valid user (E.g.: Student, Pass: 909090)
-
 
 Steps to reproduce:
-1. Click the user's icon in the right top corner, then click "Профиль"
+1. Click "Student" profile in the right top corner, then click "Профиль"
 2. Make any changes in "Адрес email" field
 3. Click "Сохранить" button
+4. Make sure that the entered values have been edited
 
 
 Expected result:
-
 The Email address is successfully edited and saved
 
+Post condition:
+Return those values as they were before editing
 
-4) Adding a new employer
 
-Precondition:
-Log in by any valid user (E.g.: Student, Pass: 909090)
+
+
+4) Deleting any deal from the list
 
 
 Steps to reproduce:
-1. From the Menu left choose "Сделки"
+1. Find and click "Сделки"
 2. In the opening list tap any deal from the existent list
 3. Click "Удалить" button
+4. Make sure the chosen deal has disappeared from the list
 
 
 Expected result:
-
 The chosen deal is successfully deleted
+
+
+Post condition:
+Add the deleted deal to the list again
+
+
 
 
 5) Editing the service date
 
-Precondition:
-Log in by any valid user (E.g.: Student, Pass: 909090)
-
 
 Steps to reproduce:
-1. From the Menu left choose "Обслуживание"
+1. Find and click "Обслуживание"
 2. Tap on any work from the opening work list
-3. Change the Service date
+3. Change the Service date (Like "From 25 March to 28 March")
 4. Click "Сохранить" button
+5. Make sure the selected date has been changed
 
 
 Expected result:
-
 A newly set date is successfully edited and saved
+
+Post condition:
+Return those values as they were before editing
+
+
+Post Post conditions:
+
+1. Find and click "Student" profile, then click "Выход" button
+2. Clear Email and Password fields
