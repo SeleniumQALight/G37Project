@@ -25,7 +25,7 @@ public class LoginNew extends ParentTest{
         }
         @Test
         public void loginWithGivenCreds (){
-            loginPage.loginInToApp("student", "906090");
+            loginPage.loginInToApp("student", "909090");
 
             Assert.assertTrue("Invalid Credentials entered", homePage.isAvatarPresent());
         }
