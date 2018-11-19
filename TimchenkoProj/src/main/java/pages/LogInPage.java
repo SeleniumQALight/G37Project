@@ -75,11 +75,9 @@ public class LogInPage extends  ParentPage {
     }
         public boolean isButtonPresent() {
             try {
-                return buttonEnter.isDisplayed();
-
-            } catch (Exception e) {
+                return webDriver.findElement(By.tagName("button")).isDisplayed();
+            }catch(Exception e){
                 return false;
-
             }
         }
 
