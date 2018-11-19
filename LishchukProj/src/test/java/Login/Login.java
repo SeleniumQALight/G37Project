@@ -45,33 +45,44 @@ public class Login {
 
     }
 
+    private boolean isAvatarPresent() {
+        try {
+            return webDriver.findElement(By.xpath(".//*[@class='pull-left image']")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
     @Test
     public void invalidLogin() {
         webDriver.get("http://v3.test.itpmgroup.com");
 
         webDriver.findElement(By.name("_username")).clear();
-        webDriver.findElement(By.name("_username")).sendKeys("Student111");
+        webDriver.findElement(By.name("_username")).sendKeys("Student");
         webDriver.findElement(By.id("password")).clear();
         webDriver.findElement(By.id("password")).sendKeys("959595");
 
 
         webDriver.findElement(By.tagName("button")).click();
 
-
+        Assert.assertTrue("Incorrect Password",
+                areValuesValid());
     }
 
-    private  boolean isAvatarPresent() {
+    private boolean areValuesValid() {
         try {
-            return webDriver.findElement(By.xpath(".//*[@class=\'pull-left image\']")).isDisplayed();
-        }
-            catch (Exception e) {
+            return webDriver.findElement(By.id("password")).isDisplayed();
+        } catch (Exception e) {
             return false;
         }
     }
+
 
     @After
     public void tearDown() {
         webDriver.quit();
 
-    }
+        }
+
 }
