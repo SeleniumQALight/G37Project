@@ -22,6 +22,14 @@ public class LoginPage extends Parent_page {
         super(webDriver);
     }
 
+    public boolean isLoginLogoDisplayed() {
+        try {
+            return webDriver.findElement(By.xpath(".//div[@class = 'login-logo']")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public void openLoginPage(){
         try{
             webDriver.get("http://v3.test.itpmgroup.com");
@@ -54,6 +62,12 @@ public class LoginPage extends Parent_page {
 //            Assert.fail("Can't find/Click element");
 //        }
 
+    }
+    public void loginInToApp(String userTypeValue1, String userTypeValue2){
+        openLoginPage();
+        enterLogin(userTypeValue1);
+        enterPassword(userTypeValue2);
+        clickButtonVhod();
     }
 
 
