@@ -15,16 +15,6 @@ public class ActionsWithOurElements {
 
     }
 
-    public void openLoginPage() {
-        try {
-            webDriver.get("http://v3.test.itpmgroup.com");
-            logger.info("Login page was opened");
-        } catch (Exception e) {
-            logger.error(" Don't work open Login Page");
-            Assert.fail(" Don't work open Login Page");
-        }
-    }
-
     public void enterTextIntoElement(WebElement element, String textInput) {
         try {
             element.clear();

@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +20,16 @@ public class LoginPage extends ParentPage {
         super(webDriver);
     }
 
+    static final String URL = "http://v3.test.itpmgroup.com";
+
     public void openLoginPage() {
-        actionsWithOurElements.openLoginPage();
+        try {
+            webDriver.get(URL);
+            logger.info(URL + " Login page was opened");
+        } catch (Exception e) {
+            logger.error(" Don't work open Login Page");
+            Assert.fail(" Don't work open Login Page");
+        }
     }
 
     public void enterLogin(String login) {
