@@ -1,6 +1,6 @@
 package line;
 
-public class Prop {
+public class Prop{
 
     //Set LOGIN Stage
     public static final String URL_SITE         = "http://v3.test.itpmgroup.com";
@@ -18,4 +18,5 @@ public class Prop {
     //Wrong data
     public static final String WRONG_PASSWORD   = "808080";
     public static final String WRONG_LOGIN      = "Dekan";
+
 }
