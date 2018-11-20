@@ -16,15 +16,18 @@ public class LoginPage extends Parent_page {
     @FindBy (tagName = "button")
     WebElement buttonToEnter;
 
+    @FindBy (xpath = ".//div[@class = 'login-logo']")
+    WebElement loginTable;
+
 
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public boolean isLoginLogoDisplayed() {
         try {
-            return webDriver.findElement(By.xpath(".//div[@class = 'login-logo']")).isDisplayed();
+            return actionsWithOurElements.isElementDisplayed(loginTable);
         } catch (Exception e) {
             return false;
         }
@@ -69,6 +72,13 @@ public class LoginPage extends Parent_page {
         enterPassword(userTypeValue2);
         clickButtonVhod();
     }
+
+    public void validLoginIntoApp(){
+        loginInToApp("Student", "909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarDisplayed();
+    }
+
 
 
 }
