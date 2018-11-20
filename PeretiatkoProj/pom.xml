@@ -76,9 +76,6 @@
       <resource>
         <directory>src</directory>
       </resource>
-      <resource>
-        <directory>src/main/java</directory>
-      </resource>
     </resources>
   </build>
 </project>

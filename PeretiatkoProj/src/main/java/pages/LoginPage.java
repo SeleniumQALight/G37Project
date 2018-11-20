@@ -20,10 +20,9 @@ public class LoginPage extends ParentPage {
         super(webDriver);
     }
 
-    static final String URL = "http://v3.test.itpmgroup.com";
-
     public void openLoginPage() {
         try {
+            String URL = "http://v3.test.itpmgroup.com";
             webDriver.get(URL);
             logger.info(URL + " Login page was opened");
         } catch (Exception e) {
