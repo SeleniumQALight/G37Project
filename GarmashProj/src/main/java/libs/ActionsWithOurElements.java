@@ -2,6 +2,7 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -31,6 +32,18 @@ public class ActionsWithOurElements {
         } catch (Exception e) {
             logger.error("Can't work with element");
             Assert.fail("Can't work with element");
+        }
+    }
+
+    public boolean isElementPresent(String xpath) {
+        return isElementPresent(By.xpath(xpath));
+    }
+
+    public boolean isElementPresent(org.openqa.selenium.By by) {
+        try {
+            return webDriver.findElement(by).isDisplayed();
+        } catch (Exception e) {
+            return false;
         }
     }
 }
