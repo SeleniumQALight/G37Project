@@ -10,7 +10,7 @@ import pages.LoginPage;
 /**
  * Created by 123 on 15.11.2018.
  */
-public class ActionWithOurElements  {
+public class ActionWithOurElements {
 
     WebDriver webDriver;
     Logger logger = Logger.getLogger((getClass()));
@@ -19,7 +19,7 @@ public class ActionWithOurElements  {
         this.webDriver = webDriver;
     }
 
-    public void enterTextIntoElement(WebElement element, String text){
+    public void enterTextIntoElement(WebElement element, String text) {
         try
 
         {
@@ -36,7 +36,7 @@ public class ActionWithOurElements  {
         }
     }
 
-    public  void clickOnElement(WebElement element) {
+    public void clickOnElement(WebElement element) {
 
         try
 
@@ -49,10 +49,26 @@ public class ActionWithOurElements  {
 
         {
             logger.error("Password or Username are incorrect");
-            Assert.assertTrue( "Password or Username are incorrect", true );
+            Assert.assertTrue("Password or Username are incorrect", true);
 
         }
 
+
+    }
+
+
+    public boolean isElementDisplayed(WebElement element) {
+        try
+
+        {
+           return element.isEnabled();
+
+        } catch ( Exception e )
+
+        {
+            return false;
+
+        }
 
     }
 }
