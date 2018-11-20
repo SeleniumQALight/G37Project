@@ -56,4 +56,19 @@ public class LoginPage extends ParentPage{
         actionsWithOurElements.clickOnElement(buttonVhod);
     }
 
+    public  void loginInToApp(String login, String password){
+            webDriver.get("http://v3.test.itpmgroup.com");
+            enterLogin(login);
+            enterPassword(password);
+            clickButtonVhod();
+    }
+
+    public boolean isLogoFormDisplayed(){
+        try{
+            return webDriver.findElement(By.xpath(".//*[@class='login-box-body']")).isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }

@@ -41,13 +41,13 @@ public class InvalidLoginWithoutPageObject {
         webDriver.findElement(By.id("password")).sendKeys("123456");
         webDriver.findElement(By.tagName("button")).click();
 
-        Assert.assertTrue("Password and login are not match",
-                isLoginPresent());
+        Assert.assertTrue("Could not find login form",
+                isLoginPagePresent());
         }
 
-    public boolean isLoginPresent(){
+    public boolean isLoginPagePresent(){
         try{
-            return webDriver.findElement(By.xpath(".//*[@href='http://v3.test.itpmgroup.com/']")).isDisplayed();
+            return webDriver.findElement(By.xpath(".//*[@class='login-box-body']")).isDisplayed();
         }catch (Exception e){
             return false;
         }
