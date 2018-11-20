@@ -1,0 +1,65 @@
+Locators
+
+
+Login page:
+
+Login.Email.input=xpath(".//*[@name='Student']")
+Login.Password.input=xpath(".//*[@id='909090']")
+Login.Button=xpath(".//button[@type='Вход']")
+
+
+Employers page:
+
+Employers.Button=xpath(".//button[@type='Словари']")
+Employers.DropList=xpath(".//select//option[value='Сотрудники']")
+Employers.Add.button=xpath(".//button[@type='Add']")
+Employers.WorkerSurname.input=xpath(".//*[@name='Jones']")
+Employers.WorkerName.input=xpath("//*[@name='Blake']")
+Employers.WorkerMiddleName.input=xpath("//*[@name='Michael']")
+Employers.WorkerPhone.input=xpath("//*[@id='+1803667776']")
+Employers.Button=xpath(".//button[@type='Создать']")
+Employers.DropList=xpath(".//select//option[value='Сотрудники']")
+Employers.Delete.button=xpath(".//button[@type='Удалить']")
+
+
+Counter Parts page:
+
+CounterParts.Button=xpath(".//button[@type='Словари']")
+CounterParts.DropList=xpath(".//select//option[value='Стороны сделок']")
+CounterParts.List=xpath(".//*[text()='New Customer For Test1']")
+CounterParts.ProCustName.input=xpath(".//*[@name='Old Customer For Test1']")
+CounterParts.Save.button=xpath(".//button[@type='Сохранить']")
+
+
+Profile page:
+
+Profile.Name=xpath(".//*[@name='Student']")
+Profile.Button=xpath(".//*[@name='Профиль']")
+Profile.EmailAddress.edit=xpath(".//*[@name='info123@qalight.com']")
+Profile.Save.button=xpath(".//button[@type='Сохранить']")
+Profile.EmailAddress.edit=xpath(".//*[@name='i1nfo@qalight.com']")
+Profile.Save.button=xpath(".//button[@type='Сохранить']")
+
+
+Deals page:
+
+Deals.Button=xpath(".//button[@type='Сделки']")
+Deals.List=xpath(".//*[text()='Test Deal 1']")
+Deals.Delete.button=xpath(".//button[@type='Удалить']")
+
+
+Service page:
+
+Service.Button=xpath(".//button[@type='Обслуживание']")
+Service.List=xpath(".//*[text()='Test Service Vol']")
+Service.ServiceDate.input=xpath(".//*[@id='28 March 2018 10 00']")
+Service.Save.button=xpath(".//button[type='Сохранить']")
+
+
+Logout page:
+
+Logout.Name=xpath(".//*[@name='Student']")
+Logout.Button=xpath(".//button[@type='Выход']")
+Logout.Email.clear=xpath(".//*[@name='']")
+Logout.Password.clear=xpath(".//*[@id='']")
+
