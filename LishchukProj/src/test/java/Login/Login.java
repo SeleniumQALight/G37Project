@@ -1,5 +1,6 @@
 package Login;
 
+import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,8 +14,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Login {
     WebDriver webDriver;
+
     @Before
-    public void setup () {
+    public void setup() {
         File file = new File("./src/drivers/chromedriver");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
@@ -42,6 +44,22 @@ public class Login {
                 isAvatarPresent());
 
     }
+
+    @Test
+    public void invalidLogin() {
+        webDriver.get("http://v3.test.itpmgroup.com");
+
+        webDriver.findElement(By.name("_username")).clear();
+        webDriver.findElement(By.name("_username")).sendKeys("Student111");
+        webDriver.findElement(By.id("password")).clear();
+        webDriver.findElement(By.id("password")).sendKeys("959595");
+
+
+        webDriver.findElement(By.tagName("button")).click();
+
+
+    }
+
     private  boolean isAvatarPresent() {
         try {
             return webDriver.findElement(By.xpath(".//*[@class=\'pull-left image\']")).isDisplayed();

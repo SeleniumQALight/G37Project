@@ -1,55 +1,44 @@
 package pages;
 
+import libs.ActionsWithOurElements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends ParentPage{
+public class LoginPage extends ParentPage {
+    @FindBy(name = "_username")     //Объявляем элемент (вместо    webDriver.findElement(By.name("_password")))
+            WebElement inputLogin;          // Называем элемент
+    @FindBy(name = "_password")
+    WebElement inputPassword;
+    @FindBy(tagName = "button")
+    WebElement buttonVhod;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    public void openLoginPage(){
-        try{
+    public void openLoginPage() {
+        try {
             webDriver.get("http://v3.test.itpmgroup.com");
             logger.info("Login Page was opened");
-        } catch (Exception e){
+        } catch (Exception e) {
             logger.error("Can not open Login page");
             Assert.fail("Can not open Login page");
         }
     }
 
+
     public void enterLogin(String login) {
-        try{
-            webDriver.findElement(By.name("_username")).clear();
-            webDriver.findElement(By.name("_username")).sendKeys(login);
-            logger.info(login + "was inputted into Input");
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+        actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
 
     public void enterPass(String passWord) {
-        try{
-            webDriver.findElement(By.name("_password")).clear();
-            webDriver.findElement(By.name("_password")).sendKeys(passWord);
-            logger.info(passWord + "was inputted into Input");
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+        actionsWithOurElements.enterTextInToElement(inputPassword, passWord);
     }
 
-
     public void clickButtonVhod() {
-        try{
-            webDriver.findElement(By.tagName("button")).click();
-            logger.info("Button Vhod was successfully pushed");
-        }catch (Exception e){
-            logger.error("Cannot click button");
-            Assert.fail("Cannot click button");
-        }
-
+        actionsWithOurElements.clickOnElement(buttonVhod);
     }
 }
