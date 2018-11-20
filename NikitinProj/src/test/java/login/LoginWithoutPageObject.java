@@ -11,7 +11,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Login {
+public class LoginWithoutPageObject {
     WebDriver webDriver;
 
     @Before
