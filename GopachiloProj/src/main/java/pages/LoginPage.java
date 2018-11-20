@@ -17,15 +17,19 @@ public class LoginPage extends ParentPage {
 
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver,"/login");
     }
+
     public void openLoginPage(){
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
+
+
             logger.info("Login page was opened");
         }catch (Exception e){
-            Assert.fail("Can not open login page");
-            logger.error("Can not open login page ");
+            logger.error("Can not open login page " + e);
+
+            Assert.fail("Can not open login page" + e);
         }
     }
 
@@ -64,5 +68,14 @@ public class LoginPage extends ParentPage {
         enterPassword(password);
         clickButtonVhod();
 
+    }
+    public  boolean isButtonVhodDisplayed(){
+        return  actionWithOurElements.isElemetDisplayed(buttonVhod);
+    }
+
+    public void validLoginInTOApp(){
+        loginInToApp("Student","909090");
+        HomePage homePage=new HomePage(webDriver);
+        homePage.isAvatarDisplayed();
     }
 }

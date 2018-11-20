@@ -37,4 +37,13 @@ public class ActionWithOurElements {
 
 
     }
+    public boolean isElemetDisplayed(WebElement element){
+        try {
+            return element.isDisplayed();
+
+
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
