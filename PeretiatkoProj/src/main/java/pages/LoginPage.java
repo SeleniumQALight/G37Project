@@ -14,57 +14,40 @@ public class LoginPage extends ParentPage {
     WebElement inputPassword;
 
     @FindBy(tagName = "button")
-    WebElement buttonVhod;
+    WebElement buttonEnter;
 
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
 
     public void openLoginPage() {
-
         try {
-            webDriver.get("http://v3.test.itpmgroup.com");
-            logger.info("Login page open");
+            String URL = "http://v3.test.itpmgroup.com";
+            webDriver.get(URL);
+            logger.info(URL + " Login page was opened");
         } catch (Exception e) {
-            logger.error("Can not Login Page");
-            Assert.fail("Can not Login Page");
+            logger.error(" Don't work open Login Page");
+            Assert.fail(" Don't work open Login Page");
         }
+    }
+
+    public void loginInToApp(String login, String password) {
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonEnter();
     }
 
     public void enterLogin(String login) {
         actionsWithOurElements.enterTextIntoElement(inputLogin, login);
-//        try {
-//            inputLogin.clear();
-//            inputLogin.sendKeys(login);
-//            logger.info(login + " was inputted into element");
-//        } catch (Exception e) {
-//            logger.error("Cannot work with element");
-//            Assert.fail("Cannot work with element");
-//        }
     }
 
     public void enterPassword(String passWord) {
         actionsWithOurElements.enterTextIntoElement(inputPassword, passWord);
-//        try {
-//            inputPassword.clear();
-//            inputPassword.sendKeys(passWord);
-//            logger.info(passWord + " Inputted into element");
-//        } catch (Exception e) {
-//            logger.error("Cannot work with element");
-//            Assert.fail("Cannot work with element");
-//        }
     }
 
-    public void clickButtonVhod() {
-        actionsWithOurElements.clickOnElement(buttonVhod);
-//        try {
-//            buttonVhod.click();
-//            logger.info("Clicked button");
-//        } catch (Exception e) {
-//            logger.error("Doest not work");
-//            Assert.fail("Doest not work");
-//        }
-//    }
+    public void clickButtonEnter() {
+        actionsWithOurElements.clickOnElement(buttonEnter);
     }
 }
 

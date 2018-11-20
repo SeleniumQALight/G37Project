@@ -5,13 +5,16 @@ import org.junit.Test;
 import parentTest.ParentTest;
 
 public class LoginNew extends ParentTest {
+
     @Test
     public void validLogin() {
-        loginPage.openLoginPage();
-        loginPage.enterLogin("Student");
-        loginPage.enterPassword("909090");
-        loginPage.clickButtonVhod();
-        Assert.assertTrue("Avatar is n ot present", homePage.isAvatarPresent());
+        loginPage.loginInToApp("Student", "909090");
+        Assert.assertTrue("Avatar has not appeared", homePage.isAvatarPresent());
+    }
 
+    @Test
+    public void inValidLogin(){
+        loginPage.loginInToApp("student", "906090");
+        Assert.assertFalse("Avatar should be not present", homePage.isAvatarPresent());
     }
 }
