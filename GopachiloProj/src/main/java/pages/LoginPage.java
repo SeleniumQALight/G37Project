@@ -57,4 +57,12 @@ public class LoginPage extends ParentPage {
         actionWithOurElements.clickOnElement(buttonVhod);
 
     }
+
+    public void loginInToApp(String login, String password) {
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
+
+    }
 }
