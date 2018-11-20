@@ -36,4 +36,13 @@ public class ActionsWithOurElements {
             Assert.fail(" Don't click on element" + e);
         }
     }
+
+    public boolean isElementDispayed(WebElement element){
+        try {
+            return element.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }
