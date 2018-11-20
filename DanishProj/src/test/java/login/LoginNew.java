@@ -14,4 +14,11 @@ public class LoginNew extends ParentTest {
         Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
     }
 
+    @Test
+    public void notValidLogin(){
+        loginPage.loginInToApp("Student", "906090");
+
+     Assert.assertTrue("Avatar is not present" , loginPage.isAuthorizationFormPresent());
+    }
+
 }

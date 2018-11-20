@@ -32,26 +32,34 @@ public class LogInPage extends ParentPage {
     }
 
     public void enterLogin(String login) {
+
         actionsWithOurElements.enterTextToElement(inputLogin,login);
     }
 
 
-    public void enterPassword(String password) {
+    public void enterPassword(String password)
+    {
         actionsWithOurElements.enterTextToElement(inputPassword, password);
     }
 
     public void clickButtonVhod() {
-//        try{
-//            buttonVhod.click();
-//            logger.info("Authorization passed correctly and user was navigated to Homepage");
-//        }catch(Exception e){
-//            logger.info("Cannot work with current element");
-//            Assert.fail("Test cannot be continued");
-//
-//        }
         actionsWithOurElements.clickOnElement(buttonVhod);
+    }
 
+    public boolean isButtonPresent(){
+        try{
+            return webDriver.findElement(By.tagName("button")).isDisplayed();
 
+        }catch(Exception e){
+            return false;
+        }
+    }
+    // homework 17.11.2018 "схлопнуть логін"
+    public void loginInToApp(String logIn, String paSSword){
+        openLogInPage();
+        enterLogin(logIn);
+        enterPassword(paSSword);
+        clickButtonVhod();
 
     }
 }

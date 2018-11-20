@@ -11,9 +11,9 @@ public class ActionsWithOurElements {
 
 
     public ActionsWithOurElements(WebDriver webDriver) {
+
         this.webDriver = webDriver;
     }
-
     public void enterTextToElement(WebElement webElement, String text){
         try{
             webElement.clear();
@@ -31,8 +31,8 @@ public class ActionsWithOurElements {
             element.click();
             logger.info("Element was clicked");
         }catch(Exception e){
-            logger.error("Cannot work with element" + e);
-            Assert.fail("Cannot work with element" + e);
+            logger.error("Cannot work with element " + e);
+            Assert.fail("Cannot work with element " + e);
         }
 
     }

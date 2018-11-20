@@ -1,10 +1,19 @@
 package pages;
 
+import libs.ActionsWithElements;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage{
+    @FindBy(name = "_username")
+    WebElement inputLogin;
+    @FindBy(name = "_password")
+    WebElement inputPassWord;
+    @FindBy(tagName = "button")
+    WebElement buttonVhod;
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -21,24 +30,17 @@ public class LoginPage extends ParentPage{
     }
 
     public void enterLogin(String login) {
-        try{
-            webDriver.findElement(By.name("_username")).clear();
-            webDriver.findElement(By.name("_username")).sendKeys(login);
-            logger.info(login + " was inputted into Input");
-        }
-        catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+        actionsWithElements.enterTextIntoElement(inputLogin, login);
     }
 
     public void enterPassword(String passWord) {
+        actionsWithElements.enterTextIntoElement(inputPassWord, passWord);
+    }
+
+    public void clickButtonVhod() {
         try{
-            webDriver.findElement(By.name("_password")).clear();
-            webDriver.findElement(By.name("_password")).sendKeys(passWord);
-            logger.info(passWord + " was inputted into Input");
-        }
-        catch (Exception e){
+            buttonVhod.click();
+        }catch (Exception e){
             logger.error("Cannot work with element");
             Assert.fail("Cannot work with element");
         }
