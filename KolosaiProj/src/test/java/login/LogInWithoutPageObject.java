@@ -11,13 +11,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class LogInWithoutPageObject {
     WebDriver webDriver;
 
     @Before
     public void setUp(){
         File file = new File("./src/drivers/chromedriver");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+
         webDriver = new ChromeDriver();
 //      webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
