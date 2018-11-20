@@ -17,4 +17,14 @@ abstract public class ParentPage {
         PageFactory.initElements(webDriver,this); // Инициализирует все элементы, задекларированные через @FindBy в дочерних страничках
         actionsWithOurElements = new ActionsWithOurElements(webDriver);
     }
+
+    public String pageTitle(){
+        try {
+            logger.info("Page Title obtained");
+            return webDriver.getTitle();
+        }catch (Exception e){
+            logger.error("Page title couldn't be obtained "+e);
+            return "fakeTitle";
+        }
+    }
 }
