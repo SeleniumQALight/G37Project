@@ -35,4 +35,12 @@ public class ActionsWithOurElements {
             Assert.fail("Cannot work with element" + e);
         }
     }
+
+    public boolean isElementDisplayed(WebElement element){
+        try {
+            return element.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
