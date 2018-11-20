@@ -2,6 +2,7 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -33,5 +34,20 @@ public class ActionsWithOurElements {
             Assert.fail("Cannot work with element" + e);
         }
 
+    }
+    public boolean isAuthorizationFormPresent() {
+        try {
+            return webDriver.findElement(By.xpath(".//p[@class='login-box-msg']")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    public boolean isElementDisplayed (WebElement element){
+        try {
+            return element.isDisplayed();
+
+        }catch (Exception e){
+            return false;
+        }
     }
 }
