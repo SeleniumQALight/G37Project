@@ -18,5 +18,4 @@ public class Prop {
     //Wrong data
     public static final String WRONG_PASSWORD   = "808080";
     public static final String WRONG_LOGIN      = "Dekan";
-
 }

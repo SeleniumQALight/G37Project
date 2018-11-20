@@ -1,10 +1,18 @@
 package pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage {
+    @FindBy(name = "_username")
+    WebElement inputLogin;
+    @FindBy(name = "_password")
+    WebElement inputPassword;
+    @FindBy(xpath = ".//button[@type='submit']")
+    WebElement buttonVhod;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -20,34 +28,14 @@ public class LoginPage extends ParentPage {
     }
 
     public void enterLogin(String login) {
-        try {
-            webDriver.findElement(By.name("_username")).clear();
-            webDriver.findElement(By.name("_username")).sendKeys(login);
-            logger.info(login + " was inputted into Input");
-        } catch (Exception e) {
-            logger.error("Can't work with element");
-            Assert.fail("Can't work with element");
-        }
+        actionsWithOurElements.enterTextIntoElement(inputLogin, login);
     }
 
     public void enterPassword(String password) {
-        try {
-            webDriver.findElement(By.name("_password")).clear();
-            webDriver.findElement(By.name("_password")).sendKeys(password);
-            logger.info(password + " was inputted into Input");
-        } catch (Exception e) {
-            logger.error("Can't work with element");
-            Assert.fail("Can't work with element");
-        }
+        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
     }
 
     public void clickButtonVhod() {
-        try {
-            webDriver.findElement(By.xpath(".//button[@type='submit']")).click();
-            logger.info("User logged successfully");
-        } catch (Exception e) {
-            logger.error("Can't work with element");
-            Assert.fail("Can't work with element");
-        }
+        actionsWithOurElements.clickOnElement(buttonVhod);
     }
 }

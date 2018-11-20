@@ -3,10 +3,31 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends Parent_page {
+    @FindBy(name = "_username")
+    WebElement inputLogin;
+
+    @FindBy(name = "_password")
+    WebElement inputPassword;
+
+    @FindBy (tagName = "button")
+    WebElement buttonToEnter;
+
+
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    public boolean isLoginLogoDisplayed() {
+        try {
+            return webDriver.findElement(By.xpath(".//div[@class = 'login-logo']")).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void openLoginPage(){
@@ -22,39 +43,31 @@ public class LoginPage extends Parent_page {
 
 
     public void enterLogin(String login) {
-        try{
-            webDriver.findElement(By.name("_username")).clear();
-            webDriver.findElement(By.name("_username")).sendKeys(login);
-            logger.info(login + "was input in element login");
-        } catch (Exception e){
-            logger.error("Can't work with login element");
-            Assert.fail("Can't work with login element");
-        }
+       actionsWithOurElements.enterTextIntoElement(inputLogin,login);
 
     }
 
     public void enterPassword(String password) {
-        try{
-            webDriver.findElement(By.name("_password")).clear();
-            webDriver.findElement(By.name("_password")).sendKeys(password);
-            logger.info(password + "was input in element password");
-
-        } catch (Exception e){
-            logger.error("Can't work with password element");
-            Assert.fail("Can't work with password element");
-        }
+        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
 
     }
 
     public void clickButtonVhod(){
-        try {
-            webDriver.findElement(By.tagName("button")).click();
-            logger.info( "Button was input in element password");
-        } catch(Exception e) {
-            logger.error("Can't click on Element");
-            Assert.fail("Can't find/Click element");
-        }
+        actionsWithOurElements.clickOnElement(buttonToEnter);
+//        try {
+//            buttonToEnter.click();
+//            logger.info( "Button was input in element password");
+//        } catch(Exception e) {
+//            logger.error("Can't click on Element");
+//            Assert.fail("Can't find/Click element");
+//        }
 
+    }
+    public void loginInToApp(String userTypeValue1, String userTypeValue2){
+        openLoginPage();
+        enterLogin(userTypeValue1);
+        enterPassword(userTypeValue2);
+        clickButtonVhod();
     }
 
 
