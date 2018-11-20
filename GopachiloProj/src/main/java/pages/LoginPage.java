@@ -46,13 +46,23 @@ public class LoginPage extends ParentPage {
     }
 
     public void clickButtonVhod() {
-        try {
-            buttonVhod.click();
-            logger.info("Was click botton Vhod");
+//        try {
+//            buttonVhod.click();
+//            logger.info("Was click botton Vhod");
+//
+//        }catch (Exception e){
+//            logger.error("Cannot work with element");
+//            Assert.fail("Cannot work with element");
+//        }
+        actionWithOurElements.clickOnElement(buttonVhod);
 
-        }catch (Exception e){
-            logger.error("Cannot work with element");
-            Assert.fail("Cannot work with element");
-        }
+    }
+
+    public void loginInToApp(String login, String password) {
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
+
     }
 }
