@@ -8,19 +8,15 @@ public class LoginNew extends ParentTest {
 
     @Test
     public void validLogin(){
-        loginPage.openLoginPage("http://v3.test.itpmgroup.com/login");
-        loginPage.enterLogin("Student");
-        loginPage.enterPassword("909090");
-        loginPage.clickButtonVhod();
+        loginPage.loginIntoApp("Student","909090");
 
-        Assert.assertTrue("Avatar is present", homePage.isAvatarPresent());
+        Assert.assertTrue("Avatar is present", homePage.isAvatarDisplayed());
 
     }
 
     @Test
     public void invalidLogin(){
-        loginPage.openLoginPage("http://v3.test.itpmgroup.com/login");
         loginPage.loginIntoApp("someinvalidtetx","909090");
-        Assert.assertFalse("Can't login with provided credentials", homePage.isAvatarPresent());
+        Assert.assertFalse("Can't login with provided credentials", homePage.isAvatarDisplayed());
     }
 }
