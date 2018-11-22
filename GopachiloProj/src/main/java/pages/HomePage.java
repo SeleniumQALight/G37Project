@@ -11,7 +11,8 @@ public class HomePage extends ParentPage {
     WebElement avatar;
     @FindBy (xpath = " .//*[@id='dictionary']/a")
     private WebElement menuDictionary;
-    @FindBy(xpath = "*[@id='spares]")
+
+    @FindBy(xpath = " .//*[@id='spares']")
     private WebElement subMenuSpare;
 
 
