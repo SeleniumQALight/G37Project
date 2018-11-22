@@ -1,7 +1,9 @@
 package parentTest;
 
+import Pages.EditSparePage;
 import Pages.HomePage;
 import Pages.LoginPage;
+import Pages.SparePage;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,8 @@ public class ParentTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected SparePage sparePage;
+    protected EditSparePage editSparePage;
     @Before
     public void setUp(){
         File file = new File("./src/drivers/chromedriver.exe");
@@ -23,6 +27,8 @@ public class ParentTest {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
+        sparePage = new SparePage(webDriver);
+        editSparePage = new EditSparePage(webDriver);
     }
 
     @After
