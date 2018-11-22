@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.EditSparePage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SparePage;
@@ -16,6 +17,7 @@ public class ParentTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected SparePage sparePage;
+    protected EditSparePage editSparePage;
 
     @Before
     public void setUp(){
@@ -28,6 +30,8 @@ public class ParentTest {
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         sparePage = new SparePage(driver);
+        editSparePage= new EditSparePage(driver);
+
 
     }
     @After
