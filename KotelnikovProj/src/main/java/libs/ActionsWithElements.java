@@ -24,4 +24,22 @@ public class ActionsWithElements {
             Assert.fail("Cannot work with element" + e);
         }
     }
+
+    public void clickOnElement(WebElement element) {
+        try{
+            element.click();
+            logger.info("Element was clicked");
+        }catch (Exception e){
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
+    }
+
+    public boolean isElementDisplayed(WebElement element){
+        try {
+            return element.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
