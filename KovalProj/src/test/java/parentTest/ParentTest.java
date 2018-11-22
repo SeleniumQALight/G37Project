@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.SparesEditPage;
 import pages.SparesPage;
 
 import java.io.File;
@@ -16,6 +17,7 @@ public class ParentTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected SparesPage sparesPage;
+    protected SparesEditPage sparesEditPage;
     @Before
     public void setUp() {
         File file = new File("./src/drivers/chromedriver.exe");
@@ -27,6 +29,7 @@ public class ParentTest {
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
         sparesPage = new SparesPage(webDriver);
+        sparesEditPage = new SparesEditPage(webDriver);
     }
 
     @After

@@ -13,7 +13,7 @@ public class HomePage extends ParentPage{
     private WebElement menuDictionary;
 
     @FindBy(id = "spares")
-    private WebElement subMenuSpare;
+    public WebElement subMenuSpare;
 
 
     public HomePage(WebDriver webDriver) {
