@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionsWithElements {
     WebDriver webDriver;
@@ -40,6 +41,17 @@ public class ActionsWithElements {
             return element.isDisplayed();
         }catch (Exception e){
             return false;
+        }
+    }
+
+    public void selectTextInDropDown(WebElement element, String text) {
+        try {
+            Select select = new Select(element);
+            select.selectByVisibleText(text);
+            logger.info(text + " was selected in dropdown");
+        }catch (Exception e){
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
         }
     }
 }
