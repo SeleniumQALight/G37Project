@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
@@ -40,6 +41,18 @@ public class ActionsWithOurElements {
             return element.isEnabled() && element.isDisplayed();
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    public void selectTextInDD(WebElement element, String text) {
+        try {
+            Select select = new Select(element);
+            select.selectByVisibleText(text);
+            logger.info("Text was selected in DD");
+
+        }catch (Exception e) {
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
         }
     }
 }
