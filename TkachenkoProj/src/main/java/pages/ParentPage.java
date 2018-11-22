@@ -18,7 +18,6 @@ abstract public class ParentPage {
         this.driver = driver;
         PageFactory.initElements(driver,this);
         actionsWithOurElements = new ActionsWithOurElements(driver);
-        logger = Logger.getLogger(getClass());
         this.expectedUrl = baseUrl+relativeUrl;
     }
 
