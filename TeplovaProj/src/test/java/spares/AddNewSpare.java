@@ -9,6 +9,9 @@ import parentTeest.ParentTest;
  */
 public class AddNewSpare extends ParentTest{
 
+    String spareName = "TeplovaSpare";
+
+
     @Test
 
     public void addNewSpares(){
@@ -17,6 +20,13 @@ public class AddNewSpare extends ParentTest{
         homePage.clickOnMenuSpare();
         homePage.subMenuSpare();
         sparePage.CheckUrl();
+        sparePage.checkAndDeleteSpare(spareName);
+        sparePage.clickOnButton();
+        editSparePage.enterSpareNameInToInput(spareName);
+        editSparePage.selectSpareTypeInDD("Meckanika");
+        editSparePage.clickButtonCreate();
+
+
 
 
 
