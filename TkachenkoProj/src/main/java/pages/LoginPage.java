@@ -11,19 +11,19 @@ import java.util.concurrent.ExecutionException;
 
 public class LoginPage extends ParentPage{
     @FindBy(name = "_username")
-    WebElement inputLogin;
+    private WebElement inputLogin;
 
     @FindBy(name = "_password")
-    WebElement inputPassword;
+    private WebElement inputPassword;
 
     @FindBy(tagName = "button")
-    WebElement buttonVhod;
+    private WebElement buttonVhod;
 
     @FindBy(xpath = ".//*[@class='login-logo']")
-    WebElement loginLogo;
+    private WebElement loginLogo;
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLoginPage(){
@@ -49,9 +49,14 @@ public class LoginPage extends ParentPage{
 
     public void loginInToApp(String login, String passWord){
         openLoginPage();
-        actionsWithOurElements.enterTextIntoElement(inputLogin, login);
-        actionsWithOurElements.enterTextIntoElement(inputPassword, passWord);
-        actionsWithOurElements.clickOnElement(buttonVhod);
+        enterLogin(login);
+        enterPassword(passWord);
+        clickButtonVhod();
+    }
+    public void validLoginInToApp(){
+        loginInToApp("Student","909090");
+        HomePage homePage = new HomePage(driver);
+        homePage.isAvatarDisplayed();
     }
 
     public boolean isLogoPresent(){
@@ -61,5 +66,8 @@ public class LoginPage extends ParentPage{
         }catch (Exception e){
             return false;
         }
+    }
+    public boolean isButtonVhodDisplayed(){
+       return actionsWithOurElements.isElementDisplayed(buttonVhod);
     }
 }

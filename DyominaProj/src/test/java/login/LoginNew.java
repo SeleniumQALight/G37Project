@@ -12,6 +12,6 @@ public class LoginNew extends ParentTest {
         loginPage.enterPassword("909090");
         loginPage.clickButtonVhod();
 
-        Assert.assertTrue("Avetar is not present", homePage.isAvatarPresent());
+        Assert.assertTrue("Avetar is not present", homePage.isAvatarDisplayed());
     }
 }

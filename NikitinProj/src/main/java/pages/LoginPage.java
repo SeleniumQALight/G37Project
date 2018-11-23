@@ -1,8 +1,6 @@
 package pages;
 
-import libs.ActionsWithOurElements;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,16 +20,10 @@ public class LoginPage extends ParentPage {
 
     public LoginPage(WebDriver webDriver) {
 
-        super(webDriver);
+        super(webDriver,"/login");
     }
 
-    public void loginIntoApp(String login, String password){
-        actionsWithOurElements.enterTextIntoElement(inputLogin,login);
-        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
-        actionsWithOurElements.clickOnElement(buttonVhod);
-    }
-
-    public void openLoginPage(String text){
+    public void openLoginPage(){
         try {
             webDriver.get("http://v3.test.itpmgroup.com/login");
             logger.info("Login page was opened");
@@ -41,10 +33,14 @@ public class LoginPage extends ParentPage {
             Assert.fail("Can't open login page");
         }
     }
-//
-//    public void openLoginPage(String address){
-//        actionsWithOurElements.
-//    }
+
+    public void loginIntoApp(String login, String password){
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
+    }
+
 
     public void enterLogin(String login) {
         actionsWithOurElements.enterTextIntoElement(inputLogin, login);
@@ -57,4 +53,18 @@ public class LoginPage extends ParentPage {
     public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonVhod);
     }
+
+    public boolean isButtonVhodDisplayed() {
+        return actionsWithOurElements.isAvatarDisplayed(buttonVhod); // to fix method name, or even method itself
+    }
+
+
+
+    public void validLoginIntoApp(){
+        loginIntoApp("Student", "909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarDisplayed();
+    }
+
+
 }
