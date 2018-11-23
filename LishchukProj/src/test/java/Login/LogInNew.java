@@ -1,6 +1,5 @@
 package Login;
 
-import com.sun.xml.internal.ws.policy.AssertionSet;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
@@ -14,7 +13,15 @@ public class LogInNew extends ParentTest {
         loginPage.clickButtonVhod();
 
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
+        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
 
+    }
+    public void invalidLogin() {
+        loginPage.openLoginPage();
+        loginPage.enterLogin("Student");
+        loginPage.enterPassword("959595");
+        loginPage.clickButtonVhod();
+
+       // Assert.assertTrue("Password is incorrect", homePage.isPassWordCorrect());
     }
 }
