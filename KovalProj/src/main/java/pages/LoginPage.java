@@ -1,8 +1,6 @@
 package pages;
 
-import libs.ActionsWithOurElements;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,9 +12,11 @@ public class LoginPage extends ParentPage {
     WebElement inputPassword;
     @FindBy(tagName = "button")
     WebElement buttonVhod;
+    @FindBy(xpath = ".//*[@class='login-box-msg']")
+    WebElement autorizationSection;
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLoginPage() {
@@ -40,5 +40,20 @@ public class LoginPage extends ParentPage {
 
     public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonVhod);
+    }
+
+    public boolean isAutorizationSectionDisplayed() {return actionsWithOurElements.isElementDisplayed(autorizationSection);}
+
+    public void loginInToApp (String login, String passWord){
+        openLoginPage();
+        enterLogin(login);
+        enterPass(passWord);
+        clickButtonVhod();
+    }
+
+    public void validLoginInToApp(){
+        loginInToApp("Student", "909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarDisplayed();
     }
 }
