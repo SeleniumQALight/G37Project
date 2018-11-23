@@ -14,6 +14,8 @@ public class ActionsWithOurElements {
         this.webDriver = webDriver;
     }
 
+
+
     public void enterTextIntoElement(WebElement element, String text){
         try {
             element.clear();
@@ -33,5 +35,16 @@ public class ActionsWithOurElements {
             logger.error("can't work with element " + e);
             Assert.fail("can't work with element " + e);
         }
+
+
+    }
+
+    public boolean isAvatarDisplayed(WebElement element){
+        try {
+            return element.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+
     }
 }
