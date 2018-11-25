@@ -2,6 +2,7 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -53,7 +54,26 @@ public class ActionsWithOurElements {
             logger.error("Can not work with element");
             Assert.fail("Can not work with element");
         }
-
-
     }
+    public void workWithDD(WebElement element, String text) {
+        try {
+            element.click();
+            driver.findElement(By.tagName(text));
+            element.clear();
+            logger.info(text + " was found in dropdown");
+        } catch (Exception e) {
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+    }
+    public void selectValueFromDD(WebElement valueFromDD){
+        try{
+            valueFromDD.click();
+            logger.info(valueFromDD+ " was selected from dropdown");
+        }catch (Exception e){
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+    }
+
 }

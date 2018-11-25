@@ -9,6 +9,8 @@ public class EditSparePage extends ParentPage {
     private WebElement spareNameInput;
     @FindBy (id = "spares_spareType")
     private WebElement spareTypeDropdown;
+    @FindBy (xpath = ".//*[@id='spares_spareType']//option[@value='1']")
+    private WebElement valueFromDD;
     @FindBy (name = "delete")
     private WebElement buttonDelete;
     @FindBy(name = "add")
