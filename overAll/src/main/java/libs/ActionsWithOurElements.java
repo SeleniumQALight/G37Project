@@ -2,6 +2,7 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -33,6 +34,14 @@ public class ActionsWithOurElements {
         }catch (Exception e){
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
+        }
+    }
+
+    public boolean isElementDisplayed(By by){
+        try{
+            return isElementDisplayed(webDriver.findElement(by));
+        }catch (Exception e){
+            return false;
         }
     }
 
