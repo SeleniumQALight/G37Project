@@ -16,9 +16,9 @@ public class AddNewSpare extends ParentTest {
       sparePage.checkUrl();
       sparePage.checkAndDeleteSpare(spareName);
       sparePage.clickOnAddButton();
-//      editSparePage.enterSpareNameInTOInput(spareName);
-//      editSparePage.selectSpareTypeInDD("Механика1");
-//      editSparePage.clickButtonCreate();
+      editSparePage.enterSpareNameInTOInput(spareName);
+      editSparePage.selectSpareTypeInDD("Механика1");
+      editSparePage.clickButtonCreate();
 
 
 
