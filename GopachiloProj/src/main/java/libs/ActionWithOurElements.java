@@ -10,6 +10,7 @@ public class ActionWithOurElements {
     WebDriver webDriver;
     Logger logger=Logger.getLogger(getClass());
 
+
     public ActionWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
@@ -60,5 +61,21 @@ public class ActionWithOurElements {
         }
 
 
+    }
+    /**
+     * Method for work with drop down.
+     * Finding necessary using SelectValue
+     * @param webElement
+     * @param value
+     */
+    public void selectValueInDD(WebElement webElement,String value){
+        try{
+            Select select=new Select(webElement);
+            select.selectByValue(value);
+
+        }catch (Exception e){
+            logger.error("Cannot work with element " +e);
+            Assert.fail("Cannot work with element " +e);
+        }
     }
 }
