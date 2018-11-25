@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionWithOurElements {
     WebDriver webDriver;
@@ -34,6 +35,29 @@ public class ActionWithOurElements {
             Assert.fail("Cannot work with element " +e);
         }
 
+
+
+    }
+    public boolean isElemetDisplayed(WebElement element){
+        try {
+            return element.isDisplayed();
+
+
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public void selectTextInDD(WebElement element, String Text) {
+        try {
+            //Select open DD
+            Select select=new Select(element);
+            select.selectByVisibleText(Text);
+            logger.info(Text+" was select in DD");
+        }catch (Exception e){
+            logger.error("Cannot work with element " +e);
+            Assert.fail("Cannot work with element " +e);
+        }
 
 
     }

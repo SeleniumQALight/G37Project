@@ -5,12 +5,13 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import pages.LoginPage;
 
 /**
  * Created by 123 on 15.11.2018.
  */
-public class ActionWithOurElements  {
+public class ActionWithOurElements {
 
     WebDriver webDriver;
     Logger logger = Logger.getLogger((getClass()));
@@ -19,7 +20,7 @@ public class ActionWithOurElements  {
         this.webDriver = webDriver;
     }
 
-    public void enterTextIntoElement(WebElement element, String text){
+    public void enterTextIntoElement(WebElement element, String text) {
         try
 
         {
@@ -36,7 +37,7 @@ public class ActionWithOurElements  {
         }
     }
 
-    public  void clickOnElement(WebElement element) {
+    public void clickOnElement(WebElement element) {
 
         try
 
@@ -49,10 +50,42 @@ public class ActionWithOurElements  {
 
         {
             logger.error("Password or Username are incorrect");
-            Assert.assertTrue( "Password or Username are incorrect", true );
+            Assert.assertTrue("Password or Username are incorrect", true);
 
         }
 
 
     }
+
+
+    public boolean isElementDisplayed(WebElement element) {
+        try
+
+        {
+            return element.isEnabled();
+
+        } catch ( Exception e )
+
+        {
+            return false;
+
+        }
+
+    }
+
+    public void selectTextInDD(WebElement element, String text) {
+        try {
+            Select select = new Select(element); // work with drop-down menu
+            select.selectByVisibleText(text);// choose selected item
+            logger.info(text + "was selected in DD");
+
+        } catch (
+                Exception e ) {
+            logger.error("Can't enter element" + e);
+            Assert.fail("Can't enter element" + e);
+
+        }
+
+    }
+
 }

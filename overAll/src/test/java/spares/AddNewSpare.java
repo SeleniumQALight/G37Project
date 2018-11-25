@@ -4,6 +4,7 @@ import org.junit.Test;
 import parentTest.ParentTest;
 
 public class AddNewSpare extends ParentTest{
+    String spareName = "radulenkoSpare";
     @Test
     public void addNewSpare(){
         loginPage.validLoginInToApp();
@@ -11,6 +12,12 @@ public class AddNewSpare extends ParentTest{
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpare();
         sparePage.checkUrl();
+        sparePage.checkAndDeleteSpare(spareName);
+        sparePage.clickOnAddButton();
+        editSparePage.enterSpareNameInToInput(spareName);
+        editSparePage.selectSpareTypeInDD("Механика1");
+        editSparePage.clickButtonCreate();
+
 
 
     }

@@ -14,7 +14,7 @@ public class Login_New_PO extends Parent_Test {
 //        loginPage.clickButtonVhod();
         loginPage.loginInToApp("Student","909090");
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
+        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
 
     }
 

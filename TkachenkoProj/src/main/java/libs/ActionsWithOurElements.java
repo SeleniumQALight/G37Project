@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.nio.channels.SelectableChannel;
 
 public class ActionsWithOurElements {
     WebDriver driver;
@@ -32,5 +35,25 @@ public class ActionsWithOurElements {
             logger.error("Can not work with element");
            Assert.fail("Can not work with element");
         }
+    }
+    public boolean isElementDisplayed(WebElement element) {
+        try {
+            return element.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public void selectTextInDD(WebElement element, String text) {
+        try{
+            Select select = new Select(element);
+            select.selectByVisibleText(text);
+            logger.info(text + " was selected in dropdown");
+        }catch (Exception e){
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+
+
     }
 }
