@@ -21,8 +21,7 @@ public class ActionWithOurElements {
             element.sendKeys(text);
             logger.info(text+ " was inputted into Input");
         }catch (Exception e){
-            logger.error("Cannot work with element " +e);
-            Assert.fail("Cannot work with element " +e);
+            printErrorAndStopTest(e);
         }
     }
 
@@ -30,10 +29,11 @@ public class ActionWithOurElements {
     public void clickOnElement(WebElement element) {
         try {
             element.click();
-            logger.info("Element was clicked");
+            logger.info("Element was clicked" +element);
         }catch (Exception e){
-            logger.error("Cannot work with element " +e);
-            Assert.fail("Cannot work with element " +e);
+//            logger.error("Cannot work with element " +e);
+//            Assert.fail("Cannot work with element " +e);
+            printErrorAndStopTest(e);
         }
 
 
@@ -56,8 +56,9 @@ public class ActionWithOurElements {
             select.selectByVisibleText(Text);
             logger.info(Text+" was select in DD");
         }catch (Exception e){
-            logger.error("Cannot work with element " +e);
-            Assert.fail("Cannot work with element " +e);
+//            logger.error("Cannot work with element " +e);
+//            Assert.fail("Cannot work with element " +e);
+            printErrorAndStopTest(e);
         }
 
 
@@ -74,8 +75,58 @@ public class ActionWithOurElements {
             select.selectByValue(value);
 
         }catch (Exception e){
-            logger.error("Cannot work with element " +e);
-            Assert.fail("Cannot work with element " +e);
+//            logger.error("Cannot work with element " +e);
+//            Assert.fail("Cannot work with element " +e);
+            printErrorAndStopTest(e);
         }
+    }
+
+    /**
+     * Method which imitation work drop down from user position
+     * @param webElement
+     * @param text
+     * @param optionText
+     */
+    public void imitationUserWorkWithDD(WebElement webElement, String text, WebElement optionText){
+        try{
+           webElement.click();
+           logger.info("element was found "+webElement+" and click ");
+           findTextInDD(optionText,text);
+           logger.info(text+"Element was selected from DD List ");
+           clickOnElement(webElement);
+
+        }
+        catch (Exception e){
+            printErrorAndStopTest(e);
+        }
+
+
+    }
+
+    private void findTextInDD(WebElement webElement,String text) {
+        try{
+            if (webElement.getText().equals(text)){
+                webElement.click();
+                logger.info("");
+            }
+        }
+        catch (Exception e){printErrorAndStopTest(e);}
+    }
+
+    private boolean findWebElement(WebElement webElement) {
+       try {
+            logger.info("block findWebElement ");
+           Assert.assertTrue(webElement.isDisplayed());
+         return true;
+       }
+       catch (Exception e){
+           printErrorAndStopTest(e);
+    }return false;
+
+    }
+
+    public void printErrorAndStopTest(Exception exception){
+        logger.error("Cannot work with element  " +exception);
+        Assert.fail("Cannot work with element  " +exception);
     }
 }
