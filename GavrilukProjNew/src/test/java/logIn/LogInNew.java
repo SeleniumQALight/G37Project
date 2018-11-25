@@ -2,7 +2,7 @@ package logIn;
 
 import org.junit.Assert;
 import org.junit.Test;
-import parenTest.ParentTest;
+import parentTest.ParentTest;
 
 public class LogInNew extends ParentTest{
     @Test
