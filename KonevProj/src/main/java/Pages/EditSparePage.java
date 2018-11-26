@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class EditSparePage extends ParentPage {
 
-    @FindBy(id = "spare_spareName")
+    @FindBy(id = "spares_spareName")
     private WebElement spareNameInput;
 
     @FindBy(id = "spares_spareType")
@@ -41,5 +41,13 @@ public class EditSparePage extends ParentPage {
 
     public void selectSpareTypeInDD(String spareType) {
         actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
+
+    }
+    public void manualSelectSpareTypeInDD(String spareType){
+        actionsWithOurElements.manualSelectTextInDD(spareTypeDD,"//select[@id='spares_spareType']//option[text()='"+spareType+"']");
+    }
+
+    public void selectSpareTypeInDDbyValue(String value){
+        actionsWithOurElements.selectValueInDD(spareTypeDD,value);
     }
 }

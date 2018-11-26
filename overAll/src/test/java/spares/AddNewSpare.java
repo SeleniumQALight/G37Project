@@ -1,7 +1,7 @@
 package spares;
 
 import org.junit.Test;
-import parenTest.ParentTest;
+import parentTest.ParentTest;
 
 public class AddNewSpare extends ParentTest{
     String spareName = "radulenkoSpare";
@@ -16,7 +16,7 @@ public class AddNewSpare extends ParentTest{
         sparePage.clickOnAddButton();
         editSparePage.enterSpareNameInToInput(spareName);
         editSparePage.selectSpareTypeInDD("Механика1");
-        editSparePage.clickButtonCreate();
+        editSparePage.clickButtonCreate();//
 
 
 
