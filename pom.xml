@@ -90,5 +90,6 @@
     <module>FedorenkoProj</module>
     <module>HorishkoProj</module>
     <module>ZhukovaProj</module>
+      <module>GavrilukProjNew</module>
   </modules>
 </project>

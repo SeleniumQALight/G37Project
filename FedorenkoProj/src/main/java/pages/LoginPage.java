@@ -7,12 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends ParentPage {
-    @FindBy(name = "_username") WebElement inputLogin;
-    @FindBy(id = "password")    WebElement inputPassword;
-    @FindBy(tagName = "button") WebElement buttonSubmit;
+    @FindBy(name = "_username")
+    WebElement inputLogin;
+    @FindBy(id = "password")
+    WebElement inputPassword;
+    @FindBy(tagName = "button")
+    WebElement buttonSubmit;
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLoginPage() {
@@ -44,17 +47,27 @@ public class LoginPage extends ParentPage {
 //            Assert.fail("Can't find submit button");
 //        }
     }
+
     public void loginInToApp(String login, String password) {
-            openLoginPage();
-            enterLogin(login);
-            enterPassword(password);
-            clickButtonVhod();
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
     }
-    public boolean isLoginInputPresent(){
-        try {
-            return inputLogin.isDisplayed();
-        }catch (Exception e){
-            return false;
-        }
+
+    public void validLoginInToApp() {
+        loginInToApp("Student", "909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarPresent();
+    }
+
+
+    public boolean isLoginInputPresent() {
+        return actionsWithOurElements.isElementPresent(inputLogin);
+//        try {
+//            return inputLogin.isDisplayed();
+//        }catch (Exception e){
+//            return false;
+//        }
     }
 }
