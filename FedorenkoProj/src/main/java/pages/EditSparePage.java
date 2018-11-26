@@ -38,4 +38,12 @@ public class EditSparePage extends ParentPage {
     public void clickButtonCreate() {
         actionsWithOurElements.clickOnElement(buttonCreate);
     }
+
+    public void ownSelectSpareTypeInDD(String spareType) {
+        actionsWithOurElements.findElementInDDByTextAndClickOnIt(spareTypeDD,spareType);
+    }
+
+    public void ownSelectSpareTypeInDDByValue(String spareType) {
+        actionsWithOurElements.findElementInDDByValueAndClickOnIt(spareTypeDD,spareType);
+    }
 }
