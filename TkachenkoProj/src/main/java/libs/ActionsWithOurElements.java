@@ -55,10 +55,10 @@ public class ActionsWithOurElements {
             Assert.fail("Can not work with element");
         }
     }
-    public void workWithDD(WebElement element, String text) {
+    public void workWithDD(WebElement element, String text, WebElement optionValue) {
         try {
             element.click();
-            driver.findElement(By.tagName(text));
+            selectTextInDD(optionValue, text);
             element.clear();
             logger.info(text + " was found in dropdown");
         } catch (Exception e) {
