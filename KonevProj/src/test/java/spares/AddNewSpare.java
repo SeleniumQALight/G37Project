@@ -17,7 +17,14 @@ public class AddNewSpare extends ParentTest {
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpare();
         sparePage.checkUrl();
-        sparePage.checkAndDeleteSpare(spareName);
+//        for (int i = 0; i <3; i++) {
+//            sparePage.clickOnAddButton();
+//            editSparePage.enterSpareNameInToInput(spareName);
+//            editSparePage.manualSelectSpareTypeInDD("Механика1");
+//            editSparePage.clickButtonCreate();
+//        }
+      sparePage.checkAndDeleteSpare(spareName);
+       // sparePage.deletingSpareUntilPresent(spareName);
         sparePage.clickOnAddButton();
         editSparePage.enterSpareNameInToInput(spareName);
         //editSparePage.selectSpareTypeInDD("Механика1");
@@ -30,7 +37,8 @@ public class AddNewSpare extends ParentTest {
 
     @After
     public void spareDelete() {
-        sparePage.checkAndDeleteSpare(spareName);
+       //sparePage.deletingSpareUntilPresent(spareName);
+       sparePage.checkAndDeleteSpare(spareName);
     }
 
 }
