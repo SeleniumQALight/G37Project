@@ -65,8 +65,9 @@ public class ActionsWithOurElements {
             Assert.fail("Can not work with element");
         }
     }
-    public void selectValueFromDD(WebElement valueFromDD){
+    public void selectValueFromDD(WebElement element, WebElement valueFromDD){
         try{
+            element.click();
             valueFromDD.click();
             logger.info(valueFromDD+ " was selected from dropdown");
         }catch (Exception e){
