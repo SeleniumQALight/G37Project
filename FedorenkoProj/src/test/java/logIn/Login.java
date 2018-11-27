@@ -82,3 +82,7 @@ public class Login {
     }
 
 }
+
+// 1. WebDriverWait
+// 2. implicitlyWait(5, TimeUnit.SECONDS);
+// 3. Thread.sleep(5000);
