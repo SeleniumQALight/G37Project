@@ -59,7 +59,6 @@ public class ActionsWithOurElements {
         try {
             element.click();
             selectTextInDD(optionValue, text);
-            element.clear();
             logger.info(text + " was found in dropdown");
         } catch (Exception e) {
             logger.error("Can not work with element");
