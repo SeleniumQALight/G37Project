@@ -55,5 +55,28 @@ public class ActionsWithOurElements {
             Assert.fail("Cannot work with element" + e);
         }
     }
+
+    public void findElementInDDByTextAndClickOnIt(WebElement element, String text) {
+        try{
+        clickOnElement(element);
+        String xpathWithText = "//*[text() = '"+text+"']";
+        element.findElement(By.xpath(xpathWithText)).click();
+            logger.info("Text was selected in DD");
+        }catch (Exception e){
+            logger.error("Cannot find element by text:"+ text + e);
+            Assert.fail("Cannot find element by text:"+ text + e);
+        }
+    }
+    public void findElementInDDByValueAndClickOnIt (WebElement element, String value) {
+        try{
+            clickOnElement(element);
+            String xpathWithValue = "//option[@value = '"+value+"']";
+            element.findElement(By.xpath(xpathWithValue)).click();
+            logger.info("Element was selected in DD by value");
+        }catch (Exception e){
+            logger.error("Cannot find element by value:"+ value + e);
+            Assert.fail("Cannot find element by value:"+ value + e);
+        }
+    }
 }
 

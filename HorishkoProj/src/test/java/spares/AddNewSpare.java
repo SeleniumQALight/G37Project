@@ -16,6 +16,7 @@ public class AddNewSpare extends ParentTest {
         sparePage.clickOnAddButton();
         editSparePage.enterSpareNameInToInpuy(spareName);
         editSparePage.selectSpareTypeInDD("Механика1");
+        editSparePage.selectSpareTypeInDDByValue("40");
         editSparePage.clickButtonCreate();
 
     }
