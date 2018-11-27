@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class EditSparePages extends ParentPage {
-    @FindBy(id = "space_spareName")
+    @FindBy(id = "spares_spareName")
     private WebElement spareNameInput;
 
-    @FindBy (id = "space_spareType")
+    @FindBy (id = "spares_spareType")
     private WebElement spareTypeDD;
 
     @FindBy (name = "delete")
@@ -23,7 +23,7 @@ public class EditSparePages extends ParentPage {
     }
 
     public boolean checkSpareNameInput (String spareName) {
-        return spareNameInput.getText().equals(spareName);
+        return spareNameInput.getAttribute("value").equals(spareName);
     }
 
     public void clickButtonDelete() {
