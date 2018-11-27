@@ -45,13 +45,24 @@ public class ActionsWithOurElements {
         }
     }
 
-// абота с дропдаун
+// работа с дропдаун
     public void selectTextInDD(WebElement element, String text) {
 
         try{
             Select select =new Select(element);
             select.selectByVisibleText(text);
             logger.info(text + " was selected in DD");
+        }catch  (Exception e) {
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
+    }
+    public void selectValueInDD(WebElement element, String value) {
+
+        try{
+            Select select =new Select(element);
+            select.selectByValue(value);
+            logger.info(value + " was selected in DD");
         }catch  (Exception e) {
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
