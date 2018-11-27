@@ -20,9 +20,11 @@ public class EditSparePage extends ParentPage {
     public EditSparePage (WebDriver webDriver){
         super(webDriver, "/dictionary/spares/edit");
     }
+
     public boolean checkSpareNameInInput(String spareName){
         return spareNameInput.getText().equals(spareName);
     }
+
     public void clickButtonDelete(){
         actionsWithOurElements.clickOnElement(buttonDelete);
     }
@@ -36,6 +38,14 @@ public class EditSparePage extends ParentPage {
     }
 
     public void selectSpareTypeInDD(String spareType) {
-        actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
+        actionsWithOurElements.selectByText(spareTypeDD, spareType);
+//        actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
     }
+
+    public void selectSpareTypeInDDByValue(String spareTypeValue) {
+        actionsWithOurElements.selectByValue(spareTypeDD, spareTypeValue);
+//        actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
+    }
+
+
 }

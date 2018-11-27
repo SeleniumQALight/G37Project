@@ -1,4 +1,3 @@
-
 package pages;
 
 import org.openqa.selenium.WebDriver;
@@ -6,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class EditSparePage extends ParentPage {
-
-
     @FindBy(id = "spares_spareName")
     private WebElement spareNameInput;
 
@@ -20,57 +17,46 @@ public class EditSparePage extends ParentPage {
     @FindBy(name = "add")
     private WebElement buttonCreate;
 
+    @FindBy(xpath = "//option[@value='1']")
+    private WebElement spareTypeDDByValue;
 
-    @FindBy(xpath = ".//*[@value='1']")
-    private WebElement value1;
-
-    @FindBy(xpath = ".//*[(text()= 'Механика1')]")
-    private WebElement SpareTypeMehanika1;
-
+    //xpath for the механика1 spare type from the DD
+    @FindBy(xpath = "//option[text()='Механика1']")
+    private WebElement spareTypeDDByText;
 
     public EditSparePage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
 
-    public boolean checkSpareNameInInput(String spareName) {
+    public boolean checkSpareNameInInput(String spareName){
         return spareNameInput.getText().equals(spareName);
-
     }
 
-    public void clickButtonDeleteOnEditPage() {
-
+    public void clickButtonDelete(){
         actionsWithOurElements.clickOnElement(buttonDelete);
     }
 
-    public void enterSpareNameInToInput(String spareName) {
-
+    public void enterSpareNameIntoInput(String spareName) {
         actionsWithOurElements.enterTextIntoElement(spareNameInput, spareName);
     }
 
-    public void selectSpareTypeInDD(String spareType) {
-        actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
-    }
-
-
-    public void clickOnButtonCreate() {
+    public void clickButtonCreate() {
         actionsWithOurElements.clickOnElement(buttonCreate);
     }
 
+//    public void selectSpareTypeInDD(String spareType) {
+//        actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
+//    }
 
-    public void setSpareTypeDDByName(WebElement element, WebElement elementDD) {
-
+    //this method uses text of the item from DD
+    public void selectSpareTypeInDDByText(String spareType){
         actionsWithOurElements.clickOnElement(spareTypeDD);
-        actionsWithOurElements.clickOnElement(SpareTypeMehanika1);
-
+        actionsWithOurElements.clickOnElement(spareTypeDDByText);
     }
 
-    public void setSpareTypeDDByValue(WebElement element, WebElement valueDD) {
-
+    //this method uses value of the item from DD
+    public void selectSpareTypeInDDByValue(String spareType){
         actionsWithOurElements.clickOnElement(spareTypeDD);
-        actionsWithOurElements.clickOnElement(value1);
-
-
+        actionsWithOurElements.clickOnElement((spareTypeDDByValue));
     }
 }
-
-
