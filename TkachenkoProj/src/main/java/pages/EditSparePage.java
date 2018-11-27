@@ -20,7 +20,7 @@ public class EditSparePage extends ParentPage {
         super(driver, "/dictionary/spares/edit");
     }
     public boolean checkSpareNameInInput(String spareName){
-        return spareNameInput.getText().equals(spareName);
+        return spareNameInput.getAttribute("value").equals(spareName);
     }
     public void clickOnButtonDelete(){
         actionsWithOurElements.clickOnElement(buttonDelete);

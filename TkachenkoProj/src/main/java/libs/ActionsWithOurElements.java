@@ -5,16 +5,19 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-import java.nio.channels.SelectableChannel;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsWithOurElements {
     WebDriver driver;
     Logger logger = Logger.getLogger(getClass());
+    WebDriverWait wait5, wait10;
 
     public ActionsWithOurElements(WebDriver driver) {
         this.driver = driver;
+        wait5 = new WebDriverWait(driver,5);
+        wait10 = new WebDriverWait(driver, 10);
     }
 
     public void enterTextIntoElement (WebElement element, String text){
@@ -30,6 +33,7 @@ public class ActionsWithOurElements {
 
     public void clickOnElement(WebElement element) {
         try {
+            wait5.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
             logger.info("Element was clicked");
         }catch (Exception e){
@@ -58,22 +62,30 @@ public class ActionsWithOurElements {
     public void workWithDD(WebElement element, String text, WebElement optionValue) {
         try {
             element.click();
-            selectTextInDD(optionValue, text);
+            selectValueFromDD(optionValue, text);
             logger.info(text + " was found in dropdown");
         } catch (Exception e) {
             logger.error("Can not work with element");
             Assert.fail("Can not work with element");
         }
     }
-    public void selectValueFromDD(WebElement element, WebElement valueFromDD){
-        try{
-            element.click();
-            valueFromDD.click();
-            logger.info(valueFromDD+ " was selected from dropdown");
-        }catch (Exception e){
+
+    public void selectValueFromDD(WebElement element, String optionValue) {
+        try {
+            Select select = new Select(element);
+            select.selectByValue(optionValue);
+            logger.info(optionValue + " was selected in dropdown");
+        } catch (Exception e) {
             logger.error("Can not work with element");
             Assert.fail("Can not work with element");
         }
     }
 
+    public boolean isElementDisplayed(By by) {
+        try{
+            return isElementDisplayed(driver.findElement(by));
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
