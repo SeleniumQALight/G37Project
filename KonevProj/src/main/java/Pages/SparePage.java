@@ -8,11 +8,11 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class SparePage extends ParentPage{
+public class SparePage extends ParentPage {
 
     @FindBy(xpath = ".//table//tr//td[1]") //находит все элементы по этому икспасу и записывает в список
-    List<WebElement> listOfRows;
-    @FindBy(xpath= "//*[@class='fa fa-plus']")
+            List<WebElement> listOfRows;
+    @FindBy(xpath = "//*[@class='fa fa-plus']")
     private WebElement buttonAdd;
 
     public SparePage(WebDriver webDriver) {
@@ -35,18 +35,29 @@ public class SparePage extends ParentPage{
 //            }
 //        }
 //    }
-        if (listOfRows.size()>0){
-            for (int i = 0; i < listOfRows.size(); i++) {
+        for (int i = 0; i < listOfRows.size(); i++) {
             if (listOfRows.get(i).getText().equals(spareName)) {
-               actionsWithOurElements.clickOnElement(listOfRows.get(i));
-                Assert.assertFalse("Diff Spare", editSparePage.checkSpareNameInInput(spareName));
+                actionsWithOurElements.clickOnElement(listOfRows.get(i));
+                Assert.assertTrue("Diff Spare", editSparePage.checkSpareNameInInput(spareName));
                 editSparePage.clickButtonDelete();
-               i--;
+                i--;
             }
         }
+
     }
 
-}
+
+    public boolean isSpareInList(String spareName) {
+        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text()=" + spareName + "']"));
+    }
+
+    private void clickOnSpare(String spareName) {
+        actionsWithOurElements.clickOnElement((getSpareWithName(spareName)));
+    }
+
+    private WebElement getSpareWithName(String spareName) {
+        return webDriver.findElement(By.xpath(".//*[text()='" + spareName + "']"));
+    }
 
     public void clickOnAddButton() {
         actionsWithOurElements.clickOnElement(buttonAdd);
