@@ -68,4 +68,28 @@ public class ActionsWithOurElements {
             Assert.fail("Cannot work with element" + e);
         }
     }
+    public void selectCheckBox(WebElement element){
+       try {
+           if (!element.isSelected()) {
+               clickOnElement(element);
+               logger.info(element+ "  was selected in check-box");
+           }
+       }catch (Exception e){
+           logger.error("Cannot work with element" + e);
+           Assert.fail("Cannot work with element" + e);
+       }
+    }
+    public void deSelectCheckBox(WebElement element){
+        try {
+            if (element.isSelected()) {
+                clickOnElement(element);
+                logger.info(element+ "  was deselected in check-box");
+            }
+        }catch (Exception e){
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
+    }
+
+
 }
