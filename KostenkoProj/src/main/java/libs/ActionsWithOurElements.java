@@ -69,7 +69,38 @@ public class ActionsWithOurElements { // это метод, здесь объя�
             return false;
         }
     }
+
+    /**
+     * Set needed state
+     * @param element
+     * @param state (Only !!! check and uncheck)
+     */
+    public void setNeededStateToCheckbox(WebElement element,String state){
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean unCheckState = state.toLowerCase().equals("uncheck");
+        if (checkState || unCheckState){
+            if(element.isSelected() && checkState){
+                logger.info("Checkbox is already checked!");
+            }
+            else if (element.isSelected() && unCheckState){
+                clickOnElement(element);
+            }
+            else if (!element.isSelected() && checkState){
+                clickOnElement(element);
+            }
+            else if(!element.isSelected() && unCheckState){
+                logger.info("Checkbox is already Unchecked!");
+            }
+        }
+        else {
+            logger.error("State should be 'check' or 'uncheck' only");
+            Assert.fail("State should be 'check' or 'uncheck' only");
+        }
+    }
 }
+
+
+
 
 // ДЗ (22.11.18)
 // 1-найти дропдайн - кликнуть на него - найти текст - кликнуть.
