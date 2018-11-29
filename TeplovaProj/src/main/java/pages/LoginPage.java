@@ -23,7 +23,7 @@ public class LoginPage extends ParentPage {
 
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLoginPage() {
@@ -100,4 +100,7 @@ public class LoginPage extends ParentPage {
 //
 //        }
     }
+
+
+
 }

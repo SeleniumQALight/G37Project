@@ -17,7 +17,7 @@ public class LoginPage extends ParentPage {
     WebElement buttonVhod;
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLoginPage(){
@@ -78,5 +78,13 @@ public class LoginPage extends ParentPage {
             logger.error("Cannot work with element");
             Assert.fail("Cannot work with element");
         }
+    }
+    public boolean isButtonVhodDisplayed(){
+        return actionsWithOurElements.isElementDisplayed(buttonVhod);
+    }
+    public void validLoginInToApp(){
+        loginInToApp("Student","909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarDisplayed();
     }
 }

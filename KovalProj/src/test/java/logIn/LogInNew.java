@@ -12,6 +12,16 @@ public class LogInNew extends ParentTest {
         loginPage.enterPass("909090");
         loginPage.clickButtonVhod();
 
-        Assert.assertTrue("Avatar isn't present", homePage.isAvatarPresent());
+        Assert.assertTrue("Avatar isn't present", homePage.isAvatarDisplayed());
+    }
+
+    @Test
+    public void inValidLogIn() {
+        loginPage.openLoginPage();
+        loginPage.enterLogin("Studen");
+        loginPage.enterPass("909090");
+        loginPage.clickButtonVhod();
+
+        Assert.assertTrue("Login page isn't displayed", loginPage.isAutorizationSectionDisplayed());
     }
 }

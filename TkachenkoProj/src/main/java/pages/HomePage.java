@@ -8,17 +8,27 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends ParentPage{
     @FindBy(xpath = ".//*[@class='pull-left image']")
-    WebElement avatarLogo;
+    private WebElement avatarLogo;
+    @FindBy(xpath = ".//*[@id='dictionary']/a")
+    private WebElement menuDictionary;
+    @FindBy(xpath = ".//*[@id='spares']/a")
+    private WebElement subMenuSpare;
+
 
 
     public HomePage(WebDriver driver) {
-        super(driver);
+        super(driver, "/");
     }
-    public boolean isAvatarPresent(){
-        try {
-            return avatarLogo.isDisplayed();
-        }catch (Exception e){
-            return false;
-        }
+    public boolean isAvatarDisplayed(){
+       return actionsWithOurElements.isElementDisplayed(avatarLogo);
     }
+
+    public void clickOnMenuDictionary() {
+        actionsWithOurElements.clickOnElement(menuDictionary);
+    }
+
+    public void clickOnSubMenuSpare() {
+        actionsWithOurElements.clickOnElement(subMenuSpare);
+    }
+
 }

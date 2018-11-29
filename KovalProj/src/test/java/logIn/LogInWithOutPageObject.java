@@ -66,7 +66,7 @@ public class LogInWithOutPageObject {
         webDriver.findElement(By.tagName("button")).click();
 
         Assert.assertTrue("Login page isn't displayed", isLogInPageDisplayed());
-//        Assert.assertFalse("Login page isn't displayed", isAvatarPresent());
+//        Assert.assertFalse("Login page isn't displayed", isAvatarDisplayed());
     }
 
     private boolean isLogInPageDisplayed() {

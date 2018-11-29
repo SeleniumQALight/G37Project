@@ -15,13 +15,30 @@ abstract public class ParentPage {
     WebDriver webDriver;
     Logger logger = Logger.getLogger((getClass()));
     ActionWithOurElements actionWithOurElements;
+    String baseUrl = "http://v3.test.itpmgroup.com ";
+    String expectedUrl;
 
 
-    public ParentPage(WebDriver webDriver) {
+    public ParentPage(WebDriver webDriver, String relativeUrl) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
         actionWithOurElements = new ActionWithOurElements(webDriver);
+        logger = Logger.getLogger(getClass());
+        this.expectedUrl = baseUrl + relativeUrl;
 
+    }
+
+    public String getCurrentUrl (){
+        return webDriver.getCurrentUrl();
+    }
+    public void CheckUrl(){
+        try{
+            Assert.assertEquals("Url is not expacted",
+                    expectedUrl, getCurrentUrl());
+        }catch (Exception e){
+            logger.error("can't wprk with url");
+            Assert.fail();
+        }
     }
 
 
@@ -30,3 +47,4 @@ abstract public class ParentPage {
 
 
 
+;
