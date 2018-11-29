@@ -32,11 +32,11 @@ public class LoginPage extends ParentPage {
     }
 
     public void enterLogin(String login) {
-        actionsWithOurElements.enterTextIntoElement(inputLogin, login);
+        actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
 
     public void enterPassword(String password) {
-        actionsWithOurElements.enterTextIntoElement(inputPassword, password);
+        actionsWithOurElements.enterTextInToElement(inputPassword, password);
     }
 
     public void clickButtonVhod() {

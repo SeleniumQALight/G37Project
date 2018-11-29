@@ -34,7 +34,7 @@ public class SparePage extends ParentPage {
             Assert.assertTrue("Diff Spare",editSparePage.checkSpareNameInIntup(spareName));
             editSparePage.clickButtonDelete();
 
-        }continue;
+        };
 
       }
 

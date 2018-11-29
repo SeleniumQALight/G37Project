@@ -11,7 +11,7 @@ public class EditSparePage extends ParentPage {
     private WebElement spareTypeDD;
     @FindBy(name = "delete")
     private WebElement buttonDelete;
-    @FindBy (name = "add")
+    @FindBy(name = "add")
     private WebElement buttonCreate;
 
     public EditSparePage(WebDriver webDriver) {
@@ -19,7 +19,7 @@ public class EditSparePage extends ParentPage {
     }
 
     public boolean checkSpareNameInInput(String spareName) {
-        return spareNameInput.getText().equals(spareName);
+        return spareNameInput.getAttribute("value").equals(spareName);
     }
 
     public void clickButtonDelete() {
@@ -40,10 +40,10 @@ public class EditSparePage extends ParentPage {
     }
 
     public void ownSelectSpareTypeInDDByText(String spareType) {
-        actionsWithOurElements.findElementInDDByTextAndClickOnIt(spareTypeDD,spareType);
+        actionsWithOurElements.findElementInDDByTextAndClickOnIt(spareTypeDD, spareType);
     }
 
     public void ownSelectSpareTypeInDDByValue(String spareType) {
-        actionsWithOurElements.findElementInDDByValueAndClickOnIt(spareTypeDD,spareType);
+        actionsWithOurElements.findElementInDDByValueAndClickOnIt(spareTypeDD, spareType);
     }
 }

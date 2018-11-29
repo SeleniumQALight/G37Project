@@ -1,6 +1,7 @@
 package parentTest;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,5 +38,10 @@ public class ParentTest {
         webDriver.quit();
     }
 
-
+public void checkExpectedResult(String message, boolean actualResult, boolean expectedResult){
+    Assert.assertEquals(message, actualResult,   expectedResult);
+}
+    public void checkExpectedResult(String message, boolean actualResult ){
+        checkExpectedResult(message, actualResult, true);
+    }
 }
