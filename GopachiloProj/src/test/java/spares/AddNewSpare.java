@@ -14,11 +14,12 @@ public class AddNewSpare extends ParentTest {
       homePage.clickMenuDictionary();
       homePage.clickOnSubMenuSpare();
       sparePage.checkUrl();
-      sparePage.checkAndDeleteSpare(spareName);
+//      sparePage.checkAndDeleteSpare(spareName);
+      sparePage.deletingSpareUntilPresent(spareName);
       sparePage.clickOnAddButton();
-//      editSparePage.enterSpareNameInTOInput(spareName);
-//      editSparePage.selectSpareTypeInDD("Механика1");
-//      editSparePage.clickButtonCreate();
+      editSparePage.enterSpareNameInTOInput(spareName);
+      editSparePage.selectSpareTypeInDD("Механика1");
+      editSparePage.clickButtonCreate();
 
 
 
