@@ -30,9 +30,11 @@ public class AddNewSpare extends Parent_Test {
 
     }
 
+
     @After
     public void spareDeleting(){
         sparePage.deletingSpareUntilPresent(spareName);
+
 
     }
 }
