@@ -23,7 +23,7 @@ public class AddNewSpare extends ParentTest {
       editSparePage.selectSpareTypeInDD("Механика1");
       editSparePage.clickButtonCreate();
 
-        Assert.assertTrue("Spare was not added",sparePage.isSperInList(spareName));
+        checkExpectedresult("Spare was not added",sparePage.isSperInList(spareName));
 
     }
     @After
