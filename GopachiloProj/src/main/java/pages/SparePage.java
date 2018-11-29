@@ -23,6 +23,7 @@ public class SparePage extends ParentPage {
         editSparePage=new EditSparePage(webDriver);
     }
 
+    @Deprecated
     public void checkAndDeleteSpare(String spareName) {
         EditSparePage editSparePage=new EditSparePage(webDriver);
         if (listRows.size() > 0) {
@@ -62,7 +63,7 @@ public class SparePage extends ParentPage {
      }
     }
 
-    private boolean isSperInList(String spareName) {
+    public boolean isSperInList(String spareName) {
         logger.info(" Method isSperInList");
         return actionWithOurElements.isElemetDisplayed(By.xpath(".//*[text()='"+spareName+"']"));
     }

@@ -1,5 +1,7 @@
 package spares;
 
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
 
@@ -21,10 +23,11 @@ public class AddNewSpare extends ParentTest {
       editSparePage.selectSpareTypeInDD("Механика1");
       editSparePage.clickButtonCreate();
 
+        Assert.assertTrue("Spare was not added",sparePage.isSperInList(spareName));
 
-
-
-
-
+    }
+    @After
+    public void spareDeleting(){
+        sparePage.deletingSpareUntilPresent(spareName);
     }
 }
