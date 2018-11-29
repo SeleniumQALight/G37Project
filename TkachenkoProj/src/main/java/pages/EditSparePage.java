@@ -19,6 +19,7 @@ public class EditSparePage extends ParentPage {
     public EditSparePage(WebDriver driver) {
         super(driver, "/dictionary/spares/edit");
     }
+
     public boolean checkSpareNameInInput(String spareName){
         return spareNameInput.getAttribute("value").equals(spareName);
     }
