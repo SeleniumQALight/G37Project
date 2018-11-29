@@ -9,7 +9,7 @@ public class EditSparePage extends ParentPage {
     private WebElement spareNameInput;
     @FindBy (id = "spares_spareType")
     private WebElement spareTypeDropdown;
-    @FindBy (xpath = ".//*[@id='spares_spareType']//option[@value='1']")
+    @FindBy (xpath = "//option[@value='1']")
     private WebElement valueFromDD;
     @FindBy (name = "delete")
     private WebElement buttonDelete;
@@ -37,5 +37,8 @@ public class EditSparePage extends ParentPage {
 
     public void selectSpareTypeInDD(String spareType) {
         actionsWithOurElements.selectTextInDD(spareTypeDropdown,spareType);
+    }
+    public void selectSpareTypeFromDD(String spareType){
+        actionsWithOurElements.selectElementFromDropdownByText(spareTypeDropdown,spareType);
     }
 }

@@ -59,16 +59,6 @@ public class ActionsWithOurElements {
             Assert.fail("Can not work with element");
         }
     }
-    public void workWithDD(WebElement element, String text, WebElement optionValue) {
-        try {
-            element.click();
-            selectValueFromDD(optionValue, text);
-            logger.info(text + " was found in dropdown");
-        } catch (Exception e) {
-            logger.error("Can not work with element");
-            Assert.fail("Can not work with element");
-        }
-    }
 
     public void selectValueFromDD(WebElement element, String optionValue) {
         try {
@@ -78,6 +68,18 @@ public class ActionsWithOurElements {
         } catch (Exception e) {
             logger.error("Can not work with element");
             Assert.fail("Can not work with element");
+        }
+    }
+
+    public void selectElementFromDropdownByText(WebElement element, String text) {
+        try{
+            clickOnElement(element);
+            String xpathWithText = "//*[text()='"+text+"']";
+            element.findElement(By.xpath(xpathWithText)).click();
+            logger.info("Text was selected in DD");
+        }catch (Exception e){
+            logger.error("Can not find element by text:"+ text);
+            Assert.fail("Can not find element by text:"+ text);
         }
     }
 
