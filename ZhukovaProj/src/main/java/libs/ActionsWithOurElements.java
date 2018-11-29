@@ -76,7 +76,30 @@ public class ActionsWithOurElements {
         }
     }
 
-    public boolean isElementDisplayed(By by) {
+    public void selectCheckBox(WebElement element){
+       try {
+           if (!element.isSelected()) {
+               clickOnElement(element);
+               logger.info(element+ "  was selected in check-box");
+           }
+       }catch (Exception e){
+           logger.error("Cannot work with element" + e);
+           Assert.fail("Cannot work with element" + e);
+       }
+    }
+    public void deSelectCheckBox(WebElement element){
+        try {
+            if (element.isSelected()) {
+                clickOnElement(element);
+                logger.info(element+ "  was deselected in check-box");
+            }
+        }catch (Exception e){
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
+    }
+ 
+  public boolean isElementDisplayed(By by) {
         try {
             return   isElementDisplayed(webDriver.findElement(by));
         } catch (Exception e) {
@@ -84,4 +107,5 @@ public class ActionsWithOurElements {
         }
 
     }
+
 }
