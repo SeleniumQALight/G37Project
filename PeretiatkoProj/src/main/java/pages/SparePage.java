@@ -11,6 +11,8 @@ import java.util.List;
 
 public class SparePage extends ParentPage {
 
+    EditSparePage editSparePage;
+
     @FindBy(xpath = ".//table/tr")
     private List<WebElement> listOfRows;
 
@@ -19,13 +21,15 @@ public class SparePage extends ParentPage {
 
     public SparePage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");
+        editSparePage = new EditSparePage(webDriver);
     }
 
+    @Deprecated
     public void checkAndDeleteSpare(String spareName) {
         if (listOfRows.size() > 0) {
             for (WebElement line : listOfRows) {
                 EditSparePage editSparePage = new EditSparePage(webDriver);
-                WebElement cellWithSpare = line.findElement(By.xpath("/td[1]"));
+                WebElement cellWithSpare = line.findElement(By.xpath("/*[1]"));
                 if (cellWithSpare.getText().trim().equals(spareName)) ;
                 actionsWithOurElements.clickOnElement(cellWithSpare);
                 //logger.info("Yes!!!");
@@ -38,5 +42,32 @@ public class SparePage extends ParentPage {
 
     public void clickOnAddButton() {
         actionsWithOurElements.clickOnElement(buttonAdd);
+    }
+
+    public void deletingSpareUntilPresent(String spareName) {
+
+        int count = 0;
+        while (isSpareInList (spareName)) {
+            clickOnSpare(spareName);
+            editSparePage.clickDeleteOnElement();
+            count++;
+            if (count > 10) {
+                Assert.fail("There are more than 100 spare in list " +
+                        "or deleting does not work, so test does not go further");
+            }
+        }
+
+    }
+
+    public boolean isSpareInList(String spareName) {
+        return actionsWithOurElements.isElementDispayed(By.xpath(".//*[text()='" + spareName + "']"));
+    }
+
+    private void clickOnSpare(String spareName) {
+        actionsWithOurElements.clickOnElement(getSpareWithName(spareName));
+    }
+
+    private WebElement getSpareWithName(String spareName) {
+        return webDriver.findElement(By.xpath(".//*[text()='" + spareName + "']"));
     }
 }

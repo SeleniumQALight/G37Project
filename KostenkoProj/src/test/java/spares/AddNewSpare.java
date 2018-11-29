@@ -3,31 +3,30 @@ package spares;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
-import pages.HomePage;
-import pages.LoginPage;
 import parentTest.ParentTest;
 
-public class AddNewSpare extends ParentTest {
-    String spareName = "lishchukSpare";
+public class AddNewSpare extends ParentTest{
+    String spareName = "kostenkoSpare";
+
     @Test
-    public void addNewSpare() {
+    public void addNewSpare(){
         loginPage.validLoginInToApp();
         homePage.checkUrl();
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpare();
         sparePage.checkUrl();
-        // sparePage.checkAndDeleteSpare(spareName);
-        sparePage.deletingSpareUntilPresent(spareName);
-        sparePage.clickOnAddButton();
-        editSparePage.enterSpareNameInToInput(spareName);
+//        sparePage.checkAndDeleteSpace (spareName);
+        sparePage.deletingSpareUntilPresent (spareName);
+        sparePage.clickOnAddButton ();
+        editSparePage.enterSpareNameIntoImput (spareName);
         editSparePage.selectSpareTypeInDD("Механика1");
-        editSparePage.clickButtonCreate();
+        editSparePage.clickOnButtonCreate();
 
         checkExpectedResult("Spare was not added", sparePage.isSpareInList(spareName));
-    }
 
+    }
     @After
-    public void spareDeleting() {
+    public void spareDeleting () {
         sparePage.deletingSpareUntilPresent(spareName);
     }
 }
