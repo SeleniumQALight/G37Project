@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends Parent_page {
 
-    @FindBy (xpath=".//div[@class = 'login-logo']")
+    @FindBy (xpath=".//a[@class='dropdown-toggle']")
     private WebElement avatar;
 
     @FindBy (xpath = ".//*[@id='dictionary']/a")
