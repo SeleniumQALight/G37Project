@@ -5,14 +5,19 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
-
-    public ActionsWithOurElements(WebDriver webDriver) {
+    WebDriverWait wait5, wait10;
+    public ActionsWithOurElements(WebDriver webDriver)
+    {
         this.webDriver = webDriver;
+        wait5 = new WebDriverWait(webDriver, 5);
+        wait10 = new WebDriverWait(webDriver,10);
     }
 
     public void enterTextIntoElement(WebElement element, String text) {
@@ -28,6 +33,9 @@ public class ActionsWithOurElements {
 
     public void clickOnElement(WebElement element) {
         try {
+            wait5.until(ExpectedConditions.elementToBeClickable(element));
+//            wait5.until(ExpectedConditions.not
+//                      (ExpectedConditions.elementToBeClickable(element)));
             element.click();
             logger.info("Element was clicked");
         } catch (Exception e) {
@@ -76,6 +84,14 @@ public class ActionsWithOurElements {
         }catch (Exception e){
             logger.error("Cannot find element by value:"+ value + e);
             Assert.fail("Cannot find element by value:"+ value + e);
+        }
+    }
+
+    public boolean isElementPresent(By by) {
+        try {
+            return isElementPresent(webDriver.findElement(by));
+        }catch (Exception e){
+            return false;
         }
     }
 }
