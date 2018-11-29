@@ -15,19 +15,19 @@ public class EditSparePage extends ParentPage {
     @FindBy(name = "delete")
     private WebElement buttonDelete;
 
-    @FindBy(name="add")
+    @FindBy(name = "add")
     private WebElement buttonCreate;
 
     public EditSparePage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
     }
 
-    public boolean checkSpareNameInInput(String spareName){
-        return spareNameInput.getText().equals(spareName);
+    public boolean checkSpareNameInInput(String spareName) {
+        return spareNameInput.getAttribute("value").equals(spareName);
     }
 
-    public void clickButtonDelete(){
-                actionsWithOurElements.clickOnElement(buttonDelete);
+    public void clickButtonDelete() {
+        actionsWithOurElements.clickOnElement(buttonDelete);
     }
 
     public void enterSpareNameInToInput(String spareName) {
@@ -43,11 +43,12 @@ public class EditSparePage extends ParentPage {
         actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
 
     }
-    public void manualSelectSpareTypeInDD(String spareType){
-        actionsWithOurElements.manualSelectTextInDD(spareTypeDD,"//select[@id='spares_spareType']//option[text()='"+spareType+"']");
+
+    public void manualSelectSpareTypeInDD(String spareType) {
+        actionsWithOurElements.manualSelectTextInDD(spareTypeDD, spareType);
     }
 
-    public void selectSpareTypeInDDbyValue(String value){
-        actionsWithOurElements.selectValueInDD(spareTypeDD,value);
+    public void selectSpareTypeInDDbyValue(String value) {
+        actionsWithOurElements.selectValueInDD(spareTypeDD, value);
     }
 }

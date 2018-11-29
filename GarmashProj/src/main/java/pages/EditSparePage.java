@@ -1,4 +1,3 @@
-
 package pages;
 
 import org.openqa.selenium.WebDriver;
@@ -6,27 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class EditSparePage extends ParentPage {
-
-
     @FindBy(id = "spares_spareName")
     private WebElement spareNameInput;
-
     @FindBy(id = "spares_spareType")
     private WebElement spareTypeDD;
-
     @FindBy(name = "delete")
     private WebElement buttonDelete;
-
     @FindBy(name = "add")
     private WebElement buttonCreate;
-
-
-    @FindBy(xpath = ".//*[@value='1']")
-    private WebElement value1;
-
-    @FindBy(xpath = ".//*[(text()= 'Механика1')]")
-    private WebElement SpareTypeMehanika1;
-
 
     public EditSparePage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");
@@ -34,41 +20,23 @@ public class EditSparePage extends ParentPage {
 
     public boolean checkSpareNameInInput(String spareName) {
         return spareNameInput.getAttribute("value").equals(spareName);
-
     }
 
-    public void clickButtonDeleteOnEditPage() {
-
+    public void clickButtonDelete() {
         actionsWithOurElements.clickOnElement(buttonDelete);
     }
 
     public void enterSpareNameInToInput(String spareName) {
-
-        actionsWithOurElements.enterTextIntoElement(spareNameInput, spareName);
+        actionsWithOurElements.enterTextInToElement(spareNameInput, spareName);
     }
 
-    public void selectSpareTypeInDD(String spareType) {
-        actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
-    }
-
-
-    public void clickOnButtonCreate() {
+    public void clickButtonCreate() {
         actionsWithOurElements.clickOnElement(buttonCreate);
     }
 
-
-    public void setSpareTypeDDByName(WebElement element, WebElement elementDD) {
-
-        actionsWithOurElements.clickOnElement(spareTypeDD);
-        actionsWithOurElements.clickOnElement(SpareTypeMehanika1);
-
+    public void selectSpareTypeInDD(String spareType) {
+        actionsWithOurElements.manualSelectTextInDD(spareTypeDD, spareType);
+        //    actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
+        //    actionsWithOurElements.selectValueInDD(spareTypeDD, spareType);
     }
-
-    public void setSpareTypeDDByValue() {
-        actionsWithOurElements.selectValueInDD(spareTypeDD,"1");     }
-
-
-
 }
-
-

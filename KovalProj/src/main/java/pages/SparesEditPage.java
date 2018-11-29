@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,5 +42,14 @@ public class SparesEditPage extends ParentPage{
 
     public void selectSpareType(String spareType) {
         actionsWithOurElements.selectTextInDD(spareTypeDD, spareType);
+    }
+
+    public WebElement getSpareType (String spareType){
+        return webDriver.findElement(By.xpath(".//*[contains(text(), '" + spareType + "')]"));
+    }
+
+    public void clickOnSpareType (String spareType){
+        actionsWithOurElements.clickOnElement(spareTypeDD);
+        actionsWithOurElements.clickOnElement(getSpareType(spareType));
     }
 }

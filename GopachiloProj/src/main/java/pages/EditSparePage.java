@@ -17,6 +17,11 @@ public class EditSparePage extends ParentPage{
     @FindBy(name="add")
     private WebElement buttonCreate;
 
+    @FindBy(xpath = ".//option[text()='Механика1']")
+    private  WebElement optionText;
+
+
+
 
 
 
@@ -29,6 +34,7 @@ public class EditSparePage extends ParentPage{
     public  boolean checkSpareNameInIntup(String spareName){
         return spareNameInput.getText().equals(spareName);
     }
+
      public  void clickButtonDelete(){
         actionWithOurElements.clickOnElement(buttonDelete);
      }
@@ -43,5 +49,10 @@ public class EditSparePage extends ParentPage{
 
     public void selectSpareTypeInDD(String spareType) {
         actionWithOurElements.selectTextInDD(spareTypeDD,spareType);
+    }
+    public void imitationUserSelectSpareTypeInDD(String text)
+    {
+        logger.info("imitation User Select Spare Type In DD ");
+        actionWithOurElements.imitationUserWorkWithDD(spareTypeDD,text,optionText);
     }
 }
