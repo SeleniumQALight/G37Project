@@ -9,6 +9,8 @@ public class EditSparePage extends ParentPage {
     private WebElement spareNameInput;
     @FindBy (id = "spares_spareType")
     private WebElement spareTypeDropdown;
+    @FindBy (xpath = "//option[@value='1']")
+    private WebElement valueFromDD;
     @FindBy (name = "delete")
     private WebElement buttonDelete;
     @FindBy(name = "add")
@@ -17,8 +19,9 @@ public class EditSparePage extends ParentPage {
     public EditSparePage(WebDriver driver) {
         super(driver, "/dictionary/spares/edit");
     }
+
     public boolean checkSpareNameInInput(String spareName){
-        return spareNameInput.getText().equals(spareName);
+        return spareNameInput.getAttribute("value").equals(spareName);
     }
     public void clickOnButtonDelete(){
         actionsWithOurElements.clickOnElement(buttonDelete);
@@ -34,5 +37,8 @@ public class EditSparePage extends ParentPage {
 
     public void selectSpareTypeInDD(String spareType) {
         actionsWithOurElements.selectTextInDD(spareTypeDropdown,spareType);
+    }
+    public void selectSpareTypeFromDD(String spareType){
+        actionsWithOurElements.selectElementFromDropdownByText(spareTypeDropdown,spareType);
     }
 }
