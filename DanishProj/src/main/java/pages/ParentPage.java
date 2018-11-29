@@ -1,6 +1,8 @@
 package pages;
 
 import libs.ActionsWithOurElements;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +13,8 @@ abstract public class ParentPage {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     public ActionsWithOurElements actionsWithOurElements;
-    String baseUrl = "http://v3.test.itpmgroup.com";
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
+    String baseUrl;
     String expectedUrl;
 
     public ParentPage(WebDriver webDriver, String relativeUrl) {
@@ -19,6 +22,7 @@ abstract public class ParentPage {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver,this); // Инициализирует все элементы, задекларированные через @FindBy в дочерних страничках
         actionsWithOurElements = new ActionsWithOurElements(webDriver);
+        baseUrl =configProperties.base_url();
         expectedUrl = baseUrl + relativeUrl;
     }
     public String getCurrentUrl(){
