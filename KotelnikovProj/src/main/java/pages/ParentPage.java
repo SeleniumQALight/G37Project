@@ -1,6 +1,8 @@
 package pages;
 
 import libs.ActionsWithElements;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +13,16 @@ abstract class ParentPage {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     ActionsWithElements actionsWithElements;
-    String baseUrl = "http://v3.test.itpmgroup.com";
-    String exprctedUrl;
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
+    String baseUrl;
+    String expectedUrl;
 
     public ParentPage(WebDriver webDriver, String relativeUrl) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
         actionsWithElements = new ActionsWithElements(webDriver);
-        this.exprctedUrl = baseUrl + relativeUrl;
+        baseUrl = configProperties.base_url();
+        this.expectedUrl = baseUrl + relativeUrl;
     }
 
     public String getCurrentUrl(){
@@ -27,7 +31,7 @@ abstract class ParentPage {
 
     public void checkUrl(){
         try {
-            Assert.assertEquals("Url is not expected" + exprctedUrl, getCurrentUrl());
+            Assert.assertEquals(expectedUrl, getCurrentUrl());
         }catch (Exception e){
             logger.error("Cannot work with URL");
             Assert.fail("Cannot work with URL");
