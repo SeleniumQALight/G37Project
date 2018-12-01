@@ -35,10 +35,10 @@ public class ActionsWithOurElements {
             wait5.until(ExpectedConditions.elementToBeClickable(element));
 //            wait5.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(element)));
             element.click();
-            logger.info("User logged successfully");
+            logger.info(element + " Element was clicked");
         } catch (Exception e) {
-            logger.error("Can't work with element");
-            Assert.fail("Can't work with element");
+            logger.error("Can't work with element: " + element);
+            Assert.fail("Can't work with element " + element);
         }
     }
 
@@ -87,6 +87,32 @@ public class ActionsWithOurElements {
         } catch (Exception e) {
             logger.error("Cannot work with element " + e);
             Assert.fail("Cannot work with element " + e);
+        }
+    }
+
+    /**
+     * Set needed state
+     *
+     * @param element
+     * @param state   (Only !!! check or uncheck)
+     */
+    public void setNeedeStateToCheckBox(WebElement element, String state) {
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean unCheckState = state.toLowerCase().equals("uncheck");
+
+        if (checkState || unCheckState) {
+            if (element.isSelected() && checkState) {
+                logger.info("Checkbox is already checked");
+            } else if (element.isSelected() && unCheckState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && checkState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && unCheckState) {
+                logger.info("Checkbox is already checked");
+            }
+        } else {
+            logger.error("State should be check or uncheck");
+            Assert.fail("State should be check or uncheck");
         }
     }
 }
