@@ -1,9 +1,6 @@
 package parentTest;
 
-import Pages.EditSparePage;
-import Pages.HomePage;
-import Pages.LoginPage;
-import Pages.SparePage;
+import Pages.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -19,6 +16,8 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparePage sparePage;
     protected EditSparePage editSparePage;
+    protected ProviderPage providerPage;
+    protected EditProviderPage editProviderPage;
 
     @Before
     public void setUp() {
@@ -26,11 +25,13 @@ public class ParentTest {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS); //Ждем каждый элемент максимум 3 секунды
+        webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); //Ждем каждый элемент максимум 3 секунды
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
         sparePage = new SparePage(webDriver);
         editSparePage = new EditSparePage(webDriver);
+        providerPage = new ProviderPage(webDriver);
+        editProviderPage = new EditProviderPage(webDriver);
     }
 
     @After
@@ -43,7 +44,7 @@ public class ParentTest {
     }
 
     public void checkExpectedResult(String message, boolean actualResult) {
-        Assert.assertEquals(message, actualResult, true);
+        Assert.assertEquals(message, true, actualResult);
     }
 
 }
