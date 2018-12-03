@@ -33,7 +33,7 @@ public class ProviderPage extends ParentPage {
             i++;
         }
 
-        if (i>= 100){logger.error("Provider table contains more then 100 records or bug with deleting provider record exist.");}
+        logger.error("Provider table contains more then 100 records or bug with deleting provider record exist.");
     }
 
     public boolean checkPrivatePersonFlag(String provider) {
