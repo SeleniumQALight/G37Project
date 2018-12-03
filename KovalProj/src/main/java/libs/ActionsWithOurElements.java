@@ -84,4 +84,29 @@ public class ActionsWithOurElements {
             Assert.fail("Can not work with Element");
         }
     }
+
+    /**
+     * Set needed state
+     * @param element
+     * @param state (Only!!! check or uncheck)
+     */
+
+    public void setNeededStateToCheckBox (WebElement element, String state){
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean uncheckState = state.toLowerCase().equals("uncheck");
+        if (checkState || uncheckState){
+            if (element.isSelected() && checkState){
+                logger.info("Checkbox is already checked");
+            } else if (element.isSelected() && uncheckState){
+                clickOnElement(element);
+            } else if (!element.isSelected() && checkState){
+                clickOnElement(element);
+            } else if (!element.isSelected() && uncheckState){
+                logger.info("Checkbox is already unchecked");
+            }
+        } else {
+            logger.error("State should be check or uncheck");
+            Assert.fail("State should be check or uncheck");
+        }
+    }
 }
