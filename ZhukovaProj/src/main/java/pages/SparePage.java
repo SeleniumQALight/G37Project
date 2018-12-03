@@ -48,7 +48,7 @@ EditSparePage editSparePage;
             clickOnSpare(spareName);
             editSparePage.clickButtonDeleteOnEditPage();
             counter++;
-            if (counter >10){
+            if (counter >100){
                 Assert.fail("There are more then 100 spare in list or deleting does not work.");
             }
         }
@@ -56,7 +56,7 @@ EditSparePage editSparePage;
     }
 
     public boolean isSpareInList(String spareName) {
-        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text(='" + spareName+ "')]"));
+        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text()='" + spareName+ "']"));
     }
 
     private void clickOnSpare(String spareName) {
@@ -64,6 +64,6 @@ EditSparePage editSparePage;
     }
 
     private WebElement getSpareWithName(String spareName) {
-        return webDriver.findElement(By.xpath(".//*[text(='" + spareName+ "')]"));
+        return webDriver.findElement(By.xpath(".//*[text()='" + spareName+ "']"));
     }
 }
