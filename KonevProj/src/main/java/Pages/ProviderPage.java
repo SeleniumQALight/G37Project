@@ -32,6 +32,8 @@ public class ProviderPage extends ParentPage {
             logger.info("Provider "+ provider+ " successfully deleted");
             i++;
         }
+
+        if (i>= 100){logger.error("Provider table contains more then 100 records or bug with deleting provider record exist.");}
     }
 
     public boolean checkPrivatePersonFlag(String provider) {
