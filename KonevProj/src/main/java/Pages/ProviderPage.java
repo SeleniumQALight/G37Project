@@ -29,22 +29,23 @@ public class ProviderPage extends ParentPage {
         while (actionsWithOurElements.isElementDisplayed(By.xpath("(//td[contains(.,'" + provider + "')])")) && i < 100) {
             actionsWithOurElements.clickOnElement(getProviderWithName(provider));
             editProviderPage.clickDeleteButton();
-            logger.info("Provider "+ provider+ " successfully deleted");
+            logger.info("Provider " + provider + " successfully deleted");
             i++;
         }
-
-        logger.error("Provider table contains more then 100 records or bug with deleting provider record exist.");
+        if (i>=100){
+            logger.error("Provider table contains more then 100 records or bug with deleting provider record exist.");
+        }
     }
 
     public boolean checkPrivatePersonFlag(String provider) {
 
         for (int i = 1; i <= listOfProviders.size(); i++) {
             if (listOfProviders.get(i).getText().equals(provider)) {
-                if (webDriver.findElement(By.xpath("(//span[@class='label label-success'])[" + String.valueOf(i+1) + "]")).getText().equals("1")) {
-                    logger.info("Provider "+provider+" PrivatePerson flag is On.");
+                if (webDriver.findElement(By.xpath("(//span[@class='label label-success'])[" + String.valueOf(i + 1) + "]")).getText().equals("1")) {
+                    logger.info("Provider " + provider + " PrivatePerson flag is On.");
                     return true;
                 } else {
-                    logger.info("Provider "+provider+" PrivatePerson flag is not set.");
+                    logger.info("Provider " + provider + " PrivatePerson flag is not set.");
                     return false;
                 }
             }

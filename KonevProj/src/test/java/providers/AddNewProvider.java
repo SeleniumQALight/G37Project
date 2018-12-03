@@ -18,12 +18,12 @@ public class AddNewProvider extends ParentTest {
         providerPage.checkAndDeleteDealPart(provider);
         providerPage.addButtonClick();
         editProviderPage.enterProCustName(provider);
-        editProviderPage.enterProCustAddr("Adress");
+        editProviderPage.enterProCustAddr("Address");
         editProviderPage.enterProCustPhone("222-3-22");
         editProviderPage.setPrivatPersonCheckbox("check");
         editProviderPage.clickCreateButton();
 
-        checkExpectedResult("Test failed! Proveder PrivatePerson flag missed!",providerPage.checkPrivatePersonFlag(provider));
+        checkExpectedResult("Test failed! Provider PrivatePerson flag missed!",providerPage.checkPrivatePersonFlag(provider));
     }
 
     @After
