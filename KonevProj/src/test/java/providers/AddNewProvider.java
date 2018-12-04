@@ -23,7 +23,7 @@ public class AddNewProvider extends ParentTest {
         editProviderPage.setPrivatPersonCheckbox("check");
         editProviderPage.clickCreateButton();
 
-        checkExpectedResult("Test failed! Provider PrivatePerson flag missed!",providerPage.checkPrivatePersonFlag(provider));
+        checkExpectedResult("Test failed! Provider PrivatePerson flag missed!",providerPage.checkPrivatePersonFlag2(provider));
     }
 
     @After

@@ -32,9 +32,23 @@ public class ProviderPage extends ParentPage {
             logger.info("Provider " + provider + " successfully deleted");
             i++;
         }
-        if (i>=100){
+        if (i >= 100) {
             logger.error("Provider table contains more then 100 records or bug with deleting provider record exist.");
         }
+    }
+
+    public boolean checkPrivatePersonFlag2(String provider) {
+        try {
+            if (webDriver.findElement(By.xpath("//td[text()='" + provider + "']//..//span")).getText().equals("1")) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            logger.error(provider + " is not present in providers list");
+            return false;
+        }
+
     }
 
     public boolean checkPrivatePersonFlag(String provider) {
