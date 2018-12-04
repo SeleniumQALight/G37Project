@@ -50,7 +50,7 @@ public class ProviderPage extends ParentPage {
         }
 
     }
-
+    @Deprecated//Method below is depricated. become obsolete
     public boolean checkPrivatePersonFlag(String provider) {
 
         for (int i = 1; i <= listOfProviders.size(); i++) {
