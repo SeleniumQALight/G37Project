@@ -27,7 +27,7 @@ public class AddNewProvider extends ParentTest {
     }
 
     @After
-    public void spareDeleting() {
+    public void providerDeleting() {
         providersPage.deletingProviderUntilPresent(providerName);
     }
 }
