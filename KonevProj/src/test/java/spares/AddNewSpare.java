@@ -17,14 +17,14 @@ public class AddNewSpare extends ParentTest {
         homePage.clickOnMenuDictionary();
         homePage.clickOnSubMenuSpare();
         sparePage.checkUrl();
-//        for (int i = 0; i <3; i++) {
-//            sparePage.clickOnAddButton();
-//            editSparePage.enterSpareNameInToInput(spareName);
-//            editSparePage.manualSelectSpareTypeInDD("Механика1");
-//            editSparePage.clickButtonCreate();
-//        }
+        for (int i = 0; i <3; i++) {
+            sparePage.clickOnAddButton();
+            editSparePage.enterSpareNameInToInput(spareName);
+            editSparePage.manualSelectSpareTypeInDD("Механика1");
+            editSparePage.clickButtonCreate();
+        }
       sparePage.checkAndDeleteSpare(spareName);
-       // sparePage.deletingSpareUntilPresent(spareName);
+      // sparePage.deletingSpareUntilPresent(spareName);
         sparePage.clickOnAddButton();
         editSparePage.enterSpareNameInToInput(spareName);
         //editSparePage.selectSpareTypeInDD("Механика1");

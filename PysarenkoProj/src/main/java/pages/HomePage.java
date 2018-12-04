@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends Parent_page {
 
-    @FindBy (xpath=".//div[@class = 'login-logo']")
+    @FindBy (xpath=".//a[@class='dropdown-toggle']")
     private WebElement avatar;
 
     @FindBy (xpath = ".//*[@id='dictionary']/a")
@@ -15,6 +15,9 @@ public class HomePage extends Parent_page {
 
     @FindBy (xpath = ".//li[@id='spares']")
     private WebElement subMenuSpare;
+
+    @FindBy (xpath = ".//a[@href ='/dictionary/providers']")
+    private WebElement subMenuProviders;
 
 
     public HomePage(WebDriver webDriver) {
@@ -36,6 +39,10 @@ public class HomePage extends Parent_page {
 
     public void clickOnSubMenuSpare() {
         actionsWithOurElements.clickOnElement(subMenuSpare);
+    }
+
+    public void clickOnSubMenuProviders() {
+        actionsWithOurElements.clickOnElement(subMenuProviders);
     }
 }
 

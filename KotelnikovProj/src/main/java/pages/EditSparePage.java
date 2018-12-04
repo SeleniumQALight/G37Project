@@ -22,7 +22,7 @@ public class EditSparePage extends ParentPage {
     }
 
     public boolean checkSpareNameInput(String spareName){
-        return spareNameInput.getText().equals(spareName);
+        return spareNameInput.getAttribute("value").equals(spareName);
     }
 
     public void clickOnButtonDelete(){

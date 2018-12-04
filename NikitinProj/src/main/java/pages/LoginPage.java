@@ -55,7 +55,7 @@ public class LoginPage extends ParentPage {
     }
 
     public boolean isButtonVhodDisplayed() {
-        return actionsWithOurElements.isAvatarDisplayed(buttonVhod); // to fix method name, or even method itself
+        return actionsWithOurElements.isElementDisplayed(buttonVhod); // to fix method name, or even method itself
     }
 
 

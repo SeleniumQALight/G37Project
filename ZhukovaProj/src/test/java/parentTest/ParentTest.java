@@ -39,7 +39,7 @@ public class ParentTest {
     }
 
 public void checkExpectedResult(String message, boolean actualResult, boolean expectedResult){
-    Assert.assertEquals(message, actualResult,   expectedResult);
+    Assert.assertEquals(message,    expectedResult, actualResult);
 }
     public void checkExpectedResult(String message, boolean actualResult ){
         checkExpectedResult(message, actualResult, true);

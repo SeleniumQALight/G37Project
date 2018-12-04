@@ -18,7 +18,7 @@ public class LoginNew extends ParentTest {
         @Test
         public void inValidLogin() {
             loginPage.openLoginPage();
-            loginPage.enterLogin("student");
+            loginPage.enterLogin("studen");
             loginPage.enterPassword("909090");
             loginPage.clickButtonVhod();
             Assert.assertFalse("Avatar should not be present!", homePage.isAvatarPresent());
