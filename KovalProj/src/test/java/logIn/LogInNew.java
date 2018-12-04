@@ -24,4 +24,6 @@ public class LogInNew extends ParentTest {
 
         Assert.assertTrue("Login page isn't displayed", loginPage.isAutorizationSectionDisplayed());
     }
+
+
 }
