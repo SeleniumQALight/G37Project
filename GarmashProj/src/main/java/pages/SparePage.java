@@ -10,8 +10,8 @@ import java.util.List;
 
 public class SparePage extends ParentPage {
     EditSparePage editSparePage;
-    @FindBy(xpath = "//table//tr")    //находит все елементы и записывает в список
-            List<WebElement> listOfRows;
+    @FindBy(xpath = "//tr")    //находит все елементы и записывает в список
+    private List<WebElement> listOfRows;
 
     @FindBy(xpath = "//*[@class='fa fa-plus']")
     private WebElement buttonAdd;
@@ -29,6 +29,7 @@ public class SparePage extends ParentPage {
                 actionsWithOurElements.clickOnElement(cellWithSpare);
                 Assert.assertTrue("Diff Spare", editSparePage.checkSpareNameInInput(spareName));
                 editSparePage.clickButtonDelete();
+                logger.info(spareName + " deleted successfully");
                 i--;
             }
         }
@@ -52,7 +53,7 @@ public class SparePage extends ParentPage {
     }
 
     public boolean isSpareInList(String spareName) {
-        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text()='" + spareName + "']"));
+        return actionsWithOurElements.isElementDisplayed(By.xpath(".//tr/td[1][text()='" + spareName + "']"));
     }
 
     private void clickOnSpare(String spareName) {
@@ -60,6 +61,6 @@ public class SparePage extends ParentPage {
     }
 
     private WebElement getSpareWithName(String spareName) {
-        return webDriver.findElement(By.xpath(".//*[text()='" + spareName + "']"));
+        return webDriver.findElement(By.xpath(".//tr/td[1][text()='" + spareName + "']"));
     }
 }

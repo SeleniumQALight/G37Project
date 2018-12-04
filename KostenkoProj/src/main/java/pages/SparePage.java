@@ -57,7 +57,7 @@ public class SparePage extends ParentPage {
     }
 
     public boolean isSpareInList(String spareName) {
-        return actionsWithOurElements.isElementDisplayed(By.xpath(".//[text()='" + spareName + "']"));
+        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text()='" + spareName + "']"));
     }
 
     private void clickOnSpare(String spareName) {
@@ -65,7 +65,7 @@ public class SparePage extends ParentPage {
     }
 
     private WebElement getSpareWithName(String spareName) {
-        return webDriver.findElement(By.xpath(".//[text()='" + spareName + "']")); //в локатор вклеиваем spareName
+        return webDriver.findElement(By.xpath(".//*[text()='" + spareName + "']")); //в локатор вклеиваем spareName
     }
 }
 

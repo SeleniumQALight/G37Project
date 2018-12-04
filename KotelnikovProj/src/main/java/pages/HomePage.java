@@ -9,7 +9,7 @@ public class HomePage extends ParentPage{
     private WebElement avatar;
     @FindBy(xpath = ".//li[@id='dictionary']/a")
     private WebElement menuDictionary;
-    @FindBy(xpath = ".//li[@id='spareType']/a")
+    @FindBy(xpath = ".//li[@id='spares']/a")
     private WebElement subMenuSpare;
 
     public HomePage(WebDriver webDriver) {
