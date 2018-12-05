@@ -4,6 +4,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.CellType;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,8 +23,8 @@ public class ExcelDriver {
      * are String. We should take care of value's type by himself when will use
      * data values in the test.
      */
-    public static Map getMultipleData(String dataFileName, String sheetName, int columnNumber) throws IOException {
-        Map<String, String> testData = new HashMap<String, String>();
+    public static Map getData(String dataFileName, String sheetName, int columnNumber) throws IOException {
+        Map<String, String> testData = new HashMap<>();
         // Create stream for reading from file
         InputStream input = new FileInputStream(dataFileName);
         // Get Excel WorkBook from input stream
@@ -32,12 +33,12 @@ public class ExcelDriver {
         HSSFSheet sheet = wb.getSheet(sheetName);
 
         // Get number of data values
-        int dataSize = sheet.getPhysicalNumberOfRows() - 1;
+        int dataSize = sheet.getPhysicalNumberOfRows();
         // Look over the table and put key-value pairs into the Map collection
-        for (int k = 1; k < (dataSize + 1); k++) {
+        for (int k = 1; k < (dataSize); k++) {
             HSSFCell keyCell = sheet.getRow(k).getCell(0);
             HSSFCell valueCell = sheet.getRow(k).getCell(columnNumber);
-            valueCell.setCellType(HSSFCell.CELL_TYPE_STRING);
+            valueCell.setCellType(CellType.STRING);
             testData.put(keyCell.getStringCellValue(), valueCell.getStringCellValue());
         }
 
@@ -53,26 +54,7 @@ public class ExcelDriver {
      * data values in the test.
      */
     public static Map getData(String dataFileName, String sheetName) throws IOException {
-        Map<String, String> testData = new HashMap<String, String>();
-        // Create stream for reading from file
-        InputStream input = new FileInputStream(dataFileName);
-        // Get Excel WorkBook from input stream
-        HSSFWorkbook wb = new HSSFWorkbook(new POIFSFileSystem(input));
-        // Get Excel sheet from WorkBook
-        HSSFSheet sheet = wb.getSheet(sheetName);
-
-        // Get number of data values
-        int dataSize = sheet.getPhysicalNumberOfRows() - 1;
-        // Look over the table and put key-value pairs into the Map collection
-        for (int k = 1; k < (dataSize + 1); k++) {
-            HSSFCell keyCell = sheet.getRow(k).getCell(0);
-            HSSFCell valueCell = sheet.getRow(k).getCell(1);
-            valueCell.setCellType(HSSFCell.CELL_TYPE_STRING);
-            testData.put(keyCell.getStringCellValue(), valueCell.getStringCellValue());
-        }
-
-        input.close();
-        return testData;
+        return getData(dataFileName, sheetName, 1);
     }
 
 
@@ -83,7 +65,7 @@ public class ExcelDriver {
      * data values in the test.
      */
     public static Map getDataRow(String dataFileName, String sheetName) throws IOException {
-        Map<String, String> testData = new HashMap<String, String>();
+        Map<String, String> testData = new HashMap<>();
         // Create stream for reading from file
         InputStream input = new FileInputStream(dataFileName);
         // Get Excel WorkBook from input stream
@@ -97,7 +79,7 @@ public class ExcelDriver {
         for (int k = 0; k < (dataSize); k++) {
             HSSFCell keyCell = sheet.getRow(2).getCell(k);
             HSSFCell valueCell = sheet.getRow(3).getCell(k);
-            valueCell.setCellType(HSSFCell.CELL_TYPE_STRING);
+            valueCell.setCellType(CellType.STRING);
             testData.put(keyCell.getStringCellValue(), valueCell.getStringCellValue());
         }
 

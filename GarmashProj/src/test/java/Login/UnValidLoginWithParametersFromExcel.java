@@ -12,12 +12,12 @@ import java.io.InputStream;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class UnValidLoginWithParametersWithParametersFromExcel extends ParentTest {
-    String login;
-    String password;
+public class UnValidLoginWithParametersFromExcel extends ParentTest {
+    private String login;
+    private String password;
 
 
-    public UnValidLoginWithParametersWithParametersFromExcel(String login, String password) {
+    public UnValidLoginWithParametersFromExcel(String login, String password) {
         this.login = login;
         this.password = password;
     }

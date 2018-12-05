@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SpreadsheetData {
 
-    private transient Collection<Object[]> data = null;
+    private transient Collection<Object[]> data;
 
     public SpreadsheetData(final InputStream excelInputStream, final String sheetName) throws IOException {
         this.data = loadFromSpreadsheet(excelInputStream, sheetName);
@@ -26,13 +26,13 @@ public class SpreadsheetData {
             throws IOException {
         HSSFWorkbook workbook = new HSSFWorkbook(excelFile);
 
-        data = new ArrayList<Object[]>();
+        data = new ArrayList<>();
 
         Sheet sheet = workbook.getSheet(sheetName);
 
         int numberOfColumns = countNonEmptyColumns(sheet);
-        List<Object[]> rows = new ArrayList<Object[]>();
-        List<Object> rowData = new ArrayList<Object>();
+        List<Object[]> rows = new ArrayList<>();
+        List<Object> rowData = new ArrayList<>();
 
         for (Row row : sheet) {
             if (isEmpty(row)) {
@@ -51,9 +51,7 @@ public class SpreadsheetData {
 
     private boolean isEmpty(final Row row) {
         Cell firstCell = row.getCell(0);
-        boolean rowIsEmpty = (firstCell == null)
-                || (firstCell.getCellType() == Cell.CELL_TYPE_BLANK);
-        return rowIsEmpty;
+        return (firstCell == null) || (firstCell.getCellType() == CellType.BLANK);
     }
 
     /**
@@ -68,7 +66,7 @@ public class SpreadsheetData {
     private int firstEmptyCellPosition(final Row cells) {
         int columnCount = 0;
         for (Cell cell : cells) {
-            if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
+            if (cell.getCellType() == CellType.BLANK) {
                 break;
             }
             columnCount++;
@@ -79,13 +77,13 @@ public class SpreadsheetData {
     private Object objectFrom(final HSSFWorkbook workbook, final Cell cell) {
         Object cellValue = null;
 
-        if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+        if (cell.getCellType() == CellType.STRING) {
             cellValue = cell.getRichStringCellValue().getString();
-        } else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+        } else if (cell.getCellType() == CellType.NUMERIC) {
             cellValue = getNumericCellValue(cell);
-        } else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
+        } else if (cell.getCellType() == CellType.BOOLEAN) {
             cellValue = cell.getBooleanCellValue();
-        } else if (cell.getCellType() == Cell.CELL_TYPE_FORMULA) {
+        } else if (cell.getCellType() == CellType.FORMULA) {
             cellValue = evaluateCellFormula(workbook, cell);
         }
 
@@ -109,11 +107,11 @@ public class SpreadsheetData {
         CellValue cellValue = evaluator.evaluate(cell);
         Object result = null;
 
-        if (cellValue.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
+        if (cellValue.getCellType() == CellType.BOOLEAN) {
             result = cellValue.getBooleanValue();
-        } else if (cellValue.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+        } else if (cellValue.getCellType() == CellType.NUMERIC) {
             result = cellValue.getNumberValue();
-        } else if (cellValue.getCellType() == Cell.CELL_TYPE_STRING) {
+        } else if (cellValue.getCellType() == CellType.STRING) {
             result = cellValue.getStringValue();
         }
 
