@@ -18,7 +18,8 @@ public class AddNewSpare extends ParentTest {
      sparePage.deletingSpareUntilPresent(spareName);
      sparePage.clickOnAddButton();
      editSparePage.enterSpareNameInToInput(spareName);
-     editSparePage.selectSpareTypeInDD("Механика1");
+//     editSparePage.selectSpareTypeInDD("Механика1");
+     editSparePage.dropDownSelect();
      editSparePage.clickButtonCreate();
 
      checkExpectedResult("Spare was not added", sparePage.isSpareinList(spareName));
