@@ -42,6 +42,7 @@ public class ProviderPage extends ParentPage {
             if (webDriver.findElement(By.xpath("//td[text()='" + provider + "']//..//span")).getText().equals("1")) {
                 return true;
             } else {
+                logger.info("Privat Person Flag is not set for " + provider);
                 return false;
             }
         } catch (Exception e) {
