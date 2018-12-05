@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class EditProvidersPage extends ParentPage {
 
-    ProvidersPage providersPage = new ProvidersPage(webDriver);
+//    ProvidersPage providersPage = new ProvidersPage(webDriver);
 
     public EditProvidersPage(WebDriver webDriver) {
         super(webDriver, "dictionary/providers/edit");
@@ -38,13 +38,13 @@ public class EditProvidersPage extends ParentPage {
         actionsWithOurElements.selectCheckBox(checkBoxPrivatPerson);
     }
 
-    public void enterProviderNameInToInput() {
-        actionsWithOurElements.enterTextIntoElement(customNameInput, providersPage.newProvider);
+    public void enterProviderNameInToInput(String newProvider) {
+        actionsWithOurElements.enterTextIntoElement(customNameInput, newProvider);
 
     }
 
-    public void enterProviderAddressInToInput() {
-        actionsWithOurElements.enterTextIntoElement(customAddressInput, providersPage.newProviderAddress);
+    public void enterProviderAddressInToInput(String newProviderAddress) {
+        actionsWithOurElements.enterTextIntoElement(customAddressInput, newProviderAddress);
     }
     public void clickButtonDeleteOnEditProviderPage() {
 
