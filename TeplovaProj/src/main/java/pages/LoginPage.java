@@ -23,13 +23,14 @@ public class LoginPage extends ParentPage {
 
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver, "/login");
+
+        super(webDriver, "login");
     }
 
     public void openLoginPage() {
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
-            logger.info(" Web page is opened");
+            logger.info("Web page is opened");
 
 
         } catch ( Exception e ) {
@@ -102,5 +103,10 @@ public class LoginPage extends ParentPage {
     }
 
 
-
+    public void validLogin() {
+        openLoginPage();
+        enterLogin("Student");
+        enterPassword("909090");
+        clickButtonEnter();
+    }
 }

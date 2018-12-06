@@ -11,6 +11,7 @@ public class HomePage extends ParentPage {
     @FindBy (xpath = ".//*[@class='pull-left image']") private WebElement avatar;
     @FindBy (xpath = ".//*[@id='dictionary']/a") private WebElement menuDictionary;
     @FindBy (id = "spares") private WebElement SubMenuSpares;
+    @FindBy (id = "prov_cus") private WebElement SubMenuProviders;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver, "/");
@@ -31,5 +32,8 @@ public class HomePage extends ParentPage {
 
     public void clickOnSubMenuSpares() {
         actionsWithOurElements.clickOnElement(SubMenuSpares);
+    }
+
+    public void clickOnSubMenuProviders() { actionsWithOurElements.clickOnElement(SubMenuProviders);
     }
 }

@@ -1,7 +1,8 @@
 package spares;
 
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
-import pages.HomePage;
 import parentTeest.ParentTest;
 
 /**
@@ -15,23 +16,29 @@ public class AddNewSpare extends ParentTest{
     @Test
 
     public void addNewSpares(){
-        loginPage.openLoginPage();
-        homePage.CheckUrl();
+
+        loginPage.validLogin();
+        homePage.checkUrl();
+
+        homePage.isAvatarPresent();
+
         homePage.clickOnMenuSpare();
         homePage.subMenuSpare();
-        sparePage.CheckUrl();
-        sparePage.checkAndDeleteSpare(spareName);
-        sparePage.clickOnButton();
+        sparePage.checkUrl();
+
+//        sparePage.checkAndDeleteSpare(spareName);
+        sparePage.deletingSpareUntilPresent(spareName);
+        sparePage.clickOnButtonAdd();
         editSparePage.enterSpareNameInToInput(spareName);
-        editSparePage.selectSpareTypeInDD("Meckanika");
+        editSparePage.selectSpareTypeInDD("Механика1");
         editSparePage.clickButtonCreate();
 
+        checkExpactedResult("Spare was not added", sparePage.isSpareInList(spareName));
 
+    }
 
-
-
-
-
-
+    @After
+    public void spareDeleting(){
+        sparePage.deletingSpareUntilPresent(spareName);
     }
 }
