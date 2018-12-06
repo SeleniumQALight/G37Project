@@ -33,7 +33,7 @@ public class SparesEditPage extends ParentPage{
     }
 
     public boolean checkSpareNameInInput(String spareName){
-        return inputSpareName.getText().equals(spareName);
+        return inputSpareName.getAttribute("value").equals(spareName);
     }
 
     public void clickDeleteButton (){
