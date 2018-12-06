@@ -16,8 +16,8 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 
 public class UnValidLoginWithParametersFromExcel extends ParentTest {
-    String login = "98999";
-    String pass = "90";
+    String login ;
+    String pass ;
 
     public UnValidLoginWithParametersFromExcel(String login, String pass) {
         this.login = login;
