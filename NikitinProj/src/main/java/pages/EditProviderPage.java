@@ -24,6 +24,9 @@ public class EditProviderPage extends ParentPage{
     @FindBy(xpath = "//button[text()='Создать']")
     private WebElement providerCreateButton;
 
+    @FindBy(xpath = "//button[text()='Удалить']")
+    private WebElement providerDeleteButton;
+
     public EditProviderPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/providers/edit/");
     }
@@ -62,5 +65,10 @@ public class EditProviderPage extends ParentPage{
 
     public void clickOnCreateButton(){
         actionsWithOurElements.clickOnElement(providerCreateButton);
+    }
+
+
+    public void clickButtonDelete() {
+        actionsWithOurElements.clickOnElement(providerDeleteButton);
     }
 }
