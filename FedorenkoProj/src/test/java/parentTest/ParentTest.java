@@ -13,6 +13,7 @@ import pages.EditSparePage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SparePage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +27,8 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparePage sparePage;
     protected EditSparePage editSparePage;
+    protected ProvidersPage providersPage;
+    protected EditProvidersPage editProvidersPage;
     @Before
     public void setUp(){
         if ("chrome".equals(browser) || browser == null) {
@@ -51,6 +54,8 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparePage = new SparePage(webDriver);
         editSparePage= new EditSparePage(webDriver);
+        providersPage = new ProvidersPage(webDriver);
+        editProvidersPage = new EditProvidersPage(webDriver);
     }
 
     @After
