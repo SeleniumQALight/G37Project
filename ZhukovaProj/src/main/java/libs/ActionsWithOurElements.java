@@ -37,6 +37,7 @@ public class ActionsWithOurElements {
         try {
             wait5.until(ExpectedConditions.elementToBeClickable(element));
 
+
             element.click();
             logger.info("Element was ckicked");
         } catch (Exception e) {
