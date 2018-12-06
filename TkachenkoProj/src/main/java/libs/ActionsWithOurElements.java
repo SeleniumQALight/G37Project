@@ -76,7 +76,7 @@ public class ActionsWithOurElements {
             clickOnElement(element);
             String xpathWithText = "//*[text()='"+text+"']";
             element.findElement(By.xpath(xpathWithText)).click();
-            logger.info("Text was selected in DD");
+            logger.info(text + " was selected in DD");
         }catch (Exception e){
             logger.error("Can not find element by text:"+ text);
             Assert.fail("Can not find element by text:"+ text);
@@ -88,6 +88,31 @@ public class ActionsWithOurElements {
             return isElementDisplayed(driver.findElement(by));
         }catch (Exception e){
             return false;
+        }
+    }
+
+    /**
+     * Set needed state
+     * @param element
+     * @param state (only!!! check or uncheck)
+     */
+    public void setNeededStateToCheckbox(WebElement element, String state){
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean uncheckState = state.toLowerCase().equals("uncheck");
+
+        if (checkState || uncheckState){
+            if(element.isSelected()  && checkState){
+                logger.info("Checkbox is already checked");
+            }else if(element.isSelected() && uncheckState){
+                clickOnElement(element);
+            }else if (!element.isSelected() && checkState){
+                clickOnElement(element);
+            }else if (!element.isSelected() && uncheckState){
+                logger.info("Checkbox is already unchecked");
+            }
+        }else {
+            logger.error("State should be check or uncheck");
+            Assert.fail("State should be check or uncheck");
         }
     }
 }

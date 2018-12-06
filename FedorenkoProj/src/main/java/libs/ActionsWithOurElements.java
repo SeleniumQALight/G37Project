@@ -13,11 +13,11 @@ public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     WebDriverWait wait5, wait10;
-    public ActionsWithOurElements(WebDriver webDriver)
-    {
+
+    public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         wait5 = new WebDriverWait(webDriver, 5);
-        wait10 = new WebDriverWait(webDriver,10);
+        wait10 = new WebDriverWait(webDriver, 10);
     }
 
     public void enterTextIntoElement(WebElement element, String text) {
@@ -58,41 +58,68 @@ public class ActionsWithOurElements {
             select.selectByVisibleText(text);
             logger.info("Text was selected in DD");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
         }
     }
 
     public void findElementInDDByTextAndClickOnIt(WebElement element, String text) {
-        try{
-        clickOnElement(element);
-        String xpathWithText = "//*[text() = '"+text+"']";
-        element.findElement(By.xpath(xpathWithText)).click();
+        try {
+            clickOnElement(element);
+            String xpathWithText = "//*[text() = '" + text + "']";
+            element.findElement(By.xpath(xpathWithText)).click();
             logger.info("Text was selected in DD");
-        }catch (Exception e){
-            logger.error("Cannot find element by text:"+ text + e);
-            Assert.fail("Cannot find element by text:"+ text + e);
+        } catch (Exception e) {
+            logger.error("Cannot find element by text:" + text + e);
+            Assert.fail("Cannot find element by text:" + text + e);
         }
     }
-    public void findElementInDDByValueAndClickOnIt (WebElement element, String value) {
-        try{
+
+    public void findElementInDDByValueAndClickOnIt(WebElement element, String value) {
+        try {
             clickOnElement(element);
-            String xpathWithValue = "//option[@value = '"+value+"']";
+            String xpathWithValue = "//option[@value = '" + value + "']";
             element.findElement(By.xpath(xpathWithValue)).click();
             logger.info("Element was selected in DD by value");
-        }catch (Exception e){
-            logger.error("Cannot find element by value:"+ value + e);
-            Assert.fail("Cannot find element by value:"+ value + e);
+        } catch (Exception e) {
+            logger.error("Cannot find element by value:" + value + e);
+            Assert.fail("Cannot find element by value:" + value + e);
         }
     }
 
     public boolean isElementPresent(By by) {
         try {
             return isElementPresent(webDriver.findElement(by));
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
+
+    /**
+     * Set needed state
+     *
+     * @param element
+     * @param state   (Only !!! check or uncheck)
+     */
+    public void setNeededStateToCheckBox(WebElement element, String state) {
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean unCheckState = state.toLowerCase().equals("uncheck");
+        if (checkState || unCheckState) {
+            if (element.isSelected() && checkState) {
+                logger.info("Checkbox is already checked");
+            } else if (element.isSelected() && unCheckState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && checkState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && unCheckState) {
+                logger.info("Checkbox is already unchecked");
+            }
+        } else {
+            logger.error("State should be check or uncheck");
+            Assert.fail("State should be check or uncheck");
+        }
+    }
+
 }
 

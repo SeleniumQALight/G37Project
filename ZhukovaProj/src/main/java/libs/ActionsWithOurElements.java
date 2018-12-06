@@ -37,6 +37,7 @@ public class ActionsWithOurElements {
         try {
             wait5.until(ExpectedConditions.elementToBeClickable(element));
 
+
             element.click();
             logger.info("Element was ckicked");
         } catch (Exception e) {
@@ -44,68 +45,102 @@ public class ActionsWithOurElements {
             Assert.fail("Cannot work with element" + e);
         }
     }
+
     public boolean isElementDisplayed(WebElement element) {
         try {
-            return  element.isDisplayed();
+            return element.isDisplayed();
         } catch (Exception e) {
             return false;
         }
     }
 
-// работа с дропдаун
+    // работа с дропдаун
     public void selectTextInDD(WebElement element, String text) {
 
-        try{
-            Select select =new Select(element);
+        try {
+            Select select = new Select(element);
             select.selectByVisibleText(text);
             logger.info(text + " was selected in DD");
-        }catch  (Exception e) {
+        } catch (Exception e) {
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
         }
     }
+
     public void selectValueInDD(WebElement element, String value) {
 
-        try{
-            Select select =new Select(element);
+        try {
+            Select select = new Select(element);
             select.selectByValue(value);
             logger.info(value + " was selected in DD");
-        }catch  (Exception e) {
+        } catch (Exception e) {
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
         }
     }
 
-    public void selectCheckBox(WebElement element){
-       try {
-           if (!element.isSelected()) {
-               clickOnElement(element);
-               logger.info(element+ "  was selected in check-box");
-           }
-       }catch (Exception e){
-           logger.error("Cannot work with element" + e);
-           Assert.fail("Cannot work with element" + e);
-       }
+    //мои методы с чек -боксом selectCheckBox deSelectCheckBox
+    public void selectCheckBox(WebElement element) {
+        try {
+            if (!element.isSelected()) {
+                clickOnElement(element);
+                logger.info(element + "  was selected in check-box");
+            }
+        } catch (Exception e) {
+            logger.error("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
     }
-    public void deSelectCheckBox(WebElement element){
+
+    public void deSelectCheckBox(WebElement element) {
         try {
             if (element.isSelected()) {
                 clickOnElement(element);
-                logger.info(element+ "  was deselected in check-box");
+                logger.info(element + "  was deselected in check-box");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error("Cannot work with element" + e);
             Assert.fail("Cannot work with element" + e);
         }
     }
- 
-  public boolean isElementDisplayed(By by) {
+
+    public boolean isElementDisplayed(By by) {
         try {
-            return   isElementDisplayed(webDriver.findElement(by));
+            return isElementDisplayed(webDriver.findElement(by));
         } catch (Exception e) {
             return false;
         }
 
     }
 
+    /**
+     * set needed
+     *
+     * @param element
+     * @param state   only!!!! check  or uncheck
+     */
+    public void setNeededStateCheckBox(WebElement element, String state) {
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean unCheckState = state.toLowerCase().equals("unCheck");
+
+        if (checkState || unCheckState) {
+
+            if (element.isSelected() && checkState) {
+                logger.info(" Checkbox is already checked  ");
+
+            } else if (element.isSelected() && unCheckState) {
+                clickOnElement(element);
+
+            } else if (!element.isSelected() && checkState) {
+                clickOnElement(element);
+
+            } else if (!element.isSelected() && unCheckState) {
+                logger.info(" Checkbox is already unchecked  ");
+
+            } else {
+                logger.error("State should be check or uncheck");
+                Assert.fail("State should be check or uncheck");
+            }
+        }
+    }
 }

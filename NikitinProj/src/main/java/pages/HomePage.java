@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +15,9 @@ public class HomePage extends ParentPage {
     @FindBy(id = "spares")
     private WebElement subMenuSpare;
 
+    @FindBy(id="prov_cus")
+    private WebElement subMenuDealType;
+
 
     public HomePage(WebDriver webDriver) {
 
@@ -23,7 +25,7 @@ public class HomePage extends ParentPage {
     }
 
     public boolean isAvatarDisplayed(){
-        return actionsWithOurElements.isAvatarDisplayed(avatar);
+        return actionsWithOurElements.isElementDisplayed(avatar);
     }
 
     public void clickOnMenuDictionary() {
@@ -32,5 +34,9 @@ public class HomePage extends ParentPage {
 
     public void clickOnSubMenuSpare() {
         actionsWithOurElements.clickOnElement(subMenuSpare);
+    }
+
+    public void clickOnSubMenuDealType(){
+        actionsWithOurElements.clickOnElement(subMenuDealType);
     }
 }

@@ -35,7 +35,7 @@ public class LoginPage extends ParentPage {
         openLoginPage();
         enterLogin(login);
         enterPassword(password);
-        clickButtonEnter();
+        clickButtonVhod();
     }
 
     public void enterLogin(String login) {
@@ -46,7 +46,7 @@ public class LoginPage extends ParentPage {
         actionsWithOurElements.enterTextIntoElement(inputPassword, passWord);
     }
 
-    public void clickButtonEnter() {
+    public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonEnter);
     }
 
@@ -58,7 +58,7 @@ public class LoginPage extends ParentPage {
         openLoginPage();
         enterLogin(login);
         enterPassword(password);
-        clickButtonEnter();
+        clickButtonVhod();
     }
 
     public void validLoginInToApp() {

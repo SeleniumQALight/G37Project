@@ -1,13 +1,11 @@
 package parentTest;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.EditSparePage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SparePage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -19,6 +17,9 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparePage sparePage;
     protected EditSparePage editSparePage;
+    protected ProviderPage providerPage;
+    protected EditProviderPage editProviderPage;
+
 
     @Before
     public void setUp(){
@@ -32,6 +33,8 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparePage = new SparePage(webDriver);
         editSparePage = new EditSparePage(webDriver);
+        providerPage = new ProviderPage(webDriver);
+        editProviderPage = new EditProviderPage(webDriver);
     }
 
     @After
@@ -39,4 +42,11 @@ public class ParentTest {
         webDriver.quit();
     }
 
+    public void checkExpectedResult(String message, boolean actualResult, boolean expectedResult){
+        Assert.assertEquals(message, expectedResult, actualResult);
+    }
+
+    public void checkExpectedResult(String message, boolean actualResult){
+        checkExpectedResult(message,actualResult,true);
+    }
 }
