@@ -9,7 +9,7 @@ import restSteps.demoqa.ApiDemoQA;
 
 import static libs.Utils.getDateAndTimeFormated;
 
-public class registarationSuccessful {
+public class RegistrationCustomerSuccessfulTest {
     @Test
     public void registrationSuccessful() {
         String dateTime = getDateAndTimeFormated();
