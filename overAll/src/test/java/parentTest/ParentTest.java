@@ -17,10 +17,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import pages.EditSparePage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SparePage;
+import pages.*;
+import pages.pageWithElementsAndElements.elements.elements.HomePageWithHtmlElements;
+import pages.pageWithElementsAndElements.elements.elements.LoginPageWithHtmlElement;
+import pages.pageWithElementsAndElements.elements.elements.SparePageWithHtmlElements;
+import pages.pageWithElementsAndElements.elements.elements.WorkersPageWithHtmlElements;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +36,10 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparePage sparePage;
     protected EditSparePage editSparePage;
+    protected LoginPageWithHtmlElement loginPageWithHtmlElement;
+    protected HomePageWithHtmlElements homePageWithHtmlElements;
+    protected SparePageWithHtmlElements sparePageWithHtmlElements;
+    protected WorkersPageWithHtmlElements workersPageWithHtmlElements;
 
     @Before
     public void setUp(){
@@ -62,6 +67,10 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparePage = new SparePage(webDriver);
         editSparePage = new EditSparePage(webDriver);
+        loginPageWithHtmlElement = new LoginPageWithHtmlElement(webDriver);
+        homePageWithHtmlElements = new HomePageWithHtmlElements(webDriver);
+        sparePageWithHtmlElements = new SparePageWithHtmlElements(webDriver);
+        workersPageWithHtmlElements = new WorkersPageWithHtmlElements(webDriver);
     }
 
     @After
