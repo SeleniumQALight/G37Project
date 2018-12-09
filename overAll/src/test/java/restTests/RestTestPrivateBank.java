@@ -1,8 +1,9 @@
+package restTests;
 
 import org.junit.Test;
 
-import restSteps.ApiPrivateBank;
-import restSteps.CurrencyValues;
+import restSteps.privateBank.ApiPrivateBank;
+import restSteps.privateBank.CurrencyValues;
 
 public class RestTestPrivateBank {
 

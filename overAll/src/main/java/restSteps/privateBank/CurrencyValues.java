@@ -1,4 +1,4 @@
-package restSteps;
+package restSteps.privateBank;
 
 public class CurrencyValues {
     public String ccy ;

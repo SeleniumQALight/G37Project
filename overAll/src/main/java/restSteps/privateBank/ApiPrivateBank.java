@@ -1,14 +1,10 @@
-package restSteps;
+package restSteps.privateBank;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.aeonbits.owner.ConfigFactory;
-import resources.ApiEndPoints;
+import restSteps.ParentApi;
 
-public class ApiPrivateBank {
-    protected static ApiEndPoints apiEndPoints
-            = ConfigFactory.create(ApiEndPoints.class);
-
+public class ApiPrivateBank extends ParentApi {
     /**
      * GET request to Private Bank
      * https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5
