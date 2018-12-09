@@ -15,7 +15,7 @@ public class ApiDemoQA extends ParentApi {
                 .when()
                 .post(apiEndPoints.restapi_demoqa_com_customer_register())
                 .then()
-                .statusCode(200)
+                .statusCode(201)
                 .extract()
                 .response().getBody();
     }
