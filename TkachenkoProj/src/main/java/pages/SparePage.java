@@ -1,6 +1,8 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +37,7 @@ public class SparePage extends ParentPage {
         }
     }
 
+    @Step
     public void clickOnAddButton() {
         actionsWithOurElements.clickOnElement(addButton);
     }
@@ -51,10 +54,12 @@ public class SparePage extends ParentPage {
         }
     }
 
+    @Step
     public boolean isSpareInList(String spareName) {
         return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text()='" + spareName + "']"));
     }
 
+    @Step
     private void clickOnSpare(String spareName) {
         actionsWithOurElements.clickOnElement(getSpareWithName(spareName));
     }
