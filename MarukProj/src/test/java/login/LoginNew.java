@@ -12,7 +12,7 @@ public class LoginNew extends ParentTest {
         logInPage.enterPassword("909090");
         logInPage.clickButtonVhod();  // homework
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
+        checkExpectedResult("Avatar is not present", homePage.isAvatarDisplayed());
     }
         // homework 17.11.2018
     @Test
@@ -22,7 +22,7 @@ public class LoginNew extends ParentTest {
         logInPage.enterPassword("909191");
         logInPage.clickButtonVhod();
 
-        Assert.assertTrue("Button'buttonVhodDisplayed' is not present. User was navigated to HomePage", logInPage.buttonVhodDisplayed());
+        checkExpectedResult("Button'buttonVhodDisplayed' is not present. User was navigated to HomePage", logInPage.buttonVhodDisplayed());
     }
 
     // homework 17.11.2018
@@ -30,6 +30,6 @@ public class LoginNew extends ParentTest {
     public void logIn() {
         logInPage.loginInToApp("Student", "906090");
 
-        Assert.assertTrue("User has passed authorization with incorrect password", logInPage.buttonVhodDisplayed());
+        checkExpectedResult("User has passed authorization with incorrect password", logInPage.buttonVhodDisplayed());
     }
 }
