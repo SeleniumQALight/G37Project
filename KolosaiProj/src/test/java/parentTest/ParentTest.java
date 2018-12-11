@@ -1,7 +1,6 @@
 package parentTest;
 
 import io.qameta.allure.Attachment;
-import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import libs.ConfigProperties;
 import org.aeonbits.owner.ConfigFactory;
