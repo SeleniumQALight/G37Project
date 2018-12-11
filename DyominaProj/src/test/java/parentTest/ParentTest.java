@@ -59,7 +59,7 @@ public class ParentTest {
         sparePage = new SparePage(webDriver);
         editSparePage = new EditSparePage(webDriver);
         providersPage = new ProvidersPage(webDriver);
-        editSparePage = new EditSparePage(webDriver);
+        editProvidersPage = new EditProvidersPage(webDriver);
 
     }
 
