@@ -1,5 +1,6 @@
 package LogIn;
 
+import libs.UtilsForDB;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;

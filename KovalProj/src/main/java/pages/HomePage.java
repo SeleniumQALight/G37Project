@@ -8,12 +8,12 @@ public class HomePage extends ParentPage{
 
     @FindBy(xpath = ".//*[@class='pull-left image']")
     private WebElement userPanelIcon;
-
     @FindBy(xpath = ".//*[@id='dictionary']//a")
     private WebElement menuDictionary;
-
     @FindBy(id = "spares")
     public WebElement subMenuSpare;
+    @FindBy (xpath = ".//a[@href = '/dictionary/providers']")
+    private WebElement subMenuProviders;
 
 
     public HomePage(WebDriver webDriver) {
@@ -30,5 +30,9 @@ public class HomePage extends ParentPage{
 
     public void clickOnSubMenuSpare() {
         actionsWithOurElements.clickOnElement(subMenuSpare);
+    }
+
+    public void clickOnSubMenuProviders(){
+        actionsWithOurElements.clickOnElement(subMenuProviders);
     }
 }

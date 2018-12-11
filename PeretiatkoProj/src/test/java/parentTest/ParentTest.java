@@ -36,7 +36,7 @@ public class ParentTest {
             webDriver = new ChromeDriver();
         } else if ("firefox".equals(browser)) {
             File file = new File("./src/drivers/geckodriver");
-            System.setProperty("webdriver.geckodriver.driver", file.getAbsolutePath());
+            System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
             FirefoxOptions profile = new FirefoxOptions();
             profile.addPreference("browser.startup.page", 0);
             profile.addPreference("browser.startup.homepage_override.mstone", "ignore"); // Suppress the "What's new" page
