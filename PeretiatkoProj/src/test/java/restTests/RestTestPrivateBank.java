@@ -2,6 +2,7 @@ package restTests;
 import org.junit.Test;
 import restSteps.privateBank.ApiPrivateBank;
 import restSteps.privateBank.CurrencyValues;
+
 public class RestTestPrivateBank {
     @Test
     public void getCursDetails(){
