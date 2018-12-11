@@ -2,20 +2,27 @@ package libs;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsWithOurElements {
 
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
+    WebDriverWait wait5, wait10;
 
-    public ActionsWithOurElements(WebDriver webDriver) {
+    public ActionsWithOurElements (WebDriver webDriver) {
         this.webDriver = webDriver;
+        wait5 = new WebDriverWait(webDriver, 5);
+        wait10 = new WebDriverWait(webDriver, 10);
 
     }
 
-    public void enterTextIntoElement(WebElement element, String textInput) {
+    public void enterTextIntoElement (WebElement element, String textInput) {
         try {
             element.clear();
             element.sendKeys(textInput);
@@ -27,8 +34,9 @@ public class ActionsWithOurElements {
 
     }
 
-    public void clickOnElement(WebElement element) {
+    public void clickOnElement (WebElement element) {
         try {
+            wait5.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
             logger.info("Element was clicked");
         } catch (Exception e) {
@@ -36,4 +44,58 @@ public class ActionsWithOurElements {
             Assert.fail(" Don't click on element" + e);
         }
     }
+
+    public boolean isElementDispayed (WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void selectTextInDropDown (WebElement element, String text) {
+        try {
+            Select select = new Select(element);
+            select.selectByVisibleText(text);
+            logger.info(text + "Was selected in Drop Down");
+        } catch (Exception e) {
+            logger.info("Cannot work with element" + e);
+            Assert.fail("Cannot work with element" + e);
+        }
+    }
+
+    public boolean isElementDispayed (By by) {
+        try {
+            return isElementDispayed(webDriver.findElement(by));
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     *
+     * State needed state
+     * @param element
+     * @param state   (Only !!! check or uncheck)
+     */
+    public void setNeededStateToCheckBox (WebElement element, String state) {
+
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean uncheckState = state.toLowerCase().equals("uncheck");
+
+        if (checkState || uncheckState) {
+            if (element.isSelected() && checkState) {
+                logger.info("Checkbox is already checked");
+            } else if (element.isSelected() && uncheckState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && checkState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && uncheckState) {
+                logger.info("Checkbox is already unchecked");
+            }
+        } else {
+            logger.error("State should be check or uncheck");
+        }
+    }
+
 }

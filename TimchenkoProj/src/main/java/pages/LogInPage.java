@@ -18,7 +18,7 @@ public class LogInPage extends  ParentPage {
 
     public LogInPage(WebDriver webDriver) {
 
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLogInPage() {
@@ -53,7 +53,7 @@ public class LogInPage extends  ParentPage {
     }
 
     public void clickButtonEnter() {
-        actionsWithOurElements.clickOnElement  (buttonEnter);
+        actionsWithOurElements.clickOnElement (buttonEnter);
       //  try {
         //    webDriver.findElement(By.xpath("//button[@type='submit']")).click();
 
@@ -73,15 +73,24 @@ public class LogInPage extends  ParentPage {
         enterPassWord(passWord);
         clickButtonEnter();
     }
-        public boolean isButtonPresent() {
-            try {
-                return webDriver.findElement(By.tagName("button")).isDisplayed();
-            }catch(Exception e){
-                return false;
-            }
-        }
+        public boolean isButtonEnterDisplayed() {
+         return actionsWithOurElements.isElementDisplayed(buttonEnter);
+    }
+
+    public void validLogInIntoApp () {
+
+        loginInToApp("Student", "909090");
+        HomePage homepage = new HomePage(webDriver);
+        homepage.isAvatarDisplayed();
+
+
 
     }
+
+
+
+
+}
 
 
      /*   public void clickStudentButton () {

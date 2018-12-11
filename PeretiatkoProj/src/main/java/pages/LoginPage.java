@@ -17,7 +17,7 @@ public class LoginPage extends ParentPage {
     WebElement buttonEnter;
 
     public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
     public void openLoginPage() {
@@ -35,7 +35,7 @@ public class LoginPage extends ParentPage {
         openLoginPage();
         enterLogin(login);
         enterPassword(password);
-        clickButtonEnter();
+        clickButtonVhod();
     }
 
     public void enterLogin(String login) {
@@ -46,8 +46,25 @@ public class LoginPage extends ParentPage {
         actionsWithOurElements.enterTextIntoElement(inputPassword, passWord);
     }
 
-    public void clickButtonEnter() {
+    public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonEnter);
+    }
+
+    public boolean isButtonEnterDisplayed() {
+        return actionsWithOurElements.isElementDispayed(buttonEnter);
+    }
+
+    public void LoginInToApp(String login, String password) {
+        openLoginPage();
+        enterLogin(login);
+        enterPassword(password);
+        clickButtonVhod();
+    }
+
+    public void validLoginInToApp() {
+        loginInToApp("Student", "909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarPresent();
     }
 }
 

@@ -1,8 +1,12 @@
 package Pages;
 
 import libs.ActionsWithOurElements;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -10,20 +14,38 @@ abstract public class ParentPage {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     ActionsWithOurElements actionsWithOurElements;
+    protected static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
-    public ParentPage(WebDriver webDriver) {
+    String baseUrl;
+    String expectedUrl;
 
+    public ParentPage(WebDriver webDriver, String relativeUrl) {
         this.webDriver = webDriver;
-        PageFactory.initElements(webDriver,this); // Инициализирует все элементы, задекларированные через @FindBy в дочерних страничках
+        PageFactory.initElements(webDriver, this); // Инициализирует все элементы, задекларированные через @FindBy в дочерних страничках
+        baseUrl = configProperties.base_url();
         actionsWithOurElements = new ActionsWithOurElements(webDriver);
+        expectedUrl = baseUrl + relativeUrl;
     }
 
-    public String pageTitle(){
+    public String getCurrentUrl() {
+        return webDriver.getCurrentUrl();
+    }
+
+    public void checkUrl() {
+        try {
+            Assert.assertEquals("Url is not expected", expectedUrl, getCurrentUrl());
+        } catch (Exception e) {
+            logger.error("Can not work with url");
+            Assert.fail("Can not work with url");
+        }
+    }
+
+    public String pageTitle() {
         try {
             logger.info("Page Title obtained");
             return webDriver.getTitle();
-        }catch (Exception e){
-            logger.error("Page title couldn't be obtained "+e);
+        } catch (Exception e) {
+            logger.error("Page title couldn't be obtained " + e);
             return "fakeTitle";
         }
     }

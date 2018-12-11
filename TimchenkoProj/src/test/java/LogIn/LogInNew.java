@@ -1,5 +1,6 @@
 package LogIn;
 
+import libs.UtilsForDB;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
@@ -16,14 +17,14 @@ public class LogInNew extends ParentTest {
         //logInPage.clickStudentButton();
         //logInPage.exitButton();
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarPresented());
+        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
 
 
     }
     @Test
     public  void inValidLogIn () {
         logInPage.loginInToApp("Student","906090");
-        Assert.assertTrue("Attention! User enters with invalid inputs", logInPage.isButtonPresent());
+        Assert.assertTrue("Attention! User enters with invalid inputs", logInPage.isButtonEnterDisplayed());
     }
 
     }

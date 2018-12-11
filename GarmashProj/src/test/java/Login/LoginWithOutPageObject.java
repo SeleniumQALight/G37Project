@@ -41,7 +41,7 @@ public class LoginWithOutPageObject {
     }
 
     @Test
-    public void invalidLogin() {
+    public void inValidLogin() {
         login("stu", "909090");
         Assert.assertTrue("It is not a login page", isPresent(By.name("_username")));
     }
@@ -49,8 +49,7 @@ public class LoginWithOutPageObject {
     @Test
     public void validLogin() {
         login();
-        Assert.assertTrue("Avata" +
-                "r is not present", isPresent(".//*[@class='pull-left info']"));
+        Assert.assertTrue("Avatar is not present", isPresent(".//*[@class='pull-left info']"));
     }
 
     @Before

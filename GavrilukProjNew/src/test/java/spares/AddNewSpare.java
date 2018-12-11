@@ -1,7 +1,7 @@
 package spares;
 
 import org.junit.Test;
-import parenTest.ParentTest;
+import parentTest.ParentTest;
 
 public class AddNewSpare extends ParentTest{
     @Test
