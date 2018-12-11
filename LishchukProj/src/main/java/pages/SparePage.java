@@ -46,7 +46,7 @@ public class SparePage extends ParentPage {
         int counter = 0;
         while (isSpareInList(spareName)) {
             clickOnSpare(spareName);
-            editSparePage.clickButtonCreate();
+            editSparePage.clickButtonDelete();
             counter++;
             if (counter > 100) {
                 Assert.fail("There are more than 100 spares in list" +
@@ -56,7 +56,7 @@ public class SparePage extends ParentPage {
     }
 
     public boolean isSpareInList(String spareName) {
-        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text() =' " + spareName + "']"));
+        return actionsWithOurElements.isElementDisplayed(By.xpath(".//*[text() ='" + spareName + "']"));
     }
 
     private void clickOnSpare(String spareName) {
@@ -64,6 +64,6 @@ public class SparePage extends ParentPage {
     }
 
     private WebElement getSpareWithName(String spareName) {
-        return webDriver.findElement(By.xpath(".//*[text() =' " + spareName + "']"));
+        return webDriver.findElement(By.xpath(".//*[text() ='" + spareName + "']"));
     }
 }

@@ -10,8 +10,18 @@ public class HomePage extends ParentPage {
     @FindBy(xpath = ".//*[@class='pull-left image']")
     WebElement AvatarPresent;
 
+    @FindBy(xpath = ".//*[@class='pull-left image']")
+    WebElement avatar;
+
+    @FindBy(xpath = ".//*[@id='dictionary']/a")
+    private WebElement menuDictionary;
+
+    @FindBy(id = "spares")
+    private WebElement subMenuSpare;
+
+
     public HomePage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver,"/");
     }
 
 //   public boolean isAvatarPresent(){
@@ -21,8 +31,29 @@ public class HomePage extends ParentPage {
 //            return false;
 //        }
 //    }
-    public void chekVisibleisAvatarPresent () {
+
+//       public boolean isAvatarPresent(){
+//        try{
+//            return avatar.isDisplayed();
+//        }catch (Exception e){
+//            return false;
+//        }
+//    }
+
+
+    public void chekVisibleisAvatarPresent() {
         actionsWithOurElements.cheсkVisibleElement(AvatarPresent);
     }
 
+    public boolean isAvatarDisplayed() {
+        return actionsWithOurElements.isElementDispayed(avatar);
+    }
+
+    public void clickOnMenuDictionary() {
+        actionsWithOurElements.clickOnElement(menuDictionary);
+    }
+
+    public void clickOnSubMenuSpare() {
+        actionsWithOurElements.clickOnElement(subMenuSpare);
+    }
 }
