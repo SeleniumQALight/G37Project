@@ -3,9 +3,13 @@ package libs;
 import com.gargoylesoftware.htmlunit.WebAssert;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 
 /**
@@ -15,9 +19,13 @@ public class ActionWithOurElements {
 
     WebDriver webDriver;
     Logger logger = Logger.getLogger((getClass()));
+//    WebDriverWait wait5, wait10;
+
 
     public ActionWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
+//        wait5 = new WebDriverWait(WebDriver, 5);
+//        wait10 = new WebDriverWait(WebDriver, 10);
     }
 
     public void enterTextIntoElement(WebElement element, String text) {
@@ -42,13 +50,11 @@ public class ActionWithOurElements {
         try
 
         {
+//            wait5.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
             logger.info("button is found");
-
         } catch (
-                Exception e )
-
-        {
+                Exception e ) {
             logger.error("Password or Username are incorrect");
             Assert.assertTrue("Password or Username are incorrect", true);
 
@@ -86,6 +92,41 @@ public class ActionWithOurElements {
 
         }
 
+    }
+
+    public boolean isElementDisplayed(By by) {
+        try {
+            return isElementDisplayed(webDriver.findElement(by));
+        } catch ( Exception e ) {
+            return false;
+        }
+
+    }
+
+    /**
+     * Set need state
+     * @param element
+     * @param state (Only !!! check or uncheck)
+     */
+    public void setNeededStateToCheckBox(WebElement element, String state) {
+        boolean checkState = state.toLowerCase().equals("check");
+        boolean unCheckState = state.toLowerCase().equals("uncheck");
+
+        if (checkState || unCheckState) {
+            if (element.isSelected() && checkState) {
+                logger.info("Already cheked");
+
+            } else if (element.isSelected() && unCheckState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && checkState) {
+                clickOnElement(element);
+            } else if (!element.isSelected() && unCheckState) {
+                logger.info("Already cheked");
+            }
+        } else {
+            logger.error("Staet should be checked or unchecked");
+            Assert.fail("Staet should be checked or unchecked");
+        }
     }
 
 }

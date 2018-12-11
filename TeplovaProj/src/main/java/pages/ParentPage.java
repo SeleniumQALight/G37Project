@@ -1,6 +1,8 @@
 package pages;
 
 import libs.ActionWithOurElements;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.http.util.Asserts;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -15,7 +17,10 @@ abstract public class ParentPage {
     WebDriver webDriver;
     Logger logger = Logger.getLogger((getClass()));
     ActionWithOurElements actionWithOurElements;
-    String baseUrl = "http://v3.test.itpmgroup.com ";
+    protected static ConfigProperties configProperties =
+            ConfigFactory.create(ConfigProperties.class);
+
+    String baseUrl;
     String expectedUrl;
 
 
@@ -23,6 +28,8 @@ abstract public class ParentPage {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
         actionWithOurElements = new ActionWithOurElements(webDriver);
+        baseUrl = configProperties.base_url();
+
         logger = Logger.getLogger(getClass());
         this.expectedUrl = baseUrl + relativeUrl;
 
@@ -31,12 +38,13 @@ abstract public class ParentPage {
     public String getCurrentUrl (){
         return webDriver.getCurrentUrl();
     }
-    public void CheckUrl(){
+
+        public void checkUrl(){
         try{
             Assert.assertEquals("Url is not expacted",
                     expectedUrl, getCurrentUrl());
         }catch (Exception e){
-            logger.error("can't wprk with url");
+            logger.error("can't work with url");
             Assert.fail();
         }
     }
