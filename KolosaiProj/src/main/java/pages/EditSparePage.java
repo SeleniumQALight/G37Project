@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class EditSparePage extends ParentPage {
-    @FindBy(id = "spareName")
+    @FindBy(id = "spares_spareName")
     private WebElement spareNameInput;
 
     @FindBy(id = "spares_spareType")
@@ -14,13 +14,18 @@ public class EditSparePage extends ParentPage {
     @FindBy(name = "delete")
     private WebElement buttonDelete;
 
+    @FindBy(name = "add")
+    private WebElement buttonCreate;
+
+
+
 
     public EditSparePage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spare/edit");
     }
 
     public boolean checkSpareNameInInput(String spareName) {
-        return spareNameInput.getText().equals(spareName);
+        return spareNameInput.getAttribute("value").equals(spareName);
 
 
     }
@@ -34,7 +39,7 @@ public class EditSparePage extends ParentPage {
     }
 
     public void clickButtonCreate() {
-        actionsWithOurElements.clickOnElement(buttonDelete);
+        actionsWithOurElements.clickOnElement(buttonCreate);
     }
 
     public void selectSpareTypeInDD(String spareType) {
