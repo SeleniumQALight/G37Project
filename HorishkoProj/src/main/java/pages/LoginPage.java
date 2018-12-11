@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,7 @@ public class LoginPage extends ParentPage {
         super(webDriver, "/login");
     }
 
+@Step
     public void openLoginPage(){
         try {
             webDriver.get("http://v3.test.itpmgroup.com");
@@ -29,7 +31,7 @@ public class LoginPage extends ParentPage {
             Assert.fail("Cannot open Login Page");
         }
     }
-
+    @Step
     public void enterLogin(String login) {
         actionsWithOurElements.enterTextInToElement(inputLogin,login);
 
@@ -42,6 +44,7 @@ public class LoginPage extends ParentPage {
 //            Assert.fail("Cannot work with element");
 //        }
     }
+    @Step
         public void enterPassword(String passWord) {
             actionsWithOurElements.enterTextInToElement(inputPassWord,passWord); // ниже код, который делает то же самое
 
@@ -56,6 +59,7 @@ public class LoginPage extends ParentPage {
 //                Assert.fail("Cannot work with element");
 //            }
     }
+    @Step
     public void clickButtonVhod() {
         actionsWithOurElements.clickOnElement(buttonVhod);
 
@@ -68,6 +72,7 @@ public class LoginPage extends ParentPage {
 //            Assert.fail("Cannot work with element");
 //        }
     }
+    @Step
     public void loginInToApp(String login, String password){
         try {
             openLoginPage();
@@ -79,6 +84,7 @@ public class LoginPage extends ParentPage {
             Assert.fail("Cannot work with element");
         }
     }
+    @Step
     public boolean isButtonVhodDisplayed(){
         return actionsWithOurElements.isElementDisplayed(buttonVhod);
     }
