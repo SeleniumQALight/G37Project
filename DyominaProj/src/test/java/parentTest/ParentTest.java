@@ -9,10 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import pages.EditSparePage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SparePage;
+import pages.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +22,8 @@ public class ParentTest {
     protected HomePage homePage;
     protected SparePage sparePage;
     protected EditSparePage editSparePage;
+    protected ProvidersPage providersPage;
+    protected EditProvidersPage editProvidersPage;
 
     @Before
     public void setUp() {
@@ -49,6 +48,8 @@ public class ParentTest {
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
         sparePage = new SparePage(webDriver);
+        editSparePage = new EditSparePage(webDriver);
+        providersPage = new ProvidersPage(webDriver);
         editSparePage = new EditSparePage(webDriver);
 
     }
