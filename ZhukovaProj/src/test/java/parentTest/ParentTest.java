@@ -11,6 +11,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import pages.*;
 
+import pages.pageWithElementsAndElements.elements.elements.HomePageWithHtmlElements;
+import pages.pageWithElementsAndElements.elements.elements.LoginPageWithHtmlElement;
+import pages.pageWithElementsAndElements.elements.elements.SparePageWithHtmlElements;
+import pages.pageWithElementsAndElements.elements.elements.WorkersPageWithHtmlElements;
+
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
@@ -24,6 +29,11 @@ public class ParentTest {
     protected EditSparePage editSparePage;
     protected EditProvidersPage editProvidersPage;
     protected ProvidersPage providersPage;
+
+    protected LoginPageWithHtmlElement loginPageWithHtmlElement;
+    protected HomePageWithHtmlElements homePageWithHtmlElements;
+    protected SparePageWithHtmlElements sparePageWithHtmlElements;
+    protected WorkersPageWithHtmlElements workersPageWithHtmlElements;
 
     @Before
     public void setUp() {
@@ -51,6 +61,10 @@ public class ParentTest {
         editSparePage = new EditSparePage(webDriver);
         editProvidersPage = new EditProvidersPage(webDriver);
         providersPage = new ProvidersPage(webDriver);
+        loginPageWithHtmlElement = new LoginPageWithHtmlElement(webDriver);
+        homePageWithHtmlElements = new HomePageWithHtmlElements(webDriver);
+        sparePageWithHtmlElements = new SparePageWithHtmlElements(webDriver);
+        workersPageWithHtmlElements = new WorkersPageWithHtmlElements(webDriver);
     }
 
     @After

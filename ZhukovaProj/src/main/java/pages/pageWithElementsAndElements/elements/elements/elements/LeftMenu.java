@@ -6,10 +6,8 @@ import ru.yandex.qatools.htmlelements.element.Link;
 
 @FindBy(xpath = "//ul[@class='sidebar-menu']")
 public class LeftMenu extends ParentElements {
-
     @FindBy(xpath = "//li[@id='dictionary']/a")
     private Link menuDictionary;
-
     @FindBy(xpath = "//li[@id='workers']/a")
     private Link subMenuWorkers;
     @FindBy(id = "spares")
@@ -19,7 +17,6 @@ public class LeftMenu extends ParentElements {
         super(webDriver);
     }
 
-
     public void clickOnMenuDictionsry() {
         actionsWithOurElements.clickOnElement(menuDictionary);
     }
@@ -28,9 +25,7 @@ public class LeftMenu extends ParentElements {
         actionsWithOurElements.clickOnElement(subMenuSpares);
     }
 
-    public void clickOnSubMenuWorkers(){
+    public void clickOnSubMenuWorkers() {
         actionsWithOurElements.clickOnElement(subMenuWorkers);
     }
-
 }
-

@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.htmlelements.element.TextInput;
+import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 public class ActionsWithOurElements {
 
@@ -143,4 +145,28 @@ public class ActionsWithOurElements {
             }
         }
     }
+
+    public void enterTextInToElement(TextInput textInput, String text) {
+        try {
+            textInput.clear();
+            textInput.sendKeys(text);
+            logger.info("'" + text + "' was inputed into '" + textInput.getName() + "'");
+        } catch (Exception e) {
+            printExceptionAndStopTest(textInput, e);
+        }
+    }
+    public void clickOnElement(TypifiedElement element) {
+        try {
+            wait5.until(ExpectedConditions.elementToBeClickable(element));
+            element.click();
+            logger.info("Element '" + element.getName() + "' was clicked ");
+        } catch (Exception e) {
+            printExceptionAndStopTest(element, e);
+        }
+    }
+    private void printExceptionAndStopTest(TypifiedElement element, Exception e) {
+        logger.error("Can not work with element '" + element.getName() + "'\n " + e);
+        Assert.fail("Can not work with element '" + element.getName() + "'\n " + e);
+    }
+
 }

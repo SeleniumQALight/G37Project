@@ -1,9 +1,7 @@
 package pages.pageWithElementsAndElements.elements.elements;
 
 import org.openqa.selenium.WebDriver;
-
-import pages.pageWithElementsAndElements.elements.LeftMenu;
-
+import pages.pageWithElementsAndElements.elements.elements.elements.LeftMenu;
 
 public class WorkersPageWithHtmlElements extends ParentPageWithHtmlElements {
 
@@ -11,8 +9,5 @@ public class WorkersPageWithHtmlElements extends ParentPageWithHtmlElements {
 
     public WorkersPageWithHtmlElements(WebDriver webDriver) {
         super(webDriver, "/dictionary/workers");
-
     }
-
-
 }
