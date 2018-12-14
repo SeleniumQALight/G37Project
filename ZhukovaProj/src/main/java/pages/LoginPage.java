@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,10 +11,10 @@ public class LoginPage extends ParentPage {
     @FindBy(name = "_username")
     WebElement inputLogin;
 
-    @FindBy(name="_password")
+    @FindBy(name = "_password")
     WebElement inputPassWord;
 
-    @FindBy(tagName="button")
+    @FindBy(tagName = "button")
     WebElement buttonVhod;
 
 
@@ -21,6 +22,7 @@ public class LoginPage extends ParentPage {
         super(webDriver, "/login");
     }
 
+    @Step
     public void openLoginPage() {
 
         try {
@@ -32,6 +34,7 @@ public class LoginPage extends ParentPage {
         }
     }
 
+    @Step
     public void enterLogin(String login) {
         actionsWithOurElements.enterTextIntoElement(inputLogin, login);
 //        try {
@@ -43,6 +46,8 @@ public class LoginPage extends ParentPage {
 //            Assert.fail("Cannot work with element");
 //        }
     }
+
+    @Step
     public void enterPassword(String passWord) {
         actionsWithOurElements.enterTextIntoElement(inputPassWord, passWord);
 //        try {
@@ -54,8 +59,10 @@ public class LoginPage extends ParentPage {
 //            Assert.fail("Cannot work with element");
 //        }
     }
-    public void clickButtonVhod(){
-actionsWithOurElements.clickOnElement(buttonVhod);
+
+    @Step
+    public void clickButtonVhod() {
+        actionsWithOurElements.clickOnElement(buttonVhod);
 // try {
 //            buttonVhod.click();
 //
@@ -67,25 +74,28 @@ actionsWithOurElements.clickOnElement(buttonVhod);
 
     }
 
-    public boolean isButtonVhodDisplaetd(){
+    @Step
+    public boolean isButtonVhodDisplaetd() {
         return actionsWithOurElements.isElementDisplayed(buttonVhod);
     }
 
-
-    public void loginIntoApp(String login, String password){
+    @Step
+    public void loginIntoApp(String login, String password) {
         openLoginPage();
         enterLogin(login);
         enterPassword(password);
         clickButtonVhod();
+
+
     }
 
-    public void validLoginIntoApp(){
+    @Step
+    public void validLoginIntoApp() {
         loginIntoApp("Student", "909090");
-        HomePage homePage= new HomePage(webDriver);
+        HomePage homePage = new HomePage(webDriver);
         homePage.isAvatarPresent();
 
     }
-
 
 
 }
