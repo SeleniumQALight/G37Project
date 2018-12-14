@@ -10,6 +10,6 @@ public class InvalidLoginNew extends ParentTest {
     public void InvalidLogin(){
         loginPage.loginInToApp("Student", "906090");
 
-       Assert.assertTrue("Login form can not be found", loginPage.isLogoFormDisplayed());
+       checkExpectedResult("Login form can not be found", loginPage.isLogoFormDisplayed());
     }
 }

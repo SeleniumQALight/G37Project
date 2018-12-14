@@ -1,24 +1,28 @@
 package login;
 
-import org.junit.Assert;
+import libs.UtilsForDB;
 import org.junit.Test;
 import parentTest.ParentTest;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class LoginNew extends ParentTest {
     @Test
-    public void validLogin(){
+    public void validLogin() throws SQLException, IOException, ClassNotFoundException {
+        UtilsForDB utilsForDB = new UtilsForDB();
         loginPage.openLoginPage();
         loginPage.enterLogin("Student");
-        loginPage.enterPassword("909090");
+        loginPage.enterPassword(utilsForDB.getPassForLogin("Student"));
         loginPage.clickButtonVhod();
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
+        checkExpectedResult("Avatar is not present", homePage.isAvatarDisplayed());
     }
 
     @Test
     public void notValidLogin(){
         loginPage.loginInToApp("Student", "906090");
 
-     Assert.assertTrue("Avatar is not present" , loginPage.actionsWithOurElements.isAuthorizationFormPresent());
+     checkExpectedResult("Avatar is not present" , loginPage.actionsWithOurElements.isAuthorizationFormPresent());
     }
 
 }

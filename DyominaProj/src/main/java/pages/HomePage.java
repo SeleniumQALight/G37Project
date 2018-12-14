@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,10 +16,14 @@ public class HomePage extends ParentPage{
     @FindBy (id="spares")
     private WebElement submenuSpare;
 
+    @FindBy (id="prov_cus")
+    private WebElement submenuProviders;
+
     public HomePage(WebDriver webDriver) {
         super(webDriver, "/");
     }
 
+    @Step
     public boolean isAvatarDisplayed(){
 //        try {
 //            return avatar.isDisplayed();
@@ -34,5 +39,9 @@ public class HomePage extends ParentPage{
 
     public void clickOnSubmenuSpare() {
         actionsWithOurElements.clickOnElement(submenuSpare);
+    }
+
+    public void clickOnSubmenuProviders() {
+        actionsWithOurElements.clickOnElement(submenuProviders);
     }
 }

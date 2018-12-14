@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,7 @@ public class LoginPage extends ParentPage{
         super(webDriver, "/login");
     }
 
+    @Step
     public void openLoginPage(){
         try{
             webDriver.get("http://v3.test.itpmgroup.com");
@@ -30,10 +32,12 @@ public class LoginPage extends ParentPage{
         }
     }
 
+    @Step
     public void enterLogin(String login) {
        actionsWithOurElements.enterTextIntoElement(inputLogin, login);
     }
 
+    @Step
     public void enterPassword(String password) {
 //        try{
 //            inputPassword.clear();
@@ -45,6 +49,8 @@ public class LoginPage extends ParentPage{
 //        }
         actionsWithOurElements.enterTextIntoElement(inputPassword, password);
     }
+
+    @Step
     public void clickButtonVhod(){
 //        try{
 //            buttonVhod.click();
@@ -56,6 +62,7 @@ public class LoginPage extends ParentPage{
         actionsWithOurElements.clickOnElement(buttonVhod);
     }
 
+    @Step
     public  void loginInToApp(String login, String password){
             openLoginPage();
             enterLogin(login);
@@ -63,6 +70,7 @@ public class LoginPage extends ParentPage{
             clickButtonVhod();
     }
 
+    @Step
     public boolean isLogoFormDisplayed(){
         try{
             return webDriver.findElement(By.xpath(".//*[@class='login-box-body']")).isDisplayed();
@@ -72,10 +80,12 @@ public class LoginPage extends ParentPage{
         }
     }
 
+    @Step
     public boolean isButtonVhodDisplayed(){
         return actionsWithOurElements.isElementDisplayed(buttonVhod);
     }
 
+    @Step
     public void validLoginInToApp(){
         loginInToApp("Student","909090");
         HomePage homePage = new HomePage(webDriver);

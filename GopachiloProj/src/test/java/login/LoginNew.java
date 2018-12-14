@@ -13,15 +13,16 @@ public class LoginNew  extends ParentTest {
         loginPage.enterPassword("909090");
         loginPage.clickButtonVhod();
 
-        Assert.assertTrue("Avatar is not present",homePage.isAvatarDisplayed());
+        checkExpectedresult("Avatar is not present",homePage.isAvatarDisplayed());
 
 
     }
+
     @Test
     public void inValidLogin(){
         loginPage.loginInToApp("Studend","909090");
 
-        Assert.assertFalse("Avatar is not present",homePage.isAvatarDisplayed());
+        checkExpectedresult("Avatar is not present",homePage.isAvatarDisplayed());
 
     }
 

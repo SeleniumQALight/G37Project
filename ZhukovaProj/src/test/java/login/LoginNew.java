@@ -1,5 +1,6 @@
 package login;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
@@ -18,10 +19,13 @@ public class LoginNew extends ParentTest {
         @Test
         public void inValidLogin() {
             loginPage.openLoginPage();
-            loginPage.enterLogin("studen");
+            loginPage.enterLogin("student");
             loginPage.enterPassword("909090");
             loginPage.clickButtonVhod();
-            Assert.assertFalse("Avatar should not be present!", homePage.isAvatarPresent());
+
+
+            checkExpectedResult("Avatar should not be present!", !homePage.isAvatarPresent());
+            //Assert.assertFalse("Avatar should not be present!", homePage.isAvatarPresent());
 
         }
 }

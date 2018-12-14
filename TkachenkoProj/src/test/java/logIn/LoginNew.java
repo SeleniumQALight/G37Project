@@ -1,5 +1,6 @@
 package logIn;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
@@ -12,7 +13,8 @@ public class LoginNew extends ParentTest {
         loginPage.enterPassword("909090");
         loginPage.clickButtonVhod();
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
+
+        checkExpectedResult("Avatar is not present", homePage.isAvatarDisplayed());
     }
     @Test
     public void invalidLogin(){
@@ -21,16 +23,17 @@ public class LoginNew extends ParentTest {
         loginPage.enterPassword("9090909");
         loginPage.clickButtonVhod();
 
-        Assert.assertTrue("User logged in with invalid credentials",loginPage.isLogoPresent());
+
+        checkExpectedResult("User logged in with invalid credentials",loginPage.isLogoPresent());
     }
     @Test
     public void studentValidLogInHW(){
         loginPage.loginInToApp("Student", "909090");
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarDisplayed());
+        checkExpectedResult("Avatar is not present", homePage.isAvatarDisplayed());
     }
     @Test
     public void studentInvalidLogInHW(){
         loginPage.loginInToApp("Student1", "9090909");
-        Assert.assertTrue("User logged in with invalid credentials", loginPage.isLogoPresent());
+        checkExpectedResult("User logged in with invalid credentials", loginPage.isLogoPresent());
     }
 }
