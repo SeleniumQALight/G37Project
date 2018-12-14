@@ -1,7 +1,6 @@
 package login;
 
 import libs.ExcelDriver;
-import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
 
@@ -15,6 +14,6 @@ public class LoginNewWithDataFromExcel extends ParentTest {
         ExcelDriver excelDriver = new ExcelDriver();
         Map dataForValidLogin   = excelDriver.getData(configProperties.DATA_FILE(), "validLogOn");
         loginPage.loginInToApp(dataForValidLogin.get("login").toString(), dataForValidLogin.get("pass").toString());
-        Assert.assertTrue("Avatar has not appeared", homePage.isAvatarPresent());
+        checkExpectedResult("Avatar has not appeared", homePage.isAvatarPresent());
     }
 }
