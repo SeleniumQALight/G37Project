@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -61,7 +62,7 @@ public class LoginPage extends ParentPage {
         actionWithOurElements.clickOnElement(buttonVhod);
 
     }
-
+  @Step
     public void loginInToApp(String login, String password) {
         openLoginPage();
         enterLogin(login);
