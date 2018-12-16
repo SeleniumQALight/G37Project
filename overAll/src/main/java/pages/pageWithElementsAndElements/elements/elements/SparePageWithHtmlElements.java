@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.EditSparePage;
-import pages.pageWithElementsAndElements.LeftMenu;
+import pages.pageWithElementsAndElements.elements.elements.elements.LeftMenu;
 
 import java.util.List;
 

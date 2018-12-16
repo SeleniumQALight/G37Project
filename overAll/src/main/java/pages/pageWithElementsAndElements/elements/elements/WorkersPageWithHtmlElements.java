@@ -2,7 +2,7 @@ package pages.pageWithElementsAndElements.elements.elements;
 
 import org.openqa.selenium.WebDriver;
 
-import pages.pageWithElementsAndElements.LeftMenu;
+import pages.pageWithElementsAndElements.elements.elements.elements.LeftMenu;
 
 
 public class WorkersPageWithHtmlElements extends ParentPageWithHtmlElements {
