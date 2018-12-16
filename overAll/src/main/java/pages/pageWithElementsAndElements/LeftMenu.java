@@ -31,6 +31,5 @@ public class LeftMenu extends ParentElements {
     public void clickOnSubMenuWorkers(){
         actionsWithOurElements.clickOnElement(subMenuWorkers);
     }
-
 }
 

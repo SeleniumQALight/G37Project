@@ -14,7 +14,6 @@ abstract public class ParentElements {
 
         PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(webDriver)), this);
         actionsWithOurElements = new ActionsWithOurElements(webDriver);
-
     }
 }
 
