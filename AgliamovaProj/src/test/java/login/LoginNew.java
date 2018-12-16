@@ -1,6 +1,7 @@
 package login;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import parentTest.ParentTest;
 
@@ -12,8 +13,7 @@ public class LoginNew extends ParentTest {
         logInPage.enterPassword("909090");
         logInPage.clickButtonVhod();
 
-        Assert.assertTrue("Avatar is not present", homePage.isAvatarPresent());
-
+        checkExpectedResult("Avatar is not present", homePage.isAvatarDisplayed());
 
 
 
