@@ -1,4 +1,6 @@
 package pages;
+
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,44 +20,55 @@ public class LogInPage extends ParentPage {
 
 
     public LogInPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, "/login");
     }
 
-    public void openLogInPage(){
-        try{
+    @Step
+    public void openLogInPage() {
+        try {
             webDriver.get("http://v3.test.itpmgroup.com");
             logger.info("Login page was opened");
 
-        }catch(Exception e){
+        } catch (Exception e) {
             logger.error("Cannot open Login Page!");
             Assert.fail("Cannot open Login Page!"); // stop test without any checking
 
         }
     }
 
-
+    @Step
     public void enterLogin(String login) {
-       actionsWithOurElements.enterTextInToElement(inputLogin,login);
+        actionsWithOurElements.enterTextInToElement(inputLogin, login);
     }
 
-
+    @Step
     public void enterPassword(String password) {
-        actionsWithOurElements.enterTextInToElement(inputPassWord,password);
+        actionsWithOurElements.enterTextInToElement(inputPassWord, password);
     }
 
+    @Step
     public void clickButtonVhod() {
-        try{
-            webDriver.findElement(By.tagName("button")).click();
-            logger.info("Authorization passed correctly and user was navigated to Homepage");
-        }catch(Exception e){
-            logger.info("Cannot work with current element");
-            Assert.fail("Test cannot be continued");
+        actionsWithOurElements.clickOnElement(buttonVhod);
+    }
 
+    @Step
+    public boolean isButtonVhodDispjayed() {
+        return actionsWithOurElements.isElementDisplayed(buttonVhod);
+    }
 
-        }
+    @Step
+    public void loginIntoApp(String login, String passWord) {
+        openLogInPage();
+        enterLogin(login);
+        enterPassword(passWord);
+        clickButtonVhod();
+    }
 
-
-
+    @Step
+    public void validLoginInToApp() {
+        loginIntoApp("Student", "909090");
+        HomePage homePage = new HomePage(webDriver);
+        homePage.isAvatarDisplayed();
     }
 
 }
