@@ -91,5 +91,7 @@
     <module>HorishkoProj</module>
     <module>ZhukovaProj</module>
       <module>GavrilukProjNew</module>
+    <module>cucumberProj</module>
+    <module>jBehaveProject</module>
   </modules>
 </project>
