@@ -25,6 +25,11 @@ import pages.SparePage;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import pages.pageWithElementsAndElements.elements.elements.elements.HomePageWithHtmlElements;
+import pages.pageWithElementsAndElements.elements.elements.elements.LoginPageWithHtmlElement;
+import pages.pageWithElementsAndElements.elements.elements.elements.SparePageWithHtmlElements;
+import pages.pageWithElementsAndElements.elements.elements.elements.WorkersPageWithHtmlElements;
+
 public class ParentTest {
    WebDriver webDriver;
    String browser = System.getProperty("browser");
@@ -34,6 +39,12 @@ public class ParentTest {
    protected HomePage homePage;
    protected SparePage sparePage;
    protected EditSparePage editSparePage;
+
+    protected LoginPageWithHtmlElement loginPageWithHtmlElement;
+    protected HomePageWithHtmlElements homePageWithHtmlElements;
+    protected SparePageWithHtmlElements sparePageWithHtmlElements;
+    protected WorkersPageWithHtmlElements workersPageWithHtmlElements;
+
     @Before
     public void setUp(){
         if ("chrome".equals(browser) || browser == null){
@@ -57,6 +68,11 @@ public class ParentTest {
         homePage = new HomePage(webDriver);
         sparePage = new SparePage(webDriver);
         editSparePage = new EditSparePage(webDriver);
+
+        loginPageWithHtmlElement = new LoginPageWithHtmlElement(webDriver);
+        homePageWithHtmlElements = new HomePageWithHtmlElements(webDriver);
+        sparePageWithHtmlElements = new SparePageWithHtmlElements(webDriver);
+        workersPageWithHtmlElements = new WorkersPageWithHtmlElements(webDriver);
     }
 
     @After

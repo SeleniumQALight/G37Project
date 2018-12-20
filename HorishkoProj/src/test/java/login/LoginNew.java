@@ -1,10 +1,15 @@
 package login;
 
+import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
 
 public class LoginNew extends ParentTest {
+    @Owner("testOwner")
+    @Link("www.google.com")
+    @Issue("NameOfIssue")
+    @Severity(SeverityLevel.BLOCKER)
 
     @Test
     public void validLogin(){
