@@ -1,10 +1,15 @@
 package login;
 
+import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Test;
 import parentTest.ParentTest;
 
 public class LoginNew extends ParentTest {
+    @Owner("testOwner")
+    @Link("www.google.com")
+    @Issue("NameOfIssue")
+    @Severity(SeverityLevel.BLOCKER)
 
     @Test
     public void validLogin(){
@@ -13,7 +18,7 @@ public class LoginNew extends ParentTest {
         loginPage.enterPassword("909090");
         loginPage.clickButtonVhod();
 
-        Assert.assertTrue("Avatar is not present" ,
+        checkExpectedResult("Avatar is not present" ,
                 homePage.isAvatarDisplayed());
     }
 
