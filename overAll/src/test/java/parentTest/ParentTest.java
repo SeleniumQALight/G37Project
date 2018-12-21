@@ -17,6 +17,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import pages.*;
 import pages.pageWithElementsAndElements.elements.elements.HomePageWithHtmlElements;
 import pages.pageWithElementsAndElements.elements.elements.LoginPageWithHtmlElement;
@@ -24,6 +26,8 @@ import pages.pageWithElementsAndElements.elements.elements.SparePageWithHtmlElem
 import pages.pageWithElementsAndElements.elements.elements.WorkersPageWithHtmlElements;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class ParentTest {
@@ -57,7 +61,16 @@ public class ParentTest {
 
 
             webDriver = new FirefoxDriver();
-        } else {
+        } else if ("remote".equals(browser)){
+            logger.info("Remote Driver will be started");
+            try {
+                webDriver = new RemoteWebDriver(
+                        new URL("http://localhost:4444/wd/hub"),
+                        DesiredCapabilities.chrome());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }else {
             Assert.fail("Wrong browser name");
         }
 
